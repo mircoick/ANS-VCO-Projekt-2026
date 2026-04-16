@@ -1,0 +1,27 @@
+---
+title: "Kundenanforderungen FM Modulator"
+lang: de
+format:
+  pdf: default
+jupyter: python3
+---
+
+* 5,5 MHz Mittenfrequenz bei 0V eingang
+* einfacher aufbau (leicht zu verstehen)
+
+
+* linearer bereich 1MHz rechts und links bei .5V (Bandbreite)
+
+* +1MHz +0.5V 
+
+* relativ große platine die viel ab kann
+* sehende bauteile
+
+* integrierter spannungsteiler mit drehknopf
+* ein eingang ein ausgang als lieber bnc aber sma auch in ordnung stecker
+
+* ein-ausgangswiderstand 50Ohm
+
+* versporgungsspannungsstabilität
+
+* keine frequenzverschiebung 

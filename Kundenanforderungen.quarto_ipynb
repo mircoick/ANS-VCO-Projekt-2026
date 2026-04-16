@@ -1,0 +1,48 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Kundenanforderungen FM Modulator\"\n",
+        "lang: de\n",
+        "format:\n",
+        "  pdf: default\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "5,5 MHz Mittenfrequenz bei 0V eingang\n",
+        "einfacher aufbau (leicht zu verstehen)\n",
+        "\n",
+        "\n",
+        "linearer bereich 1MHz rechts und links bei .5V (Bandbreite)\n",
+        "\n",
+        "+1MHz +0.5V \n",
+        "\n",
+        "relativ große platine die viel ab kann\n",
+        "sehende bauteile\n",
+        "\n",
+        "integrierter spannungsteiler mit drehknopf\n",
+        "ein eingang ein ausgang als lieber bnc aber sma auch in ordnung stecker\n",
+        "\n",
+        "ein-ausgangswiderstand 50Ohm\n",
+        "\n",
+        "versporgungsspannungsstabilität\n",
+        "\n",
+        "keine frequenzverschiebung "
+      ],
+      "id": "612f20ed"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/icke/Library/Python/3.13/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
