@@ -1,9 +1,9 @@
 ---
 title: "IC Design of a Universal Biquad Filter"
 author: 
-  - name: 
+  - name: Mirco Ick
     orcid: 
-    email:
+    email: mick001@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
     affiliation:
@@ -11,16 +11,26 @@ author:
         city: Bremen
         state: Germany
         url: https://www.hs-bremen.de  
-  - name: 
+  - name: Torben Becker
     orcid: 
-    email:
+    email: tbecker@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
-  - name: 
+    affiliation:
+      - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+        city: Bremen
+        state: Germany
+        url: https://www.hs-bremen.de  
+  - name: Tassilo Hertling
     orcid: 
-    email:
+    email: thertling@stud.hs-bremen.de
     corresponding: true
     roles: "Lead author"
+    affiliation:
+      - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+        city: Bremen
+        state: Germany
+        url: https://www.hs-bremen.de  
 
 keyword:
   - Filter Design 
