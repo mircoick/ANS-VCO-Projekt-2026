@@ -635,7 +635,7 @@
         "version": 0
       },
       "model_mode": 4,
-      "workbook_filename": ""
+      "workbook_filename": "Testprojekt.wbk"
     },
     "page_layout_descr_file": "",
     "plot_directory": "",
@@ -649,7 +649,7 @@
         "uuid": "faea5e50-0203-44c8-a22d-e350243817e9"
       }
     ],
-    "used_designators": "U1,Q1,#PWR1-4,#GND1,R1-3,TP1-3,V1-2",
+    "used_designators": "TP4",
     "variants": []
   },
   "sheets": [

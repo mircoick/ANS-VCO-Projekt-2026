@@ -498,7 +498,6 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/6f9bf142-d7c8-409b-9bd5-221f5d8f591d")
 		(sheetname "/")
 		(sheetfile "Testprojekt.kicad_sch")
 		(units
@@ -875,7 +874,7 @@
 			(size 2 0.65)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(Q1-S)")
+			(net "GND")
 			(pinfunction "S_3")
 			(pintype "passive")
 			(uuid "f09255f7-1a2c-4e72-ad6f-f4c39459e04e")
@@ -1049,7 +1048,7 @@
 			(drill 0.9)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(R3-Pad1)")
+			(net "/VG")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(uuid "29286cb0-08f8-4551-8fda-df41be14aeda")
@@ -1288,7 +1287,6 @@
 			)
 		)
 		(property ki_fp_filters "R_*")
-		(path "/0f9933bd-b388-4fcf-8028-1fcb17a98f3c")
 		(sheetname "/")
 		(sheetfile "Testprojekt.kicad_sch")
 		(units
