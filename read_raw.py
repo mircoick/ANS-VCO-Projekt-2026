@@ -13,10 +13,9 @@ print(LTR.get_trace_names())
 print(u_vals)
 
 idx_nullen = np.where(x_vals == 0)[0]
-idx_trennstellen = idx_nullen[idx_nullen > 0] 
 
-x_teile = np.split(x_vals, idx_trennstellen)
-i_teile = np.split(i_vals, idx_trennstellen)
+x_teile = np.split(x_vals, idx_nullen)
+i_teile = np.split(i_vals, idx_nullen)
 
 print(f"{len(x_teile)} Kennlinien")
 
