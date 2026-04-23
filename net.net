@@ -7,7 +7,7 @@
 .probe p(Q1)
 .probe p(V2)
 .dc V2 0 1 10m
-V1 /VDD 0 DC 10 
+V1 /VDD 0 DC 1
 R1 /VDD /vd 1k
 Q1 /vd /vg 0 Q2N3904
 V2 /vg 0 DC 1 
