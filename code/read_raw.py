@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from PyLTSpice import RawRead
 
-LTR = RawRead("tassiko/nnmoos/NMOS.raw")
+LTR = RawRead("../kicad/nnmoos/NMOS.raw")
 step = 0 
 
 x_vals = np.array(LTR.get_trace('v(v-sweep)').get_wave(step))
