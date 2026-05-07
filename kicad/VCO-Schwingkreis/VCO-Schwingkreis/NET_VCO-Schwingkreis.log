@@ -1,0 +1,24 @@
+Circuit: .title KiCad schematic
+
+Instance "m:q2:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:q1:2": Length shorter than recommended for a level 1 MOSFET.
+.OP point found by inspection.
+
+Date: Thu May  7 11:23:11 2026
+Total elapsed time: 0.470 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 152354
+traniter = 152354
+tranpoints = 70584
+accept = 49007
+rejected = 21577
+matrix size = 15
+fillins = 0
+solver = Normal
+Avg thread counts: 1.0/1.1/1.1/1.0
+Matrix Compiler1: 2.76 KB object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 1.76 KB object code size  0.1/0.2/[0.1]
+

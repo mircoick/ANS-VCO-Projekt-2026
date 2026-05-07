@@ -1,0 +1,22 @@
+Circuit: * 5.5 MHz Colpitts VCO für ANS Projekt
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Thu May  7 09:45:06 2026
+Total elapsed time: 0.733 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 198912
+traniter = 198900
+tranpoints = 62799
+accept = 43302
+rejected = 19497
+matrix size = 14
+fillins = 0
+solver = Normal
+Avg thread counts: 1.0/1.1/1.1/1.0
+Matrix Compiler1:      38 opcodes  0.2/[0.1]/0.1
+Matrix Compiler2: off  [0.1]/0.2/0.2
+

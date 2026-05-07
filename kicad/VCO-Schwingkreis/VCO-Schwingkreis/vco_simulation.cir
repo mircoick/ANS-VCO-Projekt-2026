@@ -1,0 +1,74 @@
+* 5.5 MHz Colpitts VCO für ANS Projekt
+* Mittenfrequenz: ca. 5.5 MHz bei V_tune_in = 0V
+* Abstimmbereich: ±0.5 MHz bei ±0.5V
+
+* --- Spannungsquellen ---
+VCC vcc 0 DC 9V
+* Tuning-Eingangsspannung (0V = 5.5 MHz, +0.5V = 6.0 MHz, -0.5V = 5.0 MHz)
+V_TUNE v_tune_in 0 DC 0V
+
+* --- Arbeitspunkt für die Varaktordiode (Level-Shifter) ---
+* Ein simpler Spannungsteiler erzeugt eine Vorspannung (Bias) für die Diode,
+* da diese in Sperrrichtung betrieben werden muss.
+R_Bias1 vcc v_bias 10k
+R_Bias2 v_bias 0 10k
+* v_bias ist ca. 4.5V
+
+* Einkopplung der externen Tuning-Spannung zur Vorspannung
+R_Tune_In v_tune_in v_varactor_ctrl 1k
+R_Bias_In v_bias v_varactor_ctrl 1k
+* Die Steuerspannung an der Diode (Kathode) ist nun: ~2.25V + 0.5 * V_TUNE
+
+* --- Oszillator-Kern (Colpitts) ---
+* Transistor
+Q1 vcc base emitter 2N3904
+
+* Basis-Spannungsteiler für den Arbeitspunkt des Transistors
+R_B1 vcc base 47k
+R_B2 base 0 22k
+
+* Emitter-Widerstand
+R_E emitter 0 1k
+
+* --- Schwingkreis (Tank) ---
+* Colpitts-Kapazitiver Spannungsteiler
+C1 base emitter 220p
+C2 emitter 0 220p
+
+* Induktivität
+L1 base tank_mid 4.7u
+
+* Auskopplungskondensator zur Varaktordiode (verhindert DC-Kurzschluss der Diode durch L1)
+C_couple tank_mid var_cathode 10n
+
+* Varaktordiode (Kapazitätsdiode)
+D1 0 var_cathode DVAR
+
+* Anlegen der Abstimmspannung an die Varaktordiode über einen hochohmigen Widerstand
+R_Var_Bias v_varactor_ctrl var_cathode 100k
+
+* --- Output Buffer (Ausgangstreiber für 50 Ohm) ---
+* Emitterfolger als Puffer, um den Schwingkreis nicht zu belasten
+C_out_couple emitter buf_base 1n
+Q2 vcc buf_base buf_emitter 2N3904
+R_Buf_B1 vcc buf_base 100k
+R_Buf_B2 buf_base 0 100k
+R_Buf_E buf_emitter 0 1k
+* 50 Ohm Anpassungswiderstand (Serie) am Ausgang
+R_out buf_emitter v_out 50
+R_load v_out 0 50
+
+* --- Modelle ---
+.model 2N3904 NPN(IS=1E-14 VAF=100 BF=300 IKF=0.4 XTB=1.5 BR=4 CJC=4p CJE=8p TR=250p TF=350p)
+* Stark nichtlineare Varaktordiode (z.B. BB112 ähnlich) - Parameter müssen ggf. für exakte 1MHz/V Steilheit optimiert werden
+.model DVAR D(IS=1e-15 RS=10 N=1 CJO=250p M=1.5 VJ=0.7)
+
+* --- Simulations-Setup ---
+* Transiente Simulation für 10 Mikrosekunden, Auflösung 1 Nanosekunde
+.tran 1n 100u
+
+* Startbedingungen für schnelles Anschwingen (Oszillatoren brauchen in SPICE manchmal einen "Schubs")
+.ic V(base)=0V
+
+* In LTspice einfach oben auf das "Rennende Männchen" (Run) drücken.
+.end

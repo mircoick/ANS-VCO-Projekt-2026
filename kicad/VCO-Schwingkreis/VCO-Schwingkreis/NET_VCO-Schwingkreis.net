@@ -1,0 +1,20 @@
+.title KiCad schematic
+.include "C:/Users/torbe/Documents/2.0 Studium/6.0 Semester/M6.10 Analoge Schaltungen (ANS)/ANS-VCO-Projekt-2026/kicad/Testprojekt/spicelibs/elk.lib"
+* LTspice kompatible Befehle
+.param L_var=5u
+.param R_var=20k
+.param C_var=100p
+*.step param C_var 60p 110p 10p
+.tran 10n 100u startup
+
+* Bauteile
+R_dummy /CS 0 1G
+R1 /Drain_Q2 /Drain_Q1 {R_var}
+I1 /CS 0 DC 1m
+XQ2 /Drain_Q2 /Drain_Q1 /CS BS170/PLP
+XQ1 /Drain_Q1 /Drain_Q2 /CS BS170/PLP
+V1 VDD 0 DC 5
+C2 /Drain_Q2 /Drain_Q1 {C_var}
+L1 /Drain_Q2 VDD {L_var}
+L2 VDD /Drain_Q1 {L_var}
+.end
