@@ -943,6 +943,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text ".control\nwrdata NMOS.txt I(XQ1:1) \nwrite NMOS.raw \n.endc"
+		(exclude_from_sim no)
+		(at 133.35 90.424 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2a578a40-20f6-485e-b766-44459ed6f75b")
+	)
 	(junction
 		(at 148.59 99.06)
 		(diameter 0)
@@ -1596,7 +1606,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "NPN"
+		(property "Sim.Device" "SUBCKT"
 			(at 146.05 122.555 0)
 			(hide yes)
 			(show_name no)
@@ -1607,18 +1617,7 @@
 				)
 			)
 		)
-		(property "Sim.Type" "GUMMELPOON"
-			(at 146.05 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=C 2=B 3=E"
+		(property "Sim.Pins" "1=1 2=2 3=3"
 			(at 146.05 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -1640,7 +1639,7 @@
 				)
 			)
 		)
-		(property "Sim.Name" "Q2N3904"
+		(property "Sim.Name" "BS170/PLP"
 			(at 146.05 105.41 0)
 			(hide yes)
 			(show_name no)
