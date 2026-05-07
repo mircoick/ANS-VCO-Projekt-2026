@@ -1,0 +1,14 @@
+.title KiCad schematic
+.include "C:/Users/torbe/Documents/2.0 Studium/6.0 Semester/M6.10 Analoge Schaltungen (ANS)/ANS-VCO-Projekt-2026/Testprojekt/spicelibs/elk.lib"
+.save all
+.probe alli
+.probe p(V1)
+.probe p(R1)
+.probe p(Q1)
+.probe p(V2)
+.dc V1 0 1 1m
+V1 /VG GND DC 1 
+R1 /VDD /vd 1k
+Q1 /vd /VG GND Q2N3904
+V2 /VDD GND DC 10 
+.end
