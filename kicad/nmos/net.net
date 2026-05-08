@@ -1,0 +1,14 @@
+.title KiCad schematic
+.include "C:/Users/tassi/git/ANS-VCO-Projekt-2026/Testprojekt/spicelibs/elk.lib"
+.save all
+.probe alli
+.probe p(V1)
+.probe p(R1)
+.probe p(Q1)
+.probe p(V2)
+.dc V2 0 1 10m
+V1 /VDD 0 DC 1
+R1 /VDD /vd 1k
+Q1 /vd /vg 0 Q2N3904
+V2 /vg 0 DC 1 
+.end

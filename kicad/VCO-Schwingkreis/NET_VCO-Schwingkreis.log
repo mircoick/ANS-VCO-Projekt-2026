@@ -4,8 +4,8 @@ Instance "m:q2:2": Length shorter than recommended for a level 1 MOSFET.
 Instance "m:q1:2": Length shorter than recommended for a level 1 MOSFET.
 .OP point found by inspection.
 
-Date: Thu May  7 11:23:11 2026
-Total elapsed time: 0.470 seconds.
+Date: Fri May  8 10:03:30 2026
+Total elapsed time: 0.794 seconds.
 
 tnom = 27
 temp = 27
@@ -19,6 +19,6 @@ matrix size = 15
 fillins = 0
 solver = Normal
 Avg thread counts: 1.0/1.1/1.1/1.0
-Matrix Compiler1: 2.76 KB object code size  0.3/0.2/[0.2]
-Matrix Compiler2: 1.76 KB object code size  0.1/0.2/[0.1]
+Matrix Compiler1: 2.76 KB object code size  0.4/0.2/[0.2]
+Matrix Compiler2: off  [0.1]/0.2/0.5
 

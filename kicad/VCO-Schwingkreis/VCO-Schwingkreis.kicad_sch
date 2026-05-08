@@ -1541,7 +1541,7 @@
 		)
 		(uuid "462a2aec-7615-4f46-aa14-ad8e519ab637")
 	)
-	(text ".control\nwrdata VCO-Schwingkreis.txt\nwrite NMOS.raw\n.endc"
+	(text ".control\nwrdata VCO-Schwingkreis.txt\nwrite VCO-Schwingkreis.raw\n.endc"
 		(exclude_from_sim no)
 		(at 145.542 39.37 0)
 		(effects
