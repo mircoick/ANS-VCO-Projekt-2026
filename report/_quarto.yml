@@ -1,24 +1,59 @@
 project:
   type: manuscript
 
+lang: de
+
 manuscript:
   article: index.qmd
-
+  
 execute:
   freeze: auto
 
 format:
   html:
     theme: flatly
+
+  # typst:
+  #   toc: true
+  #   toc-depth: 3
+  #   number-sections: true
+  #   section-numbering: 1.1.1
+  #   lang: de
+  #   fig-align: center
+  #   bib: references.bib
+  #   papersize: a4
+  #   output-file: ans_bericht 
+
   pdf:
     documentclass: scrreprt
-#    lof: true
-#    lot: true
-    toc: true    
+    classoption: [twoside]
+
+    keep-tex: true
+
+    toc: true
+    toc-depth: 3
+    # lof: true
+    # lot: true
+
+    number-sections: true
+    number-depth: 2
+        
+    papersize: a4
+        
     geometry:
-      - top=30mm
-      - left=20mm
+      - inner=3cm
+      - outer=4cm
+      - top=3cm
+      - bottom=4cm
+      - headsep=22pt
+      - headheight=11pt
+      - footskip=33pt
+      - ignorehead
+      - ignorefoot
       - heightrounded
+
+    fontsize: 11pt
+    pdfengine: xelatex
     include-in-header:
       text: |
         \usepackage{circuitikz}
@@ -29,9 +64,15 @@ format:
     linkcolor: "blue"
     biblio-style: ieee
     highlight-style: github
+
     mainfont: "Calibri"
-#    keep-tex: true
-    output-file: ans_bericht 
+    # mainfont: "Times New Roman"
+    # sansfont: "Arial"
+    # monofont: "Courier New"
+    mathfont: "TeX Gyre Termes Math"
+
+    output-file: ans_bericht
+
 #  epub:
 #    theme: flatly
 #    output-file: ans_bericht

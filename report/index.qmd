@@ -41,6 +41,7 @@ bibliography: references.bib
 ---
 
 {{< include content/_sec_introduction.qmd >}}
+{{< include content/_sec_requirements.qmd >}}
 {{< include content/_sec_designverlauf.qmd >}}
 {{< include content/_sec_characterisation.qmd >}}
 {{< include content/references.qmd >}}
