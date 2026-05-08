@@ -109,6 +109,8 @@
  
 
 
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta}
 \KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
@@ -155,7 +157,8 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={IC Design of a Universal Biquad Filter},
+  pdftitle={VCO Design und Simulation},
+  pdfauthor={Mirco Ick; Torben Becker; Tassilo Hertling},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -164,14 +167,11 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{IC Design of a Universal Biquad Filter}
-\author{}
-\date{2026-04-16}
+\title{VCO Design und Simulation}
+\author{Mirco Ick \and Torben Becker \and Tassilo Hertling}
+\date{2026-05-08}
 \begin{document}
 \maketitle
-\begin{abstract}
-Lorem ipsum
-\end{abstract}
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -181,7 +181,58 @@ Lorem ipsum
 
 \chapter{Introduction}\label{introduction}
 
-\chapter{Filter Design}\label{filter-design}
+In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
+designen und in Betrieb zu nehmen. Das Design soll bestimmte
+Anforderungen erfüllen, damit es in einem Laborversuch als FM-Modulator
+genutzt werden kann. In der Vergangenheit wurde im Laborversuch eine VCO
+Schaltung mit alten und abgekündigkten Komponenten verwendet. Diese
+Schaltung soll nun mit neuen und verfügbaren Komponenten erneuert
+werden.
+
+Die VCO Schaltung soll eine FM-Modulation mit einem Trägersignal bei der
+Frequenz \(5,5\,\text{MHz}\) durchführen und einen Modulationsbereich
+zwischen \(5\,\text{MHz}\) und \(6\,\text{MHz}\) verwenden. Der
+Einstellungsbereich soll mit \(1\,\text{V}\) pro \(1\,\text{MHz}\)
+eingestellt werden. Somit kann das zu modulierende Signal einen
+Spannungsbereich von \(V_{pp} = 1\,\text{V}\) haben. Die Ein- und
+Ausgangsimpedanz soll \(50\,\Omega\) betragen.
+
+Zudem soll die Schaltung soll aus Komponenten bestehen, die Studierenden
+im 4.Semester bereits kennen, damit die Schaltung im Rahmen des
+Laborversuchs im Grunde verstanden werden kann. Aus dieser
+Rahmenbedingung folgt die Auswahl der spezifischen VCO-Schaltung.
+
+Die Platine soll zudem relativ groß ausgelegt werden und es sollen
+möglichst bedrahtete Bauteile verwendet werden. In dem Laborversuch soll
+ebenfalls die Kennlinie des FM-Modulators aufgenommen werden. Hierfür
+ist ein integrierter einstellbarer Spannungsteiler vorgesehen, der über
+einen Drehregler auf der Platine eingestellt werden soll.
+
+Die Schaltung soll ebenfalls Stabil gegenüber Schwankungen in der
+Versorgungsspannung und somit in der Ausgangsfrequenz ausgelegt sein.
+Anschlüsse für die im Laborversuch verwendeten Geräte wie das
+Oszilloskop und dem Spektrumanalysator sollen über SMA- oder
+BNC-Anschlüsse geschehen.
+
+\chapter{Designverlauf}\label{designverlauf}
+
+Zuerst haben wir im Design angefangen uns ein passendes VCO-Modell nach
+den Anforderungen auszusuchen. Als Modell haben wir uns für den LC-VCO
+entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer
+kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für
+Studierende aus dem 4. Semester zu verstehen und kann auch gut mit
+bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in
+Abbildung 1 zu sehen:
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{./images/circuit.png}
+
+}
+
+\caption{Bild1}
+
+\end{figure}%
 
 \chapter{Characterisation}\label{characterisation}
 

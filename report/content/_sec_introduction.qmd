@@ -1,2 +1,11 @@
 # Introduction
 
+In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu designen und in Betrieb zu nehmen. Das Design soll bestimmte Anforderungen erfüllen, damit es in einem Laborversuch als FM-Modulator genutzt werden kann. In der Vergangenheit wurde im Laborversuch eine VCO Schaltung mit alten und abgekündigkten Komponenten verwendet. Diese Schaltung soll nun mit neuen und verfügbaren Komponenten erneuert werden. 
+
+Die VCO Schaltung soll eine FM-Modulation mit einem Trägersignal bei der Frequenz $5,5\,\text{MHz}$ durchführen und einen Modulationsbereich zwischen $5\,\text{MHz}$ und $6\,\text{MHz}$ verwenden. Der Einstellungsbereich soll mit $1\,\text{V}$ pro $1\,\text{MHz}$ eingestellt werden. Somit kann das zu modulierende Signal einen Spannungsbereich von $V_{pp} = 1\,\text{V}$ haben. Die Ein- und Ausgangsimpedanz soll $50\,\Omega$ betragen.
+
+Zudem soll die Schaltung soll aus Komponenten bestehen, die Studierenden im 4.Semester bereits kennen, damit die Schaltung im Rahmen des Laborversuchs im Grunde verstanden werden kann. Aus dieser Rahmenbedingung folgt die Auswahl der spezifischen VCO-Schaltung. 
+
+Die Platine soll zudem relativ groß ausgelegt werden und es sollen möglichst bedrahtete Bauteile verwendet werden. In dem Laborversuch soll ebenfalls die Kennlinie des FM-Modulators aufgenommen werden. Hierfür ist ein integrierter einstellbarer Spannungsteiler vorgesehen, der über einen Drehregler auf der Platine eingestellt werden soll.
+
+Die Schaltung soll ebenfalls Stabil gegenüber Schwankungen in der Versorgungsspannung und somit in der Ausgangsfrequenz ausgelegt sein. Anschlüsse für die im Laborversuch verwendeten Geräte wie das Oszilloskop und dem Spektrumanalysator sollen über SMA- oder BNC-Anschlüsse geschehen. 

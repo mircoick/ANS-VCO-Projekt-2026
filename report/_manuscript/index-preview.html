@@ -1,54 +1,143 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.9.36">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mirco Ick">
+    <meta name="author" content="Torben Becker">
+    <meta name="author" content="Tassilo Hertling">
+    <meta name="dcterms.date" content="2026-05-08">
 
-<meta name="author" content="Mirco Ick">
-<meta name="author" content="Torben Becker">
-<meta name="author" content="Tassilo Hertling">
-<meta name="dcterms.date" content="2026-05-08">
+    <title>VCO Design und Simulation</title>
+    <style>
+      /* Default styles provided by pandoc.
+      ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+      */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
 
-<title>VCO Design und Simulation</title>
-<style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
 
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
 
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -63,69 +152,19 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+      <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
+      </head>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <body class="quarto-notebook quarto-light">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> VCO Design und Simulation</h6>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+            <a href="./index.out.ipynb" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
 
-<meta name="citation_title" content="VCO Design und Simulation">
-<meta name="citation_author" content="Mirco Ick">
-<meta name="citation_author" content="Torben Becker">
-<meta name="citation_author" content="Tassilo Hertling">
-<meta name="citation_publication_date" content="2026-05-08">
-<meta name="citation_cover_date" content="2026-05-08">
-<meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-05-08">
-<meta name="citation_language" content="en">
-<meta name="citation_reference" content="citation_title=CMOS: Circuit design, layout, and simulation;,citation_author=R. Jacob Baker;,citation_publication_date=2010-10;,citation_cover_date=2010-10;,citation_year=2010;,citation_doi=10.1002/9780470891179;,citation_isbn=9780470891179;">
-<meta name="citation_reference" content="citation_title=CMOSedu;,citation_author=R. Jacob Baker;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_fulltext_html_url=http://www.cmosedu.com;,citation_publisher=Website;">
-<meta name="citation_reference" content="citation_title=Switch-mode power supplies: SPICE simulations and practical designs;,citation_author=Christophe P. Basso;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_isbn=9780071508582;,citation_series_title=Electronic engineering;">
-<meta name="citation_reference" content="citation_title=Op amps for everyone;,citation_author=Bruce Carter;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_fulltext_html_url=http://www.sciencedirect.com/science/article/pii/B9780123914958000015;,citation_doi=10.1016/B978-0-12-391495-8.00001-5;,citation_isbn=978-0-12-391495-8;">
-<meta name="citation_reference" content="citation_title=Open-source design of integrated circuits: Ein quelloffener 1,44-MS/s 703-μW 12-bit nichtbinärer SAR-ADC mit 448-aF kondensatoren in einem 130-nm CMOS-prozess;,citation_author=Patrick Fath;,citation_author=Manuel Moser;,citation_author=Georg Zachl;,citation_author=Harald Pretl;,citation_publication_date=2024-01;,citation_cover_date=2024-01;,citation_year=2024;,citation_issue=1;,citation_doi=10.1007/s00502-023-01195-5;,citation_issn=1613-7620;,citation_volume=141;,citation_journal_title=Elektrotechnik und Informationstechnik;,citation_publisher=Springer Science; Business Media LLC;">
-<meta name="citation_reference" content="citation_title=Tiny Tapeout hit as eFabless closes;,citation_author=Nick Flaherty;,citation_publication_date=2025-03;,citation_cover_date=2025-03;,citation_year=2025;,citation_fulltext_html_url=https://www.eenewseurope.com/en/tiny-tapeout-hit-as-efabless-closes/;,citation_journal_title=eeNews EUROPE;">
-<meta name="citation_reference" content="citation_title=Fundamentals of layout design for electronic circuits;,citation_author=Jens Lienig;,citation_author=Juergen Scheible;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.1007/978-3-030-39284-0;,citation_isbn=9783030392840;">
-<meta name="citation_reference" content="citation_title=Grundlagen des layoutentwurfs elektronischer schaltungen;,citation_author=Jens Lienig;,citation_author=Jürgen Scheible;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_doi=10.1007/978-3-031-15768-4;,citation_isbn=9783031157684;">
-<meta name="citation_reference" content="citation_title=Op amps for everyone;,citation_author=Ron Mancini;,citation_publication_date=2002-08;,citation_cover_date=2002-08;,citation_year=2002;,citation_fulltext_html_url=https://web.mit.edu/6.101/www/reference/op_amps_everyone.pdf;,citation_technical_report_institution=Texas Instruments Incorporation;,citation_technical_report_number=SLOD006B;">
-<meta name="citation_reference" content="citation_title=Leistungselektronik: Einführung in schaltungen und deren verhalten;,citation_author=Manfred Michel;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_doi=10.1007/978-3-642-15984-8;,citation_isbn=978-3-642-15983-1;">
-<meta name="citation_reference" content="citation_title=Analog Circuit Design;,citation_author=Harald Pretl;,citation_author=Michael Koefinger;,citation_author=Simon Dorrer;,citation_publication_date=2024-12;,citation_cover_date=2024-12;,citation_year=2024;,citation_fulltext_html_url=https://iic-jku.github.io/analog-circuit-design;,citation_doi=10.5281/zenodo.14387481;,citation_language=en-us;">
-<meta name="citation_reference" content="citation_title=GitHub repository of the IIC-OSIC-TOOLS;,citation_author=Harald Pretl;,citation_author=Georg Zachl;,citation_publication_date=2025-01;,citation_cover_date=2025-01;,citation_year=2025;,citation_fulltext_html_url=https://github.com/iic-jku/IIC-OSIC-TOOLS;,citation_doi=10.5281/zenodo.14634518;,citation_publisher=Zenodo;">
-<meta name="citation_reference" content="citation_title=From code to chip: Open-source automated analog layout design;,citation_author=Jakob Ratschenberger;,citation_author=Harald Pretl;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_doi=10.1007/978-3-031-68562-0;,citation_isbn=9783031685620;,citation_issn=2690-0327;,citation_book_title=Synthesis Lectures on Engineering, Science, and Technology;,citation_series_title=Synthesis lectures on engineering, science, and technology;">
-<meta name="citation_reference" content="citation_title=Schaltnetzteile und ihre peripherie: Dimensionierung, einsatz, EMV;,citation_author=Ulrich Schlienz;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.1007/978-3-658-29490-8;,citation_isbn=9783658294908;">
-<meta name="citation_reference" content="citation_title=Leistungselektronische schaltungen;,citation_editor=Dierk Schröder;,citation_editor=Rainer Marquardt;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_doi=10.1007/978-3-662-55325-1;">
-<meta name="citation_reference" content="citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=2;,citation_doi=10.1109/mssc.2024.3400568;,citation_issn=1943-0590;,citation_volume=16;,citation_journal_title=IEEE Solid-State Circuits Magazine;,citation_publisher=Institute of Electrical; Electronics Engineers (IEEE);">
-<meta name="citation_reference" content="citation_title=Analog building blocks of dc-dc converters: Examining fundamental concepts;,citation_author=Bernhard Wicht;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_issue=3;,citation_doi=10.1109/mssc.2020.3002141;,citation_volume=12;,citation_journal_title=IEEE Solid-State Circuits Magazine;,citation_publisher=institution of Electrical; Electronics Engineers (IEEE);">
-<meta name="citation_reference" content="citation_title=Design of power management integrated circuits;,citation_author=Bernhard Wicht;,citation_publication_date=2024-05;,citation_cover_date=2024-05;,citation_year=2024;,citation_doi=10.1002/9781119123095;,citation_isbn=9781119123095;">
-</head>
-
-<body class="quarto-light">
-
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">VCO Design und Simulation</h1>
@@ -184,7 +223,7 @@ window.Quarto = {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="ans_bericht.pdf"><i class="bi bi-file-pdf"></i>PDF</a></p></div></div></div>
+      </div>
     </div>
 
 
@@ -197,47 +236,37 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#designverlauf" id="toc-designverlauf" class="nav-link" data-scroll-target="#designverlauf"><span class="header-section-number">2</span> Designverlauf</a></li>
-  <li><a href="#characterisation" id="toc-characterisation" class="nav-link" data-scroll-target="#characterisation"><span class="header-section-number">3</span> Characterisation</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#designverlauf" id="toc-designverlauf" class="nav-link" data-scroll-target="#designverlauf">Designverlauf</a></li>
+  <li><a href="#characterisation" id="toc-characterisation" class="nav-link" data-scroll-target="#characterisation">Characterisation</a></li>
   <li><a href="#literaturverzeichnis" id="toc-literaturverzeichnis" class="nav-link" data-scroll-target="#literaturverzeichnis">Literaturverzeichnis</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="content\references-preview.html"><i class="bi bi-journal-code"></i>Literaturverzeichnis</a></li></ul></div></nav>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-
-
-  
-
-
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+       <section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p>In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu designen und in Betrieb zu nehmen. Das Design soll bestimmte Anforderungen erfüllen, damit es in einem Laborversuch als FM-Modulator genutzt werden kann. In der Vergangenheit wurde im Laborversuch eine VCO Schaltung mit alten und abgekündigkten Komponenten verwendet. Diese Schaltung soll nun mit neuen und verfügbaren Komponenten erneuert werden.</p>
 <p>Die VCO Schaltung soll eine FM-Modulation mit einem Trägersignal bei der Frequenz <span class="math inline">\(5,5\,\text{MHz}\)</span> durchführen und einen Modulationsbereich zwischen <span class="math inline">\(5\,\text{MHz}\)</span> und <span class="math inline">\(6\,\text{MHz}\)</span> verwenden. Der Einstellungsbereich soll mit <span class="math inline">\(1\,\text{V}\)</span> pro <span class="math inline">\(1\,\text{MHz}\)</span> eingestellt werden. Somit kann das zu modulierende Signal einen Spannungsbereich von <span class="math inline">\(V_{pp} = 1\,\text{V}\)</span> haben. Die Ein- und Ausgangsimpedanz soll <span class="math inline">\(50\,\Omega\)</span> betragen.</p>
 <p>Zudem soll die Schaltung soll aus Komponenten bestehen, die Studierenden im 4.Semester bereits kennen, damit die Schaltung im Rahmen des Laborversuchs im Grunde verstanden werden kann. Aus dieser Rahmenbedingung folgt die Auswahl der spezifischen VCO-Schaltung.</p>
 <p>Die Platine soll zudem relativ groß ausgelegt werden und es sollen möglichst bedrahtete Bauteile verwendet werden. In dem Laborversuch soll ebenfalls die Kennlinie des FM-Modulators aufgenommen werden. Hierfür ist ein integrierter einstellbarer Spannungsteiler vorgesehen, der über einen Drehregler auf der Platine eingestellt werden soll.</p>
 <p>Die Schaltung soll ebenfalls Stabil gegenüber Schwankungen in der Versorgungsspannung und somit in der Ausgangsfrequenz ausgelegt sein. Anschlüsse für die im Laborversuch verwendeten Geräte wie das Oszilloskop und dem Spektrumanalysator sollen über SMA- oder BNC-Anschlüsse geschehen.</p>
 </section>
-<section id="designverlauf" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Designverlauf</h1>
-<p>Zuerst haben wir im Design angefangen uns ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wir uns für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in <a href="#fig-circuit" class="quarto-xref">Figure&nbsp;1</a> zu sehen:</p>
-<div id="fig-circuit" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-circuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href=".\images/circuit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Bild1"><img src=".\images/circuit.png" class="img-fluid figure-img" style="width:60.0%"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-circuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Bild1
-</figcaption>
+<section id="designverlauf" class="level1">
+<h1>Designverlauf</h1>
+<p>Zuerst haben wir im Design angefangen uns ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wir uns für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in Abbildung 1 zu sehen:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/circuit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Bild1"><img src="images/circuit.png" class="img-fluid figure-img" style="width:60.0%" alt="Bild1"></a></p>
+<figcaption>Bild1</figcaption>
 </figure>
 </div>
-<p>In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten <span class="math inline">\(L1\)</span> und <span class="math inline">\(L2\)</span> in doppelter Ausführung zu sehen, da die Versorgungsspannung mittig angeschlossen werden muss, um die Symmetrie der Schaltung gewärleisten zu können. Weiter unten ist der einstellbare Kondensator <span class="math inline">\(C1\)</span> zu sehen, dessen Wert die Schwingung der Schaltung maßgeblich beeinflusst. Durch die Änderung des Kondensator ändert sich auch die Frequnz <span class="math inline">\(f_0\)</span> der Schaltung. Somit kann duch eine gesteuerte Änderung der Kapazität die Frequenz der Schwingung eingestellt werden. Das ist das Grundprinzip des VCO´s und die Funktionsweise der FM-Modulation. Der Widerstand <span class="math inline">\(R1\)</span> vervollständigt den RLC-Schwingkreis. Die beiden kreugekoppelten Mosfets sind für die ständige Anregung der Schwingung zuständig. Durch die ständige Änderung der gesamt Impedanz des Schwingkreises ändert sich jeweils immer der Strom, der durch die Mosfets am Gate eingang anliegt. Diese Änderung bewirkt eine Rückgekoppelte Schleife. Durch diese Schleife schwingt das System dauerhaft.</p>
 </section>
-<section id="characterisation" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Characterisation</h1>
+<section id="characterisation" class="level1">
+<h1>Characterisation</h1>
 </section>
 <section id="literaturverzeichnis" class="level1 unnumbered">
 <h1 class="unnumbered">Literaturverzeichnis</h1>
@@ -245,10 +274,8 @@ Figure&nbsp;1: Bild1
 
 </div>
 </section>
-
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -647,9 +674,7 @@ Figure&nbsp;1: Bild1
       }
     }
   });
-  </script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+  </script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -680,9 +705,6 @@ Figure&nbsp;1: Bild1
   };
   
 })();
-          </script>
-
-
-
-
+          </script> 
+  
 </body></html>

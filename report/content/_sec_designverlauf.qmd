@@ -1,0 +1,7 @@
+# Designverlauf
+
+Zuerst haben wir im Design angefangen uns ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wir uns für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in @fig-circuit zu sehen:
+
+![Bild1](/images/circuit.png){#fig-circuit width="60%"}
+
+In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und $L2$ in doppelter Ausführung zu sehen, da die Versorgungsspannung mittig angeschlossen werden muss, um die Symmetrie der Schaltung gewärleisten zu können. Weiter unten ist der einstellbare Kondensator $C1$ zu sehen, dessen Wert die Schwingung der Schaltung maßgeblich beeinflusst. Durch die Änderung des Kondensator ändert sich auch die Frequnz $f_0$ der Schaltung. Somit kann duch eine gesteuerte Änderung der Kapazität die Frequenz der Schwingung eingestellt werden. Das ist das Grundprinzip des VCO´s und die Funktionsweise der FM-Modulation. Der Widerstand $R1$ vervollständigt den RLC-Schwingkreis. Die beiden kreugekoppelten Mosfets sind für die ständige Anregung der Schwingung zuständig. Durch die ständige Änderung der gesamt Impedanz des Schwingkreises ändert sich jeweils immer der Strom, der durch die Mosfets am Gate eingang anliegt. Diese Änderung bewirkt eine Rückgekoppelte Schleife. Durch diese Schleife schwingt das System dauerhaft.

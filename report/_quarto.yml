@@ -19,6 +19,10 @@ format:
       - top=30mm
       - left=20mm
       - heightrounded
+    include-in-header:
+      text: |
+        \usepackage{circuitikz}
+        \usetikzlibrary{arrows.meta}
     hyperrefoptions:
       - linktoc=all
     colorlinks: true
