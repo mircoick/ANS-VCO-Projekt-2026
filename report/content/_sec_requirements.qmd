@@ -1,21 +1,23 @@
 # Kundenanforderungen FM Modulator
 
 * 5,5 MHz (ZF) Mittenfrequenz bei 0V Eingang
-* einfacher Aufbau (leicht zu verstehen)
 
+* Einfacher Aufbau (leicht zu verstehen)
 
-* linearer Bereich 0.5 MHz rechts und links bei 0.5 V (Bandbreite)
+* Linearer Bereich 0.5 MHz rechts und links bei 0.5 V (Bandbreite)
 
-* $\pm+ 0.5$ MHz $\pm 0.5$ V 
+* $\pm 0.5$ MHz bei $\pm 0.5$ V 
 
-* relativ große Platine, die viel ab kann
-* sehende Bauteile
+* Relativ große Platine, die viel ab kann
 
-* integrierter Spannungsteiler mit Drehknopf
-* ein Eingang ein Ausgang als lieber BNC aber SMA auch i.O. Stecker
+* Stehende Bauteile
 
-* Ein-/Ausgangswiderstand $50 \Omega$
+* Integrierter Spannungsteiler mit Drehknopf
 
-* Versporgungsspannungsstabilität
+* Ein- und Ausgänge als SMA oder BNC Stecker
 
-* keine Frequenzverschiebung 
+* Ein- und Ausgangswiderstand $50 \Omega$
+
+* Stabilisierung der Versorgungsspannung
+
+* Keine Frequenzverschiebung
