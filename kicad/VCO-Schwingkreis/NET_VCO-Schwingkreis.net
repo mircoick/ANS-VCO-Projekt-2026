@@ -1,17 +1,17 @@
 .title KiCad schematic
 .include "../spicelibs/elk.lib"
 
-* 1. FESTE BAUTEILE (Genau deine Werte für den echten Bau!)
+* 1. FESTE BAUTEILE (Genau deine Werte fÃ¼r den echten Bau!)
 .param L_var=0.5u
 .param R_var=10k
 .param C_einbau=680p
 
-* 2. STEUERSPANNUNG (101 hochauflösende Schritte)
+* 2. STEUERSPANNUNG (101 hochauflÃ¶sende Schritte)
 .param vctrl_val=0
-.step param vctrl_val -0.5 0.5 0.01
+.step param vctrl_val -0.5 0.5 1
 
 * Transientenanalyse
-.tran 10n 100u startup
+.tran 1n 100u startup
 
 * Bauteile
 R_dummy /CS 0 1G
@@ -24,11 +24,11 @@ V1 VDD 0 DC 5
 * DIE STEUERSPANNUNGSQUELLE
 V_ctrl Vctrl 0 {vctrl_val}
 
-* 3. DIE VIRTUELLE KAPAZITÄTSDIODE (VARACTOR)
-* Verhält sich wie ein echtes Bauteil: Basiswert 115p, sinkt bei steigender Spannung.
+* 3. DIE VIRTUELLE KAPAZITÃ„TSDIODE (VARACTOR)
+* VerhÃ¤lt sich wie ein echtes Bauteil: Basiswert 115p, sinkt bei steigender Spannung.
 C_diode /Drain_Q2 /Drain_Q1 {115p - 85p * vctrl_val}
 
-* 4. DEIN REALER FESTKONDENSATOR (wird später echt eingelötet)
+* 4. DEIN REALER FESTKONDENSATOR (wird spÃ¤ter echt eingelÃ¶tet)
 C_fest /Drain_Q2 /Drain_Q1 {C_einbau}
 
 L1 /Drain_Q2 VDD {L_var}
