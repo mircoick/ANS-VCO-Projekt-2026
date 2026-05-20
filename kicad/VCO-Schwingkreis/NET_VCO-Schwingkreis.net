@@ -2,16 +2,17 @@
 .include "../spicelibs/elk.lib"
 
 * 1. FESTE BAUTEILE (Genau deine Werte für den echten Bau!)
-.param L_var=0.5u
-.param R_var=10k
-.param C_einbau=680p
+.param L_var=2u
+.param R_var=20k
+.param C_einbau=66p
+
 
 * 2. STEUERSPANNUNG (101 hochauflösende Schritte)
 .param vctrl_val=0
-.step param vctrl_val -0.5 0.5 1
+.step param vctrl_val -0.5 0.5 0.1
 
 * Transientenanalyse
-.tran 1n 100u startup
+.tran 10n 100u startup
 
 * Bauteile
 R_dummy /CS 0 1G
@@ -26,7 +27,7 @@ V_ctrl Vctrl 0 {vctrl_val}
 
 * 3. DIE VIRTUELLE KAPAZITÄTSDIODE (VARACTOR)
 * Verhält sich wie ein echtes Bauteil: Basiswert 115p, sinkt bei steigender Spannung.
-C_diode /Drain_Q2 /Drain_Q1 {115p - 85p * vctrl_val}
+C_diode /Drain_Q2 /Drain_Q1 {65p - 72p * vctrl_val}
 
 * 4. DEIN REALER FESTKONDENSATOR (wird später echt eingelötet)
 C_fest /Drain_Q2 /Drain_Q1 {C_einbau}
