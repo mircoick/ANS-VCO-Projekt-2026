@@ -1,10 +1,16 @@
 .title KiCad schematic
 .include "../spicelibs/elk.lib"
-* LTspice kompatible Befehle
-.param L_var=2.7u
-.param R_var=20k
-.param C_var=80p
-*.step param C_var 60p 110p 10p
+
+* 1. FESTE BAUTEILE (Genau deine Werte für den echten Bau!)
+.param L_var=0.5u
+.param R_var=10k
+.param C_einbau=680p
+
+* 2. STEUERSPANNUNG (101 hochauflösende Schritte)
+.param vctrl_val=0
+.step param vctrl_val -0.5 0.5 0.01
+
+* Transientenanalyse
 .tran 10n 100u startup
 
 * Bauteile
@@ -14,13 +20,19 @@ I1 /CS 0 DC 1m
 XQ2 /Drain_Q2 /Drain_Q1 /CS BS170/PLP
 XQ1 /Drain_Q1 /Drain_Q2 /CS BS170/PLP
 V1 VDD 0 DC 5
-C2 /Drain_Q2 /Drain_Q1 {C_var}
+
+* DIE STEUERSPANNUNGSQUELLE
+V_ctrl Vctrl 0 {vctrl_val}
+
+* 3. DIE VIRTUELLE KAPAZITÄTSDIODE (VARACTOR)
+* Verhält sich wie ein echtes Bauteil: Basiswert 115p, sinkt bei steigender Spannung.
+C_diode /Drain_Q2 /Drain_Q1 {115p - 85p * vctrl_val}
+
+* 4. DEIN REALER FESTKONDENSATOR (wird später echt eingelötet)
+C_fest /Drain_Q2 /Drain_Q1 {C_einbau}
+
 L1 /Drain_Q2 VDD {L_var}
 L2 VDD /Drain_Q1 {L_var}
 
-.save V(/Drain_Q1) V(/Drain_Q2)
+.save V(/Drain_Q1) V(/Drain_Q2) V(Vctrl)
 .end
-
-
-
-
