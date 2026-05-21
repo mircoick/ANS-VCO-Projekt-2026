@@ -1883,7 +1883,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text ".param L_var=5u\n.param R_var=20k\n.param C_var=80p\n.step param C_var 60p 110p 10p"
+	(text ".param L_var=2u\n.param R_var=20k\n.param C_var=66p\n"
 		(exclude_from_sim no)
 		(at 176.022 61.976 0)
 		(effects
@@ -1903,6 +1903,16 @@
 			)
 		)
 		(uuid "83c5429d-d87f-47e4-816e-bf2aeb941e8a")
+	)
+	(text ".step param C_var 60p 110p 10p"
+		(exclude_from_sim yes)
+		(at 192.278 67.056 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "95c8957f-15a7-4916-a97d-14d2012ff8b9")
 	)
 	(junction
 		(at 149.86 45.72)

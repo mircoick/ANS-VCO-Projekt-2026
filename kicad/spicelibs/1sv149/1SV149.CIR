@@ -1,0 +1,26 @@
+*  1SV149 PSpice Compatible Model
+*  Date     : 20/10/2020
+*  Author: Zabb Csaba
+*  C1V/C8V 500pF/20pF Varicap 
+.SUBCKT 1SV149 A K
+D1 A K dmodel
+E1 2 0 value={-4.00888*(v(A)-v(K)-0.191433)}
+R1 2 0 1e12
+D2 3 0 d1mod
+V1 4 3 0
+E2 4 0 2 0 1
+G1 0 5 value={i(V1)+1}
+D3 5 0 d1mod
+E3 6 0 value={0.191433-0.249446*v(5)}
+R2 6 0 1e12
+V2 6 7 0
+D4 7 0 dcjmod
+G2 A K value={i(V2)}
+.model dmodel d(IS=6.62255e-15 RS=0.09585 N=1.02933 EG=1.19084
++XTI=3.00208 BV=15 IBV=0.000999997 TT=2.01517e-08
++KF=0 AF=0.1)
+.model d1mod d (is=1, n=38.75969, rs=0.01)
+.model dcjmod d (is=1e-25 n=10
++ cjo=4.54e-9 vj=0.4 m=1.713 fc=0.5)
+.ends 1SV149
+*
