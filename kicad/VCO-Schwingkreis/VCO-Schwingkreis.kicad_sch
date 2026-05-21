@@ -160,6 +160,220 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Capacitance"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Capacitance"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Variable capacitance diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "capacitance diode varicap varactor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Capacitance_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.778) (xy -0.1524 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.1524 -1.27) (xy -0.1524 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.1524 -1.27) (xy 0.1524 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.1524 -1.778) (xy 1.27 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Capacitance_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:L"
 			(pin_numbers
 				(hide yes)
@@ -1390,6 +1604,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:VD"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VD"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VD\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VD_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VD_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:VDD"
 			(power global)
 			(pin_numbers
@@ -1532,7 +1885,7 @@
 	)
 	(text ".param L_var=5u\n.param R_var=20k\n.param C_var=80p\n.step param C_var 60p 110p 10p"
 		(exclude_from_sim no)
-		(at 170.942 61.976 0)
+		(at 176.022 61.976 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1543,7 +1896,7 @@
 	)
 	(text ".control\nwrdata VCO-Schwingkreis.txt\nwrite VCO-Schwingkreis.raw\n.endc"
 		(exclude_from_sim no)
-		(at 145.542 39.37 0)
+		(at 145.542 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1552,52 +1905,70 @@
 		(uuid "83c5429d-d87f-47e4-816e-bf2aeb941e8a")
 	)
 	(junction
-		(at 157.48 67.31)
+		(at 149.86 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "084de85c-5a73-4483-857d-7ff2ae166058")
+		(uuid "153e21ad-c463-419a-9496-b262cda9a73a")
 	)
 	(junction
-		(at 134.62 67.31)
+		(at 134.62 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "3da2c326-a441-45a7-8433-9e4210cb94f1")
+		(uuid "28ce63a6-df2c-4abf-89cf-98c1e9aa85c5")
 	)
 	(junction
-		(at 157.48 81.28)
+		(at 134.62 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4ba59574-affa-4456-bd9d-cab583cf20f5")
+		(uuid "2b95b735-8000-4b79-a455-730852793b45")
 	)
 	(junction
-		(at 157.48 76.2)
+		(at 163.83 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5185f44b-cae2-413b-831d-faac44bb956d")
+		(uuid "3430b2fe-4d43-48a9-9d53-effd1b26c739")
 	)
 	(junction
-		(at 146.05 58.42)
+		(at 163.83 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5aa223a0-f2c5-4e5d-9f37-d5b8754d7778")
+		(uuid "4e1274b1-9a8f-4a09-890d-2b68a7953388")
+	)
+	(junction
+		(at 163.83 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "606b278b-de46-4c74-8825-40ff7bc33448")
+	)
+	(junction
+		(at 149.86 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d1d6975-fc73-45a7-8ef8-33a5ef33f8de")
+	)
+	(junction
+		(at 149.86 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b3a6a146-841e-4602-ab36-1e2b1126a8eb")
 	)
 	(junction
 		(at 134.62 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "620976a5-6098-440f-9c2f-57e081b56ddd")
+		(uuid "c382fa6c-01fe-4670-a512-3b82c4709eb1")
 	)
 	(junction
-		(at 134.62 76.2)
+		(at 134.62 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "a8b1b606-0311-4e50-bf13-98eb16fa12ca")
+		(uuid "c8914ad9-b576-4621-b30e-9459fe9b0427")
 	)
 	(junction
-		(at 146.05 96.52)
+		(at 163.83 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "faf5b61d-6ee3-4a5e-ac06-8355e227a6d9")
+		(uuid "f67b6d0a-8743-4409-8d28-dd2f421afc8f")
 	)
 	(wire
 		(pts
@@ -1611,27 +1982,17 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 67.31) (xy 142.24 67.31)
+			(xy 134.62 96.52) (xy 149.86 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0a444f39-bce7-4c91-852b-c7729e1705e8")
+		(uuid "111b5864-2633-4f71-8a68-827f97bfc752")
 	)
 	(wire
 		(pts
-			(xy 134.62 93.98) (xy 134.62 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15a60694-0f3c-4203-93a0-2f2301ed65e9")
-	)
-	(wire
-		(pts
-			(xy 148.59 88.9) (xy 148.59 82.55)
+			(xy 151.13 88.9) (xy 151.13 82.55)
 		)
 		(stroke
 			(width 0)
@@ -1641,17 +2002,37 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 76.2) (xy 157.48 76.2)
+			(xy 161.29 55.88) (xy 163.83 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "390d885a-2771-4606-b3c5-6f7b24eab644")
+		(uuid "24487d7d-4b67-44a6-b292-31ff797f8ca9")
 	)
 	(wire
 		(pts
-			(xy 144.78 81.28) (xy 157.48 81.28)
+			(xy 134.62 82.55) (xy 151.13 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30bd838c-acc9-4c8f-a0b6-3be3e64b968e")
+	)
+	(wire
+		(pts
+			(xy 149.86 96.52) (xy 163.83 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bcac515-4ffe-4e7f-8943-200e8535c8d6")
+	)
+	(wire
+		(pts
+			(xy 148.59 81.28) (xy 163.83 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1661,47 +2042,37 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 82.55) (xy 134.62 76.2)
+			(xy 153.67 66.04) (xy 163.83 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "48541a53-d3d1-4c3e-940d-1101ef5f3e3b")
+		(uuid "4b0bebf6-4414-4809-bb63-a080cb972d6a")
 	)
 	(wire
 		(pts
-			(xy 134.62 96.52) (xy 146.05 96.52)
+			(xy 134.62 96.52) (xy 134.62 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "49bf9ad3-8ef4-4a46-95bd-24394e3482c2")
+		(uuid "59429094-88a4-4ccd-93db-c119edfa4897")
 	)
 	(wire
 		(pts
-			(xy 146.05 58.42) (xy 148.59 58.42)
+			(xy 142.24 88.9) (xy 148.59 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "49f0d3ae-a475-43b7-bc35-50cd2c3c055d")
+		(uuid "5b01d170-2e7f-4699-b3ce-f2c244165a60")
 	)
 	(wire
 		(pts
-			(xy 146.05 96.52) (xy 157.48 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "533849c1-b52b-407a-8c1f-5bfe3483cfbf")
-	)
-	(wire
-		(pts
-			(xy 146.05 96.52) (xy 146.05 99.06)
+			(xy 149.86 96.52) (xy 149.86 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1711,7 +2082,17 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 55.88) (xy 146.05 58.42)
+			(xy 134.62 66.04) (xy 134.62 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6978d3df-d796-4b23-890d-97f91682994e")
+	)
+	(wire
+		(pts
+			(xy 149.86 41.91) (xy 149.86 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1721,7 +2102,17 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 88.9) (xy 144.78 81.28)
+			(xy 134.62 55.88) (xy 138.43 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7305f879-cefb-4749-92ea-ec581ae8cb0e")
+	)
+	(wire
+		(pts
+			(xy 148.59 88.9) (xy 148.59 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1741,17 +2132,37 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 67.31) (xy 134.62 76.2)
+			(xy 149.86 55.88) (xy 153.67 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a3c75b04-e638-496c-8bbe-608f919a560a")
+		(uuid "83b60897-9cfe-445f-b701-8d4dc1d50448")
 	)
 	(wire
 		(pts
-			(xy 157.48 67.31) (xy 157.48 76.2)
+			(xy 146.05 55.88) (xy 149.86 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8faca078-de0a-48cd-bcea-4c5becf62aec")
+	)
+	(wire
+		(pts
+			(xy 134.62 74.93) (xy 134.62 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f3b3e01-7e37-4d32-924c-a68622bfe68b")
+	)
+	(wire
+		(pts
+			(xy 163.83 66.04) (xy 163.83 74.93)
 		)
 		(stroke
 			(width 0)
@@ -1761,7 +2172,17 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 109.22) (xy 146.05 111.76)
+			(xy 153.67 74.93) (xy 163.83 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7664ec4-8d13-4c82-a86a-e43de19dfb96")
+	)
+	(wire
+		(pts
+			(xy 149.86 109.22) (xy 149.86 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1771,27 +2192,17 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 88.9) (xy 144.78 88.9)
+			(xy 149.86 45.72) (xy 153.67 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b431be69-5e3e-41b3-aea4-e55fac0309a5")
+		(uuid "b1fb81d7-4855-4a21-9adc-909d9c21bc38")
 	)
 	(wire
 		(pts
-			(xy 149.86 67.31) (xy 157.48 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b78b7ac6-c916-4753-9323-cb326ccb47f9")
-	)
-	(wire
-		(pts
-			(xy 157.48 58.42) (xy 157.48 67.31)
+			(xy 163.83 45.72) (xy 163.83 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1801,7 +2212,27 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 58.42) (xy 146.05 58.42)
+			(xy 149.86 53.34) (xy 149.86 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c517564b-98df-4e1b-ab0e-cad3854491c0")
+	)
+	(wire
+		(pts
+			(xy 134.62 74.93) (xy 146.05 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8f53413-5719-4d8f-9f41-58e33bad92e3")
+	)
+	(wire
+		(pts
+			(xy 146.05 45.72) (xy 149.86 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1811,7 +2242,17 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 58.42) (xy 156.21 58.42)
+			(xy 134.62 66.04) (xy 146.05 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce795263-6078-49fd-9b45-fee801c8ca6d")
+	)
+	(wire
+		(pts
+			(xy 163.83 45.72) (xy 161.29 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1821,7 +2262,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 96.52) (xy 157.48 93.98)
+			(xy 163.83 96.52) (xy 163.83 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1831,7 +2272,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 58.42) (xy 134.62 58.42)
+			(xy 138.43 45.72) (xy 134.62 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1841,7 +2282,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 88.9) (xy 148.59 88.9)
+			(xy 151.13 88.9) (xy 156.21 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1851,27 +2292,17 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 76.2) (xy 142.24 76.2)
+			(xy 134.62 55.88) (xy 134.62 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e2314695-5b39-4e42-95e5-8eea986c21e7")
+		(uuid "e569e5bc-0ed0-41a5-b3d9-b07404f524b6")
 	)
 	(wire
 		(pts
-			(xy 148.59 82.55) (xy 134.62 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f45f03ef-4763-4b03-bdd0-f086c63db6c0")
-	)
-	(wire
-		(pts
-			(xy 157.48 83.82) (xy 157.48 81.28)
+			(xy 163.83 83.82) (xy 163.83 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1881,7 +2312,27 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 58.42) (xy 134.62 67.31)
+			(xy 163.83 74.93) (xy 163.83 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb18bab5-bc01-45ac-a61d-9f441ae8fc7c")
+	)
+	(wire
+		(pts
+			(xy 163.83 55.88) (xy 163.83 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb859d5c-2408-4e44-998f-a54d9bcb9e71")
+	)
+	(wire
+		(pts
+			(xy 134.62 45.72) (xy 134.62 55.88)
 		)
 		(stroke
 			(width 0)
@@ -1899,18 +2350,8 @@
 		)
 		(uuid "fdedce6e-ecb5-419c-934a-d0a765f749a0")
 	)
-	(wire
-		(pts
-			(xy 157.48 76.2) (xy 157.48 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffc77072-ce5e-48d1-ba71-c19d920950b8")
-	)
 	(label "CS"
-		(at 146.05 96.52 0)
+		(at 149.86 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1930,7 +2371,7 @@
 		(uuid "4cee0ee1-fa7e-48cb-a124-6865c7ade27f")
 	)
 	(label "Drain_Q1"
-		(at 157.48 74.93 0)
+		(at 163.83 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1941,7 +2382,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 146.05 67.31 90)
+		(at 149.86 66.04 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1951,7 +2392,7 @@
 		(dnp no)
 		(uuid "0d8a9490-4c2f-4a29-aba0-12a019fc4cac")
 		(property "Reference" "C2"
-			(at 146.05 63.754 90)
+			(at 149.86 62.484 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1961,7 +2402,7 @@
 			)
 		)
 		(property "Value" "{C_var}"
-			(at 146.05 70.612 90)
+			(at 149.86 69.342 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1971,7 +2412,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 66.3448 0)
+			(at 153.67 65.0748 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1982,7 +2423,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 67.31 0)
+			(at 149.86 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1993,7 +2434,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 146.05 67.31 0)
+			(at 149.86 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2136,7 +2577,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:NMOS")
-		(at 154.94 88.9 0)
+		(at 161.29 88.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2147,7 +2588,7 @@
 		(fields_autoplaced yes)
 		(uuid "39f5e6fb-4a86-41d5-a542-5541bee34c6d")
 		(property "Reference" "Q1"
-			(at 161.29 87.6299 0)
+			(at 167.64 87.6299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2158,7 +2599,7 @@
 			)
 		)
 		(property "Value" "NMOS"
-			(at 161.29 90.1699 0)
+			(at 167.64 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2169,7 +2610,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 86.36 0)
+			(at 166.37 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2180,7 +2621,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 154.94 101.6 0)
+			(at 161.29 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2191,7 +2632,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 154.94 88.9 0)
+			(at 161.29 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2202,7 +2643,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 154.94 106.045 0)
+			(at 161.29 106.045 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2213,7 +2654,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=1 2=2 3=3"
-			(at 154.94 104.14 0)
+			(at 161.29 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2223,8 +2664,8 @@
 				)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\Testprojekt\\spicelibs\\elk.lib"
-			(at 154.94 88.9 0)
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\elk.lib"
+			(at 161.29 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2235,7 +2676,7 @@
 			)
 		)
 		(property "Sim.Name" "BS170/PLP"
-			(at 154.94 88.9 0)
+			(at 161.29 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2265,7 +2706,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:0")
-		(at 146.05 111.76 0)
+		(at 149.86 111.76 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2275,7 +2716,7 @@
 		(dnp no)
 		(uuid "3e0f3fc0-b40e-492b-8309-48485cdafdd9")
 		(property "Reference" "#GND01"
-			(at 146.05 116.84 0)
+			(at 149.86 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2286,7 +2727,7 @@
 			)
 		)
 		(property "Value" "0"
-			(at 146.05 115.57 0)
+			(at 149.86 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2296,7 +2737,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 111.76 0)
+			(at 149.86 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2307,7 +2748,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#subsec_Circuit_elements__device"
-			(at 146.05 121.92 0)
+			(at 149.86 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2318,7 +2759,7 @@
 			)
 		)
 		(property "Description" "0V reference potential for simulation"
-			(at 146.05 119.38 0)
+			(at 149.86 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2341,8 +2782,132 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Capacitance")
+		(at 157.48 55.88 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5a892f92-39a2-4063-862a-5a35d73cb8cf")
+		(property "Reference" "D2"
+			(at 157.48 53.594 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Capacitance"
+			(at 157.48 59.182 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Variable capacitance diode"
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\FM-VCO\\SpiceLibs\\BB112.cir"
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "BB112"
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=A 2=K"
+			(at 157.48 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "026dbc28-2a4d-41c4-aafd-e445c93d1de8")
+		)
+		(pin "1"
+			(uuid "e524a18f-39e5-4686-8655-a88809a1812c")
+		)
+		(instances
+			(project "VCO-Schwingkreis"
+				(path "/1fef71e8-43ba-4b9f-93b6-ba8fd1dcc858"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Simulation_SPICE:IDC")
-		(at 146.05 104.14 0)
+		(at 149.86 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2353,7 +2918,7 @@
 		(fields_autoplaced yes)
 		(uuid "630e04ac-8ebb-4fc1-bcc1-f92292f4fb71")
 		(property "Reference" "I1"
-			(at 149.86 102.8699 0)
+			(at 153.67 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2364,7 +2929,7 @@
 			)
 		)
 		(property "Value" "10m"
-			(at 149.86 105.4099 0)
+			(at 153.67 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2375,7 +2940,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2386,7 +2951,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2397,7 +2962,7 @@
 			)
 		)
 		(property "Description" "Current source, DC"
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2408,7 +2973,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2419,7 +2984,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2430,7 +2995,7 @@
 			)
 		)
 		(property "Sim.Device" "I"
-			(at 146.05 104.14 0)
+			(at 149.86 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2457,7 +3022,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 139.7 58.42 90)
+		(at 142.24 45.72 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2467,7 +3032,7 @@
 		(dnp no)
 		(uuid "687d8b31-091d-48f5-bc94-f0a471cfa92c")
 		(property "Reference" "L1"
-			(at 139.7 56.896 90)
+			(at 142.24 44.196 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2477,7 +3042,7 @@
 			)
 		)
 		(property "Value" "{L_var}"
-			(at 139.7 59.69 90)
+			(at 142.24 46.99 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2487,7 +3052,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 58.42 0)
+			(at 142.24 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2498,7 +3063,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 58.42 0)
+			(at 142.24 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2509,7 +3074,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 139.7 58.42 0)
+			(at 142.24 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2624,7 +3189,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\Testprojekt\\spicelibs\\elk.lib"
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\elk.lib"
 			(at 137.16 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -2744,7 +3309,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 152.4 58.42 90)
+		(at 157.48 45.72 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2754,7 +3319,7 @@
 		(dnp no)
 		(uuid "c557fe3f-7998-4c1d-83c6-b474558a4b40")
 		(property "Reference" "L2"
-			(at 152.4 56.896 90)
+			(at 157.48 44.196 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2764,7 +3329,7 @@
 			)
 		)
 		(property "Value" "{L_var}"
-			(at 152.4 59.69 90)
+			(at 157.48 46.99 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2774,7 +3339,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 58.42 0)
+			(at 157.48 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2785,7 +3350,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 58.42 0)
+			(at 157.48 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2796,7 +3361,7 @@
 			)
 		)
 		(property "Description" "Inductor"
-			(at 152.4 58.42 0)
+			(at 157.48 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2823,7 +3388,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 146.05 76.2 90)
+		(at 149.86 74.93 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2833,7 +3398,7 @@
 		(dnp no)
 		(uuid "ceeacc2b-36b3-4307-a689-8c5bd8ec35f6")
 		(property "Reference" "R1"
-			(at 146.05 74.168 90)
+			(at 149.86 72.898 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2843,7 +3408,7 @@
 			)
 		)
 		(property "Value" "{R_var}"
-			(at 146.05 78.486 90)
+			(at 149.86 77.216 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2853,7 +3418,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 77.978 90)
+			(at 149.86 76.708 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2864,7 +3429,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 76.2 0)
+			(at 149.86 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2875,7 +3440,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 146.05 76.2 0)
+			(at 149.86 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2978,8 +3543,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VDD")
-		(at 146.05 55.88 0)
+		(lib_id "power:VD")
+		(at 149.86 53.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2987,10 +3552,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fce80212-22cd-4be4-aac3-aa45c48f4ed2")
-		(property "Reference" "#PWR01"
-			(at 146.05 59.69 0)
+		(uuid "f9256cc9-87d2-4701-8808-eb414a9ed2ef")
+		(property "Reference" "#PWR03"
+			(at 149.86 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3000,8 +3564,8 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
-			(at 146.05 50.8 0)
+		(property "Value" "Vcontrol"
+			(at 149.86 49.784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3011,7 +3575,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 55.88 0)
+			(at 149.86 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3022,7 +3586,208 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 55.88 0)
+			(at 149.86 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VD\""
+			(at 149.86 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f9cea6a5-cf3d-4380-8cca-9f719be1bab4")
+		)
+		(instances
+			(project "VCO-Schwingkreis"
+				(path "/1fef71e8-43ba-4b9f-93b6-ba8fd1dcc858"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Capacitance")
+		(at 142.24 55.88 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fc1d5455-aedd-4ade-9774-a33736303e86")
+		(property "Reference" "D1"
+			(at 142.24 53.594 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Capacitance"
+			(at 142.24 59.182 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Variable capacitance diode"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\FM-VCO\\SpiceLibs\\BB112.cir"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "BB112"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=A 2=K"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf1a8b3e-24f8-4451-8bb1-f1317c5c0d30")
+		)
+		(pin "2"
+			(uuid "588b2a89-2824-4c5e-9d2a-2b67107dcf8d")
+		)
+		(instances
+			(project "VCO-Schwingkreis"
+				(path "/1fef71e8-43ba-4b9f-93b6-ba8fd1dcc858"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDD")
+		(at 149.86 41.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fce80212-22cd-4be4-aac3-aa45c48f4ed2")
+		(property "Reference" "#PWR01"
+			(at 149.86 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VDD"
+			(at 149.86 36.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 41.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3033,7 +3798,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDD\""
-			(at 146.05 55.88 0)
+			(at 149.86 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
