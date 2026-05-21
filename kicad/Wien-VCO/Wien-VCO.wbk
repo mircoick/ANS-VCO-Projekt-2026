@@ -1,11 +1,11 @@
 {
-  "custom_cursors": 0,
+  "custom_cursors": 2,
   "last_sch_text_sim_command": "",
   "tabs": [
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 1m 10m",
+        ".tran 1u 100m",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
@@ -22,13 +22,13 @@
       "showGrid": true,
       "traces": [
         {
-          "color": "rgb(55, 126, 184)",
-          "signal": "V(/Ve)",
+          "color": "rgb(77, 175, 74)",
+          "signal": "V(/Va)",
           "trace_type": 257
         },
         {
-          "color": "rgb(228, 26, 28)",
-          "signal": "V(VA)",
+          "color": "rgb(55, 126, 184)",
+          "signal": "V(/Ve)",
           "trace_type": 257
         }
       ]
