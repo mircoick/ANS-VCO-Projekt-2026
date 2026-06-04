@@ -1,0 +1,17 @@
+* Generischer 100 MHz Operationsverstaerker fuer ngspice
+* GBW = 100 MHz, Unity-Gain Stable
+.subckt OP_100MHZ IN_P IN_N V_P V_N OUT
+R_IN IN_P IN_N 1Meg
+* Eingangsstufe (Transkonduktanz)
+G_A 0 MID IN_P IN_N 1m
+* Spannungsverstaerkung und Polstelle (100 dB DC Gain, GBW = 100 MHz)
+R_A MID 0 100Meg
+C_A MID 0 1.59p
+* Ausgangspuffer
+E_OUT OUT_RAW 0 MID 0 1
+R_OUT OUT_RAW OUT 50
+* Begrenzung auf Versorgungsspannung (Clipping)
+D_C1 OUT V_P D_IDEAL
+D_C2 V_N OUT D_IDEAL
+.model D_IDEAL D(N=0.01 RS=1)
+.ends OP_100MHZ

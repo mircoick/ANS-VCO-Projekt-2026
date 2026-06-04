@@ -1,11 +1,11 @@
 {
-  "custom_cursors": 2,
+  "custom_cursors": 1,
   "last_sch_text_sim_command": "",
   "tabs": [
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 1u 100m",
+        ".tran 1u 400m",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
