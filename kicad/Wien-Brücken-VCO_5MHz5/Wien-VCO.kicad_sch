@@ -2506,7 +2506,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\lm7171.lib"
+		(property "Sim.Library" "..\\spicelibs\\lm7171.lib"
 			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -3392,7 +3392,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\MeinJ113.lib"
+		(property "Sim.Library" "..\\spicelibs\\MeinJ113.lib"
 			(at 143.51 116.84 0)
 			(hide yes)
 			(show_name no)
