@@ -5,242 +5,6 @@
 	(uuid "61a7698a-1c0d-4258-9661-7a52612acc47")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Amplifier_Operational:TL081"
-			(pin_names
-				(offset 0.127)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U1"
-				(at 2.032 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TL081"
-				(at 3.556 4.064 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl081.pdf"
-				(at 3.81 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Single JFET-Input Operational Amplifiers, DIP-8/SOIC-8"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\sloj069\\TL081.301"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Name" "TL081"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Device" "SUBCKT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Pins" "2=2 3=1 4=4 6=5 7=3"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "single opamp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TSSOP*3x3mm*P0.65mm*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TL081_0_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "TL081_1_1"
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 3.81)
-					(name "V-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 3.81)
-					(name "V+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -831,6 +595,234 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Simulation_SPICE:OPAMP"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 3.81 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "${SIM.PARAMS}"
+				(at 3.81 -3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Operational amplifier, single"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=in+ 2=in- 3=vcc 4=vee 5=out"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "SUBCKT"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Sim.Library" "${KICAD9_SYMBOL_DIR}/Simulation_SPICE.sp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Name" "kicad_builtin_opamp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "simulation"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "OPAMP_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "OPAMP_1_1"
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -1515,9 +1507,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text ".param R=100R\n.param C=280pF\n.model __D1 D(Vfwd=0.6)\n.ic V(Net-_C2-Pad2_)=.001"
+	(text ".param R=1K\n.param C=25pF\n.model __D1 D(Vfwd=0.6 Cjo=0)\n.ic V(Net-_C2-Pad2_)=.001\n\n.options reltol=0.005 trtol=4 method=gear\n.options numdgt=7"
 		(exclude_from_sim no)
-		(at 173.482 108.458 0)
+		(at 168.91 93.726 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1533,10 +1525,22 @@
 		(uuid "0acaa484-1bdd-46e9-ac0a-9948e64d87bb")
 	)
 	(junction
-		(at 157.48 99.06)
+		(at 123.19 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "17292332-ede8-4ad8-bc4c-8edff2f604c9")
+		(uuid "0cb3c1d5-6fa2-46af-9705-9347605516bc")
+	)
+	(junction
+		(at 130.81 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d1eae1d-5633-4332-9040-e45406a9d520")
+	)
+	(junction
+		(at 140.97 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32f12567-9145-41b7-9abb-61b1b7142330")
 	)
 	(junction
 		(at 157.48 116.84)
@@ -1545,10 +1549,16 @@
 		(uuid "37ce8c24-9447-41f0-84f7-b391096c1627")
 	)
 	(junction
-		(at 140.97 132.08)
+		(at 157.48 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "42b60387-a321-4691-b71a-ce677e990a56")
+		(uuid "38a73668-2aec-4318-974a-260e7cdae6b6")
+	)
+	(junction
+		(at 130.81 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ba88c3e-626f-4fb6-9218-cc34643d366b")
 	)
 	(junction
 		(at 123.19 132.08)
@@ -1561,24 +1571,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a35b293c-7b2c-43d8-98ab-13674ebbb973")
-	)
-	(junction
-		(at 123.19 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a9eb436c-4b0a-4b43-bab8-0d0e529daf57")
-	)
-	(junction
-		(at 130.81 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfc04cd3-2ba3-4107-84f4-08692e162487")
-	)
-	(junction
-		(at 130.81 96.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bfc9ca8d-bd98-4423-bf00-499f6c7b9fb9")
 	)
 	(junction
 		(at 157.48 83.82)
@@ -1600,6 +1592,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 105.41) (xy 142.24 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01573561-ce22-48dd-be0f-726c616de18c")
+	)
+	(wire
+		(pts
 			(xy 123.19 132.08) (xy 130.81 132.08)
 		)
 		(stroke
@@ -1607,6 +1609,16 @@
 			(type default)
 		)
 		(uuid "01cb3302-f596-420a-9ca5-1af3eabf3f50")
+	)
+	(wire
+		(pts
+			(xy 140.97 121.92) (xy 140.97 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "066e8adf-d955-4db4-a9bb-883baf635944")
 	)
 	(wire
 		(pts
@@ -1620,7 +1632,17 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 132.08) (xy 152.4 132.08)
+			(xy 130.81 100.33) (xy 137.16 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1155b8a8-2d2a-4fa5-be10-87389ca1e6d4")
+	)
+	(wire
+		(pts
+			(xy 130.81 132.08) (xy 140.97 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1660,16 +1682,6 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 96.52) (xy 130.81 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f66f7b7-ff86-476d-a717-31ff45e6eeea")
-	)
-	(wire
-		(pts
 			(xy 157.48 77.47) (xy 157.48 83.82)
 		)
 		(stroke
@@ -1677,16 +1689,6 @@
 			(type default)
 		)
 		(uuid "289c0181-6941-4a9c-be20-6c6e0622d137")
-	)
-	(wire
-		(pts
-			(xy 130.81 96.52) (xy 138.43 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2dcad136-7606-4d4a-88ef-78ab61f04877")
 	)
 	(wire
 		(pts
@@ -1717,16 +1719,6 @@
 			(type default)
 		)
 		(uuid "35e3f82e-b644-47f0-9fa4-89cb64c05aa6")
-	)
-	(wire
-		(pts
-			(xy 157.48 83.82) (xy 157.48 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35eb635a-969c-48d0-8103-4e7d7c2521fa")
 	)
 	(wire
 		(pts
@@ -1780,6 +1772,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 99.06) (xy 123.19 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ae9e5a4-3be5-47ea-b152-a528ed3169c8")
+	)
+	(wire
+		(pts
 			(xy 99.06 90.17) (xy 99.06 92.71)
 		)
 		(stroke
@@ -1787,16 +1789,6 @@
 			(type default)
 		)
 		(uuid "4c10ed58-39f7-4895-bcf3-14801f398078")
-	)
-	(wire
-		(pts
-			(xy 130.81 110.49) (xy 140.97 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54164b62-daa3-4ca8-997b-6bcfdbfee0e7")
 	)
 	(wire
 		(pts
@@ -1810,17 +1802,57 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 91.44) (xy 143.51 90.17)
+			(xy 130.81 100.33) (xy 130.81 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "592994ba-481a-4e69-8166-56416f25003c")
+		(uuid "5fdc342d-4231-4ff8-820f-4dd47790864d")
 	)
 	(wire
 		(pts
-			(xy 123.19 101.6) (xy 123.19 116.84)
+			(xy 125.73 99.06) (xy 123.19 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "612e911a-5d91-4120-8d9f-2b888ed5877e")
+	)
+	(wire
+		(pts
+			(xy 130.81 83.82) (xy 130.81 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64f7afd3-7a43-42c0-a1d2-8ddb38f908b5")
+	)
+	(wire
+		(pts
+			(xy 140.97 132.08) (xy 152.4 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65e4c44c-25d8-4afd-84f3-ac6b1ab64d2e")
+	)
+	(wire
+		(pts
+			(xy 157.48 97.79) (xy 157.48 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74d0f7f3-3bde-43da-b0d7-29878b9a3941")
+	)
+	(wire
+		(pts
+			(xy 123.19 96.52) (xy 123.19 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1850,7 +1882,17 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 100.33) (xy 157.48 99.06)
+			(xy 152.4 97.79) (xy 157.48 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a00457f-87cd-4891-b1fb-8c233e3f0114")
+	)
+	(wire
+		(pts
+			(xy 157.48 83.82) (xy 157.48 97.79)
 		)
 		(stroke
 			(width 0)
@@ -1870,16 +1912,6 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 83.82) (xy 130.81 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "83003438-056d-43d4-967c-a8192438a4fa")
-	)
-	(wire
-		(pts
 			(xy 148.59 116.84) (xy 152.4 116.84)
 		)
 		(stroke
@@ -1887,6 +1919,16 @@
 			(type default)
 		)
 		(uuid "834af4aa-a5ab-4def-8d85-fd47c0af55d7")
+	)
+	(wire
+		(pts
+			(xy 125.73 95.25) (xy 125.73 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "859f1ae0-c657-4db2-a78c-1900af2a0fdf")
 	)
 	(wire
 		(pts
@@ -1900,6 +1942,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 88.9) (xy 143.51 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "962c7cc0-9171-4c1f-84ad-204ca47fefb6")
+	)
+	(wire
+		(pts
 			(xy 99.06 77.47) (xy 99.06 80.01)
 		)
 		(stroke
@@ -1907,16 +1959,6 @@
 			(type default)
 		)
 		(uuid "96dba47f-187e-40d6-ae85-222bd433e5df")
-	)
-	(wire
-		(pts
-			(xy 140.97 121.92) (xy 140.97 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "99b3bd19-c3e7-4ded-a315-d255662057f7")
 	)
 	(wire
 		(pts
@@ -1930,6 +1972,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 106.68) (xy 143.51 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a522b8cd-9d88-45cd-b413-1b15d4ecca4b")
+	)
+	(wire
+		(pts
 			(xy 140.97 111.76) (xy 140.97 110.49)
 		)
 		(stroke
@@ -1940,73 +1992,23 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 132.08) (xy 140.97 132.08)
+			(xy 137.16 95.25) (xy 125.73 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b3cd136f-c159-46d0-afcd-db60a3fd21ee")
+		(uuid "d0b8e870-8595-427d-a3e0-dd4324403460")
 	)
 	(wire
 		(pts
-			(xy 123.19 96.52) (xy 123.19 101.6)
+			(xy 139.7 110.49) (xy 140.97 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c21922d9-3ddc-4c6b-864f-5b7d12716338")
-	)
-	(wire
-		(pts
-			(xy 130.81 110.49) (xy 130.81 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c26c4783-e882-425d-a4f5-d8f119fd15d0")
-	)
-	(wire
-		(pts
-			(xy 143.51 107.95) (xy 143.51 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c46efb37-3fef-437d-9b5e-a57b7e7bf304")
-	)
-	(wire
-		(pts
-			(xy 143.51 90.17) (xy 139.7 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5268bb5-9217-4dd5-80dd-a2869ddab51d")
-	)
-	(wire
-		(pts
-			(xy 123.19 101.6) (xy 138.43 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4549025-b006-4cfc-9d83-d5e4d0b733d4")
-	)
-	(wire
-		(pts
-			(xy 140.97 130.81) (xy 140.97 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "da39a25f-8b1e-4761-aed9-9fb728186aa8")
+		(uuid "d39ae7f3-3865-466f-aaff-f82e2b00b7fd")
 	)
 	(wire
 		(pts
@@ -2017,6 +2019,16 @@
 			(type default)
 		)
 		(uuid "dbd6920e-da97-41dd-ad80-30765dd98b64")
+	)
+	(wire
+		(pts
+			(xy 130.81 110.49) (xy 130.81 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3e9e1e3-63b9-4f60-a7ee-0cea060888ba")
 	)
 	(wire
 		(pts
@@ -2040,26 +2052,6 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 107.95) (xy 143.51 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb4a1b1a-8874-4da2-b697-9f8b973a3301")
-	)
-	(wire
-		(pts
-			(xy 153.67 99.06) (xy 157.48 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebb8e049-9660-4bb6-b848-c9099f4838bf")
-	)
-	(wire
-		(pts
 			(xy 99.06 105.41) (xy 99.06 107.95)
 		)
 		(stroke
@@ -2067,6 +2059,26 @@
 			(type default)
 		)
 		(uuid "eec07961-e5b2-48ad-b981-21f09ca6b139")
+	)
+	(wire
+		(pts
+			(xy 130.81 110.49) (xy 132.08 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f080df56-ac6d-4b3c-bd3f-69b4dadc0b4b")
+	)
+	(wire
+		(pts
+			(xy 142.24 88.9) (xy 142.24 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdba6458-0022-48c0-8324-804399fc62da")
 	)
 	(label "Va"
 		(at 157.48 96.52 0)
@@ -2079,7 +2091,7 @@
 		(uuid "5e12d7e9-1be1-4358-abb5-b9f36f3bd473")
 	)
 	(label "Ve"
-		(at 127 101.6 0)
+		(at 133.35 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2171,7 +2183,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 139.7 90.17 90)
+		(at 143.51 106.68 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2181,7 +2193,7 @@
 		(dnp no)
 		(uuid "1126920e-b98f-4bb2-be7c-b8f1587db908")
 		(property "Reference" "#PWR05"
-			(at 143.51 90.17 0)
+			(at 139.7 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2192,7 +2204,7 @@
 			)
 		)
 		(property "Value" "VCC-"
-			(at 139.7 92.202 90)
+			(at 143.51 104.648 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2203,7 +2215,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 90.17 0)
+			(at 143.51 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2214,7 +2226,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 90.17 0)
+			(at 143.51 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2225,7 +2237,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 139.7 90.17 0)
+			(at 143.51 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2406,6 +2418,141 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:OPAMP")
+		(at 144.78 97.79 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3157c687-bf1d-46b2-b5c4-c45d94957502")
+		(property "Reference" "U1"
+			(at 147.574 91.694 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "${SIM.NAME}"
+			(at 147.574 93.472 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Operational amplifier, single"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=3 2=2 3=4 4=5 5=6"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\lm7171.lib"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "LM7171"
+			(at 144.78 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "58674f40-06f2-41c9-8bb5-b1fff138425a")
+		)
+		(pin "5"
+			(uuid "9a40122e-3b29-46e7-93d1-11be77726c61")
+		)
+		(pin "1"
+			(uuid "68ccb282-5d02-43cf-9ae4-d59e129d5197")
+		)
+		(pin "4"
+			(uuid "665c0875-1cac-464b-9a2a-59ed51ef0a88")
+		)
+		(pin "3"
+			(uuid "f623dfe0-4b4e-441e-8180-330ce31b7e23")
+		)
+		(instances
+			(project "Wien-VCO"
+				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
 		(at 99.06 77.47 0)
 		(unit 1)
@@ -2485,7 +2632,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 139.7 107.95 90)
+		(at 143.51 88.9 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2495,7 +2642,7 @@
 		(dnp no)
 		(uuid "40d9810a-1b18-4436-986c-3b30689f53a4")
 		(property "Reference" "#PWR03"
-			(at 143.51 107.95 0)
+			(at 139.7 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2506,7 +2653,7 @@
 			)
 		)
 		(property "Value" "VCC+"
-			(at 137.16 105.41 90)
+			(at 148.59 87.122 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2516,7 +2663,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 107.95 0)
+			(at 143.51 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2527,7 +2674,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 107.95 0)
+			(at 143.51 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2538,7 +2685,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 139.7 107.95 0)
+			(at 143.51 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2740,7 +2887,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "1nF"
 			(at 149.606 126.746 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2898,7 +3045,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K4"
+		(property "Value" "1K2"
 			(at 132.334 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3062,139 +3209,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:TL081")
-		(at 146.05 99.06 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8b01edaf-23c8-4206-a5ef-cb04e1df6a91")
-		(property "Reference" "U1"
-			(at 147.828 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LT1220"
-			(at 149.352 92.964 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl081.pdf"
-			(at 149.86 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Single JFET-Input Operational Amplifiers, DIP-8/SOIC-8"
-			(at 146.05 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\OP_100MHZ.lib"
-			(at 146.05 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "OP_100MHZ"
-			(at 146.05 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "SUBCKT"
-			(at 146.05 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "3=IN_P 2=IN_N 7=V_P 4=V_N 6=OUT"
-			(at 146.05 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "0883fea6-2925-410d-8da6-5a82553baff4")
-		)
-		(pin "7"
-			(uuid "e9078c74-3443-433a-b047-7ec6ab610988")
-		)
-		(pin "2"
-			(uuid "f665ab17-a190-4bb5-af4a-d0e148071e46")
-		)
-		(pin "3"
-			(uuid "89da7edf-fdbb-4387-a414-f15133574ea8")
-		)
-		(pin "6"
-			(uuid "a37607b2-8218-4179-b698-ef33a3850617")
-		)
-		(instances
-			(project "Wien-VCO"
-				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 157.48 104.14 0)
 		(unit 1)
@@ -3216,7 +3230,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470R"
+		(property "Value" "50R"
 			(at 159.004 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3270,87 +3284,6 @@
 			(project "Wien-VCO"
 				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
 					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 140.97 127 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "af39c12f-7859-4cce-aefd-3d116b8be40c")
-		(property "Reference" "R6"
-			(at 139.446 128.016 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10K"
-			(at 139.446 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 142.748 127 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 140.97 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "753d8636-7145-4a68-9444-6f6db9fdd0a5")
-		)
-		(pin "2"
-			(uuid "22a6643c-94c2-4f75-9768-8f0aad4dc0aa")
-		)
-		(instances
-			(project "Wien-VCO"
-				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
-					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -3417,6 +3350,7 @@
 		)
 		(property "Description" "0.5A Id, 60V Vds, N-Channel MOSFET, TO-92"
 			(at 196.088 114.808 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3458,7 +3392,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\J113.lib"
+		(property "Sim.Library" "C:\\Users\\torbe\\Documents\\2.0 Studium\\6.0 Semester\\M6.10 Analoge Schaltungen (ANS)\\ANS-VCO-Projekt-2026\\kicad\\spicelibs\\MeinJ113.lib"
 			(at 143.51 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -3469,7 +3403,7 @@
 				)
 			)
 		)
-		(property "Sim.Name" "J113"
+		(property "Sim.Name" "MeinJ113"
 			(at 143.51 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -3794,7 +3728,7 @@
 				)
 			)
 		)
-		(property "Value" "2K"
+		(property "Value" "2K2"
 			(at 140.97 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3874,7 +3808,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10M"
+		(property "Value" "20K"
 			(at 159.004 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4044,6 +3978,87 @@
 			(project "Wien-VCO"
 				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
 					(reference "V2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 135.89 110.49 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f549c42e-705c-4f03-ae33-efdb088893d5")
+		(property "Reference" "R8"
+			(at 133.604 114.554 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 135.89 117.094 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 135.89 112.268 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 135.89 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "30081c2a-6076-4f45-85bc-b915d1a129d8")
+		)
+		(pin "2"
+			(uuid "ad571679-f035-4fb0-9097-dc1c71e0a651")
+		)
+		(instances
+			(project "Wien-VCO"
+				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
+					(reference "R8")
 					(unit 1)
 				)
 			)

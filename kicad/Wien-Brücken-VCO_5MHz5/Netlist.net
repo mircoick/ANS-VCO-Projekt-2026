@@ -1,0 +1,38 @@
+.title Wien-Bruecken-Oszillator fuer LTspice
+.include "C:/Users/torbe/Documents/2.0 Studium/6.0 Semester/M6.10 Analoge Schaltungen (ANS)/ANS-VCO-Projekt-2026/kicad/spicelibs/MeinJ113.lib"
+.include "C:/Users/torbe/Documents/2.0 Studium/6.0 Semester/M6.10 Analoge Schaltungen (ANS)/ANS-VCO-Projekt-2026/kicad/spicelibs/lm7171.lib"
+
+* Globale Parameter
+.param R=1K
+.param C=27pF
+
+* Diodenmodell ohne parasitaere Kapazitaeten, die bei 6 MHz daempfen
+.model __D1 D(Vfwd=0.6 Cjo=0)
+
+* Anfangsbedingung fuer den Oszillatorstart
+.ic V(Net-_C2-Pad2_)=.001
+
+* LTspice-spezifische Optionen (Keine Datenkompression, Gear-Solver)
+.options reltol=0.005 trtol=4 method=gear plotwinsize=0
+.options numdgt=7
+
+* Transientenanalyse: 50µs Dauer, Start bei 0, max. 0.1ns Zeitschritt, UIC erzwingt Startimpuls
+.tran 0 50u 0 0.1n uic
+
+* Schaltungsstruktur
+D1 Net-_D1-A_ Net-_D1-K_ __D1
+R7 /Va Net-_D1-K_ 50
+C3 0 Net-_D1-A_ 1n
+R5 Net-_D1-A_ 0 20k
+R3 /Ve /Va 2.2k
+XU1 Net-_U1-+_ /Ve VCC+ VCC- /Va LM7171
+R4 /Ve 0 1.2k
+R2 Net-_U1-+_ 0 {R}
+C1 Net-_U1-+_ 0 {C}
+R8 /Ve Net-_J1-D_ 10k
+J1 Net-_J1-D_ Net-_D1-A_ 0 MeinJ113
+R1 Net-_C2-Pad2_ Net-_U1-+_ {R}
+V2 VCC+ 0 DC 10
+C2 /Va Net-_C2-Pad2_ {C}
+V1 0 VCC- DC 10
+.end
