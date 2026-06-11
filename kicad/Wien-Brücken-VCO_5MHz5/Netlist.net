@@ -3,40 +3,40 @@
 .include "lm7171.lib"
 
 .param R=1K
-.param C=22pF
+.param C=17pF
+
+.options reltol=0.1
+.options abstol=1p
+.options chgtol=10f
+.options plotwinsize=0
 
 * Diodenmodelle
 .model __D1 D(Vfwd=0.6 Cjo=0)
 .model D_Var D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)
 
-* Schaltung
+C3 0 Net-_D1-A_ 1n
+R8 /Ve Net-_J1-D_ 10k
 J1 Net-_J1-D_ Net-_D1-A_ 0 MeinJ113
-R7 /Va Net-_D1-K_ 30
-D1 Net-_D1-A_ Net-_D1-K_ __D1
 R5 Net-_D1-A_ 0 20k
 R4 /Ve 0 1.2k
-R8 /Ve Net-_J1-D_ 10k
-XU1 Net-_Va_Wien_ /Ve VCC+ VCC- /Va LM7171
-R3 /Ve /Va 2.3k
-
-* Wien-Bruecke mit antiseriellen Dioden (Parallel)
-Cf1 Net-_Va_Wien_ 0 {C}
-R2 Net-_Va_Wien_ 0 {R}
-D5 Net-_Va_Wien_ Net-_Vctrl_P_ D_Var
-D3 0 Net-_Vctrl_P_ D_Var
-R_tune_P Vstr Net-_Vctrl_P_ 100k
-
-* Wien-Bruecke mit antiseriellen Dioden (Seriell)
-C2 /Va Net-_C2_Wien_ {C}
-R1 Net-_C2_Wien_ Net-_Va_Wien_ {R}
-D4 Net-_C2_Wien_ Net-_Vctrl_S_ D_Var
-D2 /Va Net-_Vctrl_S_ D_Var
-R_tune_S Vstr Net-_Vctrl_S_ 100k
-
-* Versorgungen
-V1 0 VCC- DC 10
+D1 Net-_D1-A_ Net-_D1-K_ __D1
+R2 Net-_D5-A_ 0 {R}
+R1 Net-_D4-A_ Net-_D5-A_ {R}
+C2 /Va Net-_D4-A_ {C}
+D4 Net-_D4-A_ Net-_D2-K_ D_Var
+R9 Vstr Net-_D2-K_ 100k
+D5 Net-_D5-A_ Net-_D3-K_ D_Var
+C1 Net-_D5-A_ 0 {C}
+D3 0 Net-_D3-K_ D_Var
+R6 Vstr Net-_D3-K_ 100k
 V2 VCC+ 0 DC 10
-V3 Vstr 0 DC 10
+D2 /Va Net-_D2-K_ D_Var
+V1 0 VCC- DC 10
+V3 Vstr 0 DC 2
+R7 /Va Net-_D1-K_ 1K
+XU1 Net-_D5-A_ /Ve VCC+ VCC- /Va LM7171
+R3 /Ve /Va 2.2k
+
 .ic V(/Va)=0.1
 .tran 0 200u 0 10n
 .end
