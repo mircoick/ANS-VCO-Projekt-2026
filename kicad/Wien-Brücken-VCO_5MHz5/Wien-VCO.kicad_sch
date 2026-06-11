@@ -1721,7 +1721,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text ".param R=1K\n.param C=17pF\n.model __D1 D(Vfwd=0.6 Cjo=0)\n.model __D2 D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)\n.model __D3 D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)\n.model __D4 D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)\n.model __D5 D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)\n.ic V(/Va)=0.001\n\n.options reltol=0.005 trtol=4 method=gear\n.options numdgt=7"
+	(text ".param R=1K\n.param C=17pF\n.model 1N4002 D(IS=2.55e-9 RS=0.042 N=1.74 CJO=18.5p M=0.333 VJ=0.75 TT=5.76u BV=100 IBV=10u)\n.model 1SV305 D(IS=1e-14 RS=0.27 CJO=28p M=0.5 VJ=0.75)\n.ic V(/Va)=0.1"
 		(exclude_from_sim no)
 		(at 168.91 93.726 0)
 		(effects
@@ -1731,6 +1731,17 @@
 			(justify left)
 		)
 		(uuid "39596b0c-24bf-414a-b8d0-c9219fda46f7")
+	)
+	(text ".options reltol=0.005 trtol=4 method=gear\n.options numdgt=7"
+		(exclude_from_sim yes)
+		(at 168.91 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8a524dd0-9b9a-4a76-8d9b-1792a4b79d81")
 	)
 	(junction
 		(at 152.4 116.84)
@@ -3849,7 +3860,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1N4002"
 			(at 157.48 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -3952,7 +3963,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 114.3 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -4132,7 +4143,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4393,7 +4404,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 106.68 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -4868,7 +4879,7 @@
 				)
 			)
 		)
-		(property "Value" "2K2"
+		(property "Value" "2K4"
 			(at 140.97 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5030,7 +5041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2V"
+		(property "Value" "1V"
 			(at 74.93 90.0401 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5189,7 +5200,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 106.68 132.08 0)
 			(hide yes)
 			(show_name no)

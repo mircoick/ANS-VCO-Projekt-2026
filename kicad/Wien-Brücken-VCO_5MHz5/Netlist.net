@@ -5,38 +5,36 @@
 .param R=1K
 .param C=17pF
 
-.options reltol=0.1
-.options abstol=1p
-.options chgtol=10f
-.options plotwinsize=0
+.options cshunt=1e-15
+.options method=gear
 
 * Diodenmodelle
-.model __D1 D(Vfwd=0.6 Cjo=0)
-.model D_Var D(IS=1e-14 RS=0.5 N=1 CJO=48p M=0.5 VJ=0.7)
+.model 1N4002 D(IS=2.55e-9 RS=0.042 N=1.74 CJO=18.5p M=0.333 VJ=0.75 TT=5.76u BV=100 IBV=10u)
+.model 1SV305 D(IS=1e-14 RS=0.27 CJO=28p M=0.5 VJ=0.75 FC=0.5 TT=0 BV=15 IBV=1e-5 mfg=Toshiba type=Varactor)
 
 C3 0 Net-_D1-A_ 1n
-R8 /Ve Net-_J1-D_ 10k
 J1 Net-_J1-D_ Net-_D1-A_ 0 MeinJ113
+R8 /Ve Net-_J1-D_ 10k
 R5 Net-_D1-A_ 0 20k
 R4 /Ve 0 1.2k
-D1 Net-_D1-A_ Net-_D1-K_ __D1
+D1 Net-_D1-A_ Net-_D1-K_ 1N4002
+R7 /Va Net-_D1-K_ 30
 R2 Net-_D5-A_ 0 {R}
 R1 Net-_D4-A_ Net-_D5-A_ {R}
-C2 /Va Net-_D4-A_ {C}
-D4 Net-_D4-A_ Net-_D2-K_ D_Var
 R9 Vstr Net-_D2-K_ 100k
-D5 Net-_D5-A_ Net-_D3-K_ D_Var
+C2 /Va Net-_D4-A_ {C}
+D4 Net-_D4-A_ Net-_D2-K_ 1SV305
+D5 Net-_D5-A_ Net-_D3-K_ 1SV305
 C1 Net-_D5-A_ 0 {C}
-D3 0 Net-_D3-K_ D_Var
+D3 0 Net-_D3-K_ 1SV305
 R6 Vstr Net-_D3-K_ 100k
 V2 VCC+ 0 DC 10
-D2 /Va Net-_D2-K_ D_Var
+D2 /Va Net-_D2-K_ 1SV305
 V1 0 VCC- DC 10
-V3 Vstr 0 DC 2
-R7 /Va Net-_D1-K_ 1K
+V3 Vstr 0 DC 1.83
 XU1 Net-_D5-A_ /Ve VCC+ VCC- /Va LM7171
 R3 /Ve /Va 2.2k
 
-.ic V(/Va)=0.1
-.tran 0 200u 0 10n
+.ic V(/Va)=0.001
+.tran 0 100u 0 10n
 .end
