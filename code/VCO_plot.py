@@ -3,14 +3,17 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # 1. RAW-Datei laden
-LTR = RawRead("kicad/VCO-Schwingkreis/NET_VCO-Schwingkreis.raw")
+LTR = RawRead("/Users/icke/Desktop/Git.nosync/ANS-VCO-Projekt-2026/kicad/Wien-Bruecken-VCO_5MHz5/Netlist.raw")
 
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
 
-Vd1 = LTR.get_trace("V(/drain_q1)")
-Vd2 = LTR.get_trace("V(/drain_q2)") 
+Vd1 = LTR.get_trace("V(/va)")
+Vd2 = LTR.get_trace("V(/ve)") 
+Vdstr = LTR.get_trace("V(vstr)")
+
+print(Vdstr)
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
 plt.subplot(3,1,1)
@@ -57,7 +60,7 @@ plt.grid()
 plt.ylabel(r"Amplitude in $dBV$")
 plt.xlabel(r"Frequency in $Hz$")
 
-Vd1 = LTR.get_trace("V(/drain_q1)")
+Vd1 = LTR.get_trace("V(/va)")
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
 
@@ -86,14 +89,10 @@ for step in range(len(steps)):
     amp_vd1 = np.abs(np.fft.rfft(vd1_uniform)) * 2 / n
     freq = np.fft.rfftfreq(n, d=dt)
 
-    # --- STEUERSPANNUNG AUSLESEN ---
-    step_dict = steps[step]
-    if isinstance(step_dict, dict) and len(step_dict) > 0:
-        param_name = list(step_dict.keys())[0]
-        v_ctrl = float(step_dict[param_name])
-    else:
-        # Dynamischer Fallback für jede beliebige Step-Anzahl von -0.5V bis +0.5V
-        v_ctrl = -0.5 + (step * (1.0 / (len(steps) - 1)))
+# --- STEUERSPANNUNG AUSLESEN ---
+    # Reale Spannung V(vstr) aus der Simulation für diesen Step auslesen
+    vdstr_wave = Vdstr.get_wave(step)
+    v_ctrl = np.mean(vdstr_wave) 
     
     v_ctrl_list.append(v_ctrl)
 
@@ -114,32 +113,33 @@ f_min = min(f_peak_mhz)
 f_max = max(f_peak_mhz)
 diff_f = f_max - f_min
 
-try:
-    idx_0v = np.where(np.isclose(v_ctrl_np, 0.0, atol=0.005))[0][0]
-    f_mitte = f_peak_mhz[idx_0v]
-except IndexError:
-    f_mitte = f_peak_mhz[len(f_peak_mhz)//2]
+# Mittenfrequenz über den mittleren Index ermitteln
+idx_mitte = len(f_peak_mhz) // 2
+f_mitte = f_peak_mhz[idx_mitte]
+v_mitte = v_ctrl_np[idx_mitte]
 
-plt.subplot(3,1,3)
+# --------------------------------------------------------------------------------------------------------------------------------
+# ÄNDERUNG: Jetzt im sauberen 3er-Layout (3, 1, 3)
+plt.subplot(3, 1, 3)
 plt.plot(v_ctrl_np, f_peak_mhz, 'o-', color='green',
-         label=f"VCO Kennlinie (Ist)\nMitte (0V) = {f_mitte:.2f} MHz\nMin = {f_min:.2f} MHz\nMax = {f_max:.2f} MHz\nHub = {diff_f:.2f} MHz")
+         label=f"VCO Kennlinie (Ist)\nMitte ({v_mitte:.2f} V) = {f_mitte:.2f} MHz\nMin = {f_min:.2f} MHz\nMax = {f_max:.2f} MHz\nHub = {diff_f:.2f} MHz")
 
-plt.plot(0, 5.5, 'ro', markersize=8, label="Soll-Mitte (0V -> 5.5 MHz)")
-plt.plot(-0.5, 5.0, 'mo', markersize=8, label="Soll-Min (-0.5V -> 5.0 MHz)")
-plt.plot(0.5, 6.0, 'mo', markersize=8, label="Soll-Max (+0.5V -> 6.0 MHz)")
+#plt.plot([1.77, 6.45], [5.0, 6.0], linestyle="-", color="red", label="Soll-Kennlinie (Ideal)")
 
-plt.xlabel("Steuerspannung $V_{ctrl}$ in V")
+plt.xlabel(r"Steuerspannung $V_{str}$ in V")
 plt.ylabel("Frequenz in MHz")
 
-plt.xlim(-0.55, 0.55)
-plt.ylim(4.8,6.2)
+# Flexibles X-Limit basierend auf deinen realen Vstr-Werten
+plt.xlim(v_ctrl_np.min() * 0.95, v_ctrl_np.max() * 1.05)
+#plt.ylim(4.8, 6.2)
+
+plt.axhline(5, color="red", linestyle="--", label=r"Unterefrequenz 5.0 MHz")
+plt.axhline(5.5, color="red", linestyle="--", label=r"Mittenfrequenz 5.5 MHz")
+plt.axhline(6, color="red", linestyle="--", label=r"Oberefrequenz 6.0 MHz")
 
 plt.grid(True, which="both", linestyle="--")
 plt.legend(loc="upper left")
-print("\n--> INFO: Plot mit Achsenfixierung berechnet. Bitte Grafikfenster öffnen.\n\n")
 
-
-print(f"Untere Grenzfrequenz = \t{f_min:.2f} MHz")
-print(f"Mittenfrequenz = \t{f_mitte:.2f} MHz")
-print(f"Obere Grenzfrequenz = \t{f_max:.2f} MHz")
+plt.tight_layout() # Verhindert, dass sich Achsenbeschriftungen überlappen
+plt.show()
 plt.show()
