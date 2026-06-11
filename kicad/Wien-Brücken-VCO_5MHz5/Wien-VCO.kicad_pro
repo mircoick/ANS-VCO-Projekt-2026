@@ -410,7 +410,7 @@
       "version": 1
     },
     "ngspice": {
-      "fix_include_paths": true,
+      "fix_include_paths": false,
       "meta": {
         "version": 0
       },

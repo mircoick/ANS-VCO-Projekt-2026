@@ -13,30 +13,28 @@ R9 N001 Vstr 100k
 R6 N006 Vstr 100k
 D1 N005 P001 1N4148
 C3 N005 0 1nF
+D5 N003 N006 1SV305
+D3 0 N006 1SV305
+D2 va N001 1SV305
 VCC- VCC- 0 -10V
 VCC+ VCC+ 0 10V
 Vstr Vstr 0 {Vstr}
-X§U1 N003 ve VCC+ VCC- va lm7171 ;§pnba In+)In-)V+)V-)OUT
-D2 va N001 1SV305
-D3 N003 N006 1SV305
-D4 N002 N001 1SV305
-D5 0 N006 1SV305
+X§U2 N003 ve VCC+ VCC- va LT1363 ;§pnba In+)In-)V+)V-)OUT
 J1 N004 N005 0 J113
+D4 N002 N001 1SV305
 .model D D
 .lib C:\users\crossover\AppData\Local\LTspice\lib\cmp\standard.dio
 .model NJF NJF
 .model PJF PJF
 .lib C:\users\crossover\AppData\Local\LTspice\lib\cmp\standard.jft
-* Parameter
 .param R=1k
 .param C=17pF
 .param Vstr=2V
-* Modelle
-.inc ../spicelibs/elk.lib
-.inc ../spicelibs/lm7171.lib
-* Analyse
-.ic V(va)=1e-12
-.tran 1n 100u
 *.step param Vstr list 8 9 10 11 12 13 14 15 16
+.ic V(va)=0.000000000001
+.model 1SV305 D(IS=1e-14 RS=0.27 CJO=28p M=0.5 VJ=0.75)
+.tran 1n 100u
+* Library below included based on ModelFile attribute of instance X§U2 (C:\users\crossover\AppData\Local\LTspice\lib\sym\OpAmps\LT1363.asy)
+.lib LT1363.sub
 .backanno
 .end

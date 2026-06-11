@@ -21,14 +21,14 @@
 *LM7171A  Operational Amplifier Macro-Model
 */////////////////////////////////////////////////
 *
-* connections:      non-inverting input
-*                   |      inverting input
+* connections:      inverting input
+*                   |      non-inverting input
 *                   |      |      positive power supply
 *                   |      |      |       negative power supply
 *                   |      |      |       |      output
 *                   |      |      |       |      |
 *                   |      |      |       |      |
-.SUBCKT LM7171  3      2      4       5      6
+.SUBCKT LM7171  2      3      4       5      6
 *
 *Features
 *Very High Slew Rate  

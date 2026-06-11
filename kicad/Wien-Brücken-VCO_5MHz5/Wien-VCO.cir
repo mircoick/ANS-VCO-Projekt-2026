@@ -1,0 +1,51 @@
+.title KiCad schematic
+.include "../spicelibs/J113.lib"
+.include "../spicelibs/elk.lib"
+.include "../spicelibs/lm7171.lib"
+
+.save all
+
+* Parameter
+.param R=1K
+.param C=17p
+.param Vstr=2
+
+* Initial Condition
+.ic V(/Va)=1e-12
+
+* Options
+.options reltol=0.005 trtol=4 method=gear
+.options numdgt=7
+
+* Datenexport
+.control
+wrdata Wien-VCO.csv V(/Va) V(/Ve)
+.endc
+
+* Analyse
+.tran 1n 100u
+
+* Schaltung
+R3 /Ve /Va 2.4k
+C3 0 Net-_D1-A_ 1n
+J1 Net-_J1-D_ Net-_D1-A_ 0 J113
+R5 Net-_D1-A_ 0 20k
+XU1 Net-_D5-A_ /Ve VCC+ VCC- /Va LM7171
+R7 /Va Net-_D1-K_ 30
+D1 Net-_D1-A_ Net-_D1-K_ D1N4148
+R4 /Ve 0 1.2k
+R2 Net-_D5-A_ 0 {R}
+R8 /Ve Net-_J1-D_ 10k
+D5 Net-_D5-A_ Net-_D3-K_ 1SV305
+C1 Net-_D5-A_ 0 {C}
+R6 Vstr Net-_D3-K_ 100k
+D3 0 Net-_D3-K_ 1SV305
+R9 Vstr Net-_D2-K_ 100k
+V1 0 VCC- DC 10 
+V2 VCC+ 0 DC 10 
+C2 /Va Net-_D4-A_ {C}
+R1 Net-_D4-A_ Net-_D5-A_ {R}
+D4 Net-_D4-A_ Net-_D2-K_ 1SV305
+V3 Vstr 0 DC {Vstr} 
+D2 /Va Net-_D2-K_ 1SV305
+.end
