@@ -3,14 +3,14 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # 1. RAW-Datei laden
-LTR = RawRead("/Users/icke/Desktop/Git.nosync/ANS-VCO-Projekt-2026/kicad/Wien-Bruecken-VCO_5MHz5/Netlist.raw")
+LTR = RawRead(r"..\kicad\Wien-Brücken-VCO_5MHz5\Wien-LT.raw")
 
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
 
-Vd1 = LTR.get_trace("V(/va)")
-Vd2 = LTR.get_trace("V(/ve)") 
+Vd1 = LTR.get_trace("V(va)")
+Vd2 = LTR.get_trace("V(ve)") 
 Vdstr = LTR.get_trace("V(vstr)")
 
 print(Vdstr)
@@ -20,7 +20,6 @@ plt.subplot(3,1,1)
 for step in range(len(steps)):
     plt.plot(time.get_wave(step) ,Vd1.get_wave(step))
     plt.plot(time.get_wave(step) ,Vd2.get_wave(step))
-
 
 
 #plt.legend()  # order a legend
@@ -60,7 +59,7 @@ plt.grid()
 plt.ylabel(r"Amplitude in $dBV$")
 plt.xlabel(r"Frequency in $Hz$")
 
-Vd1 = LTR.get_trace("V(/va)")
+Vd1 = LTR.get_trace("V(va)")
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
 
