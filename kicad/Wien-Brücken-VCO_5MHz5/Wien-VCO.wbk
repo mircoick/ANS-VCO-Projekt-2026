@@ -6,14 +6,12 @@
       "analysis": "TRAN",
       "commands": [
         ".tran 1n 100u",
+        ".kicad adjustpaths",
         ".save all",
-        ".kicad esavenone"
+        ".probe alli",
+        ".probe allp"
       ],
       "dottedSecondary": true,
-      "legend": {
-        "x": 0,
-        "y": 0
-      },
       "margins": {
         "bottom": 45,
         "left": 70,

@@ -1721,9 +1721,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "* Parameter\n.param R=1K\n.param C=17p\n.param Vstr=2\n\n* Initial Condition\n.ic V(/Va)=1e-12\n\n* Options\n.options reltol=0.005 trtol=4 method=gear\n.options numdgt=7\n\n.control\nwrdata Wien-VCO.csv V(/Va) V(/Ve)\n.endc"
+	(text ".param R=1K\n.param C=17pF\n.model 1N4002 D(IS=2.55e-9 RS=0.042 N=1.74 CJO=18.5p M=0.333 VJ=0.75 TT=5.76u BV=100 IBV=10u)\n.model 1SV305 D(IS=1e-14 RS=0.27 CJO=28p M=0.5 VJ=0.75)\n.ic V(/Va)=0.1"
 		(exclude_from_sim no)
-		(at 159.512 41.148 0)
+		(at 168.91 93.726 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1732,7 +1732,7 @@
 		)
 		(uuid "39596b0c-24bf-414a-b8d0-c9219fda46f7")
 	)
-	(text ""
+	(text ".options reltol=0.005 trtol=4 method=gear\n.options numdgt=7"
 		(exclude_from_sim yes)
 		(at 168.91 104.14 0)
 		(effects
@@ -1768,6 +1768,12 @@
 		(uuid "32f12567-9145-41b7-9abb-61b1b7142330")
 	)
 	(junction
+		(at 157.48 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37ce8c24-9447-41f0-84f7-b391096c1627")
+	)
+	(junction
 		(at 157.48 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1784,12 +1790,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3dce8fd4-3a7d-4e9b-9ec1-8a5f8d0a70ea")
-	)
-	(junction
-		(at 157.48 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "40d298dc-6aed-48a5-b079-d24238dd43f5")
 	)
 	(junction
 		(at 101.6 118.11)
@@ -3038,7 +3038,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Library" "../spicelibs/lm7171.lib"
+		(property "Sim.Library" "..\\spicelibs\\lm7171.lib"
 			(at 144.78 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -3310,132 +3310,6 @@
 			(project "Wien-VCO"
 				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
 					(reference "#GND01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N4148")
-		(at 157.48 113.03 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4def7e42-3954-4547-af20-e5a42eed9de3")
-		(property "Reference" "D1"
-			(at 160.02 111.7599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1N4148"
-			(at 160.02 114.2999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "100V 0.15A standard switching diode, DO-35"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "../spicelibs/elk.lib"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "D1N4148"
-			(at 157.48 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a27327e9-bc26-494f-958d-26fe89617d41")
-		)
-		(pin "2"
-			(uuid "c7bac7d2-a7e1-4386-b35e-fec2314f474f")
-		)
-		(instances
-			(project "Wien-VCO"
-				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -3920,6 +3794,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:1N4148")
+		(at 157.48 113.03 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "899151cc-6609-4897-abe1-483bdfc1c456")
+		(property "Reference" "D1"
+			(at 160.02 111.7599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1N4002"
+			(at 160.02 114.2999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 157.48 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+			(at 157.48 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "100V 0.15A standard switching diode, DO-35"
+			(at 157.48 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "1N4002"
+			(at 157.48 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 157.48 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a075f5da-4d07-4939-856d-e741e71c7411")
+		)
+		(pin "1"
+			(uuid "9088312d-2371-4efa-a201-9a9b57b96659")
+		)
+		(instances
+			(project "Wien-VCO"
+				(path "/61a7698a-1c0d-4258-9661-7a52612acc47"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Capacitance")
 		(at 114.3 88.9 0)
 		(unit 1)
@@ -3985,7 +3963,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 114.3 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -3997,28 +3975,6 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 114.3 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "../spicelibs/elk.lib"
-			(at 114.3 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "1SV305"
 			(at 114.3 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -4187,7 +4143,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4199,28 +4155,6 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 114.3 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "../spicelibs/elk.lib"
-			(at 114.3 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "1SV305"
 			(at 114.3 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4470,7 +4404,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 106.68 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -4482,28 +4416,6 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 106.68 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "../spicelibs/elk.lib"
-			(at 106.68 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "1SV305"
 			(at 106.68 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -4632,7 +4544,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "../spicelibs/J113.lib"
+		(property "Sim.Library" "..\\spicelibs\\MeinJ113.lib"
 			(at 143.51 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -4643,7 +4555,7 @@
 				)
 			)
 		)
-		(property "Sim.Name" "J113"
+		(property "Sim.Name" "MeinJ113"
 			(at 143.51 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -5129,7 +5041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "{Vstr}"
+		(property "Value" "1V"
 			(at 74.93 90.0401 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5288,7 +5200,7 @@
 				)
 			)
 		)
-		(property "Sim.Device" "D"
+		(property "Sim.Device" "1SV305"
 			(at 106.68 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -5300,28 +5212,6 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 106.68 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "../spicelibs/elk.lib"
-			(at 106.68 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "1SV305"
 			(at 106.68 132.08 0)
 			(hide yes)
 			(show_name no)
