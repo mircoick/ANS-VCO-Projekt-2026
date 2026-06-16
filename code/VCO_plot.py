@@ -2,9 +2,8 @@ from PyLTSpice import RawRead
 import numpy as np
 from matplotlib import pyplot as plt
 
-# 1. RAW-Datei laden
-LTR = RawRead(r"..\kicad\Wien-Brücken-VCO_5MHz5\Wien-LT.raw")
-
+# %% 1. RAW-Datei laden
+LTR = RawRead(r"../kicad/Wien-Brücken-VCO_5MHz5/Wien-LT.raw")
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
@@ -16,24 +15,26 @@ Vdstr = LTR.get_trace("V(vstr)")
 print(Vdstr)
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
-plt.subplot(3,1,1)
+
+# %% Auswertung transienter Spannungsverläufe und Frequenzspektren
+plt.subplot(3, 1, 1)
+
 for step in range(len(steps)):
-    plt.plot(time.get_wave(step) ,Vd1.get_wave(step))
-    plt.plot(time.get_wave(step) ,Vd2.get_wave(step))
+    plt.plot(time.get_wave(step), Vd1.get_wave(step))
+    plt.plot(time.get_wave(step), Vd2.get_wave(step))
 
-
-#plt.legend()  # order a legend
+# plt.legend()  # order a legend
 plt.grid()
 plt.ylabel(r"Voltage in $V$")
 plt.xlabel(r"Time in $s$")
 
-#--------------------------------------------------------------------------------------------------------------------------------
+# %% Spektren der Ausgangsspannungen V(va) und V(ve) über alle Simulationsschritte hinweg
 plt.subplot(3, 1, 2)
 
 for step in range(len(steps)):
     t = time.get_wave(step)
-    vd1 = Vd1.get_wave(step)
-    vd2 = Vd2.get_wave(step)
+    vd1 = Vd1.get_wave(step)  # V(va)
+    vd2 = Vd2.get_wave(step)  # V(ve)
     
     n = len(t)
     t_uniform = np.linspace(t[0], t[-1], n)
@@ -59,6 +60,7 @@ plt.grid()
 plt.ylabel(r"Amplitude in $dBV$")
 plt.xlabel(r"Frequency in $Hz$")
 
+# %% VCO-Kennlinie: Steuerspannung V(vstr) vs. Frequenz der Ausgangsspannung V(va)
 Vd1 = LTR.get_trace("V(va)")
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
@@ -88,7 +90,7 @@ for step in range(len(steps)):
     amp_vd1 = np.abs(np.fft.rfft(vd1_uniform)) * 2 / n
     freq = np.fft.rfftfreq(n, d=dt)
 
-# --- STEUERSPANNUNG AUSLESEN ---
+    # --- STEUERSPANNUNG AUSLESEN ---
     # Reale Spannung V(vstr) aus der Simulation für diesen Step auslesen
     vdstr_wave = Vdstr.get_wave(step)
     v_ctrl = np.mean(vdstr_wave) 
@@ -123,22 +125,21 @@ plt.subplot(3, 1, 3)
 plt.plot(v_ctrl_np, f_peak_mhz, 'o-', color='green',
          label=f"VCO Kennlinie (Ist)\nMitte ({v_mitte:.2f} V) = {f_mitte:.2f} MHz\nMin = {f_min:.2f} MHz\nMax = {f_max:.2f} MHz\nHub = {diff_f:.2f} MHz")
 
-#plt.plot([1.77, 6.45], [5.0, 6.0], linestyle="-", color="red", label="Soll-Kennlinie (Ideal)")
+# plt.plot([1.77, 6.45], [5.0, 6.0], linestyle="-", color="red", label="Soll-Kennlinie (Ideal)")
 
 plt.xlabel(r"Steuerspannung $V_{str}$ in V")
 plt.ylabel("Frequenz in MHz")
 
 # Flexibles X-Limit basierend auf deinen realen Vstr-Werten
 plt.xlim(v_ctrl_np.min() * 0.95, v_ctrl_np.max() * 1.05)
-#plt.ylim(4.8, 6.2)
+# plt.ylim(4.8, 6.2)
 
-plt.axhline(5, color="red", linestyle="--", label=r"Unterefrequenz 5.0 MHz")
+plt.axhline(5, color="red", linestyle="--", label=r"Untere Frequenz 5.0 MHz")
 plt.axhline(5.5, color="red", linestyle="--", label=r"Mittenfrequenz 5.5 MHz")
-plt.axhline(6, color="red", linestyle="--", label=r"Oberefrequenz 6.0 MHz")
+plt.axhline(6, color="red", linestyle="--", label=r"Obere Frequenz 6.0 MHz")
 
 plt.grid(True, which="both", linestyle="--")
 plt.legend(loc="upper left")
 
 plt.tight_layout() # Verhindert, dass sich Achsenbeschriftungen überlappen
-plt.show()
 plt.show()
