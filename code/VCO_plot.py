@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # %% 1. RAW-Datei laden
-LTR = RawRead(r"../kicad/Wien-Brücken-VCO_5MHz5/Wien-LT.raw")
+LTR = RawRead(r"../kicad/Wien-Bruecken-VCO_5MHz5/Wien-LT.raw")
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
@@ -17,7 +17,7 @@ time = LTR.get_trace("time")
 steps = LTR.get_steps()
 
 # %% Auswertung transienter Spannungsverläufe und Frequenzspektren
-plt.subplot(3, 1, 1)
+plt.subplot(3, 2, (1,2))
 
 for step in range(len(steps)):
     plt.plot(time.get_wave(step), Vd1.get_wave(step))
@@ -29,7 +29,7 @@ plt.ylabel(r"Voltage in $V$")
 plt.xlabel(r"Time in $s$")
 
 # %% Spektren der Ausgangsspannungen V(va) und V(ve) über alle Simulationsschritte hinweg
-plt.subplot(3, 1, 2)
+plt.subplot(3, 2, (3,5))
 
 for step in range(len(steps)):
     t = time.get_wave(step)
@@ -121,7 +121,7 @@ v_mitte = v_ctrl_np[idx_mitte]
 
 # --------------------------------------------------------------------------------------------------------------------------------
 # ÄNDERUNG: Jetzt im sauberen 3er-Layout (3, 1, 3)
-plt.subplot(3, 1, 3)
+plt.subplot(3, 2, (4,6))
 plt.plot(v_ctrl_np, f_peak_mhz, 'o-', color='green',
          label=f"VCO Kennlinie (Ist)\nMitte ({v_mitte:.2f} V) = {f_mitte:.2f} MHz\nMin = {f_min:.2f} MHz\nMax = {f_max:.2f} MHz\nHub = {diff_f:.2f} MHz")
 
