@@ -15,3 +15,10 @@ Im Verlauf der Entwicklung wurde sich entschieden verschiede VCO Ansätze zu ent
 Zur Einleitung in den Wien-Robinson-Oszillator wurde sich die Seite des Elektroniktutors angeschaut und versucht die entsprechende Schaltung nachstellen zu können [@wienbruecke]. 
 
 ![Wien-Robinson-Oszillator Schaltung [@wienbruecke]](/images/wien3.png){#fig-wien width="60%"}
+
+## Komponenten
+
+Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen musste die Grundschaltung angepasst werden und entsprechende Bauteile rausgesucht werden.
+
+### Operationsverstärker
+Da der 
