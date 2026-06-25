@@ -4,7 +4,7 @@
 
 Zuerst wurde im Design angefangen ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wurde sich für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in @fig-circuit zu sehen:
 
-![Bild1](/images/circuit.png){#fig-circuit width="60%"}
+![VCO-Grundschaltung](/images/circuit.png){#fig-circuit width="60%"}
 
 In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und $L2$ in doppelter Ausführung zu sehen, da die Versorgungsspannung mittig angeschlossen werden muss, um die Symmetrie der Schaltung gewärleisten zu können. Weiter unten ist der einstellbare Kondensator $C1$ zu sehen, dessen Wert die Schwingung der Schaltung maßgeblich beeinflusst. Durch die Änderung des Kondensator ändert sich auch die Frequenz $f_0$ der Schaltung. Somit kann duch eine gesteuerte Änderung der Kapazität die Frequenz der Schwingung eingestellt werden. Das ist das Grundprinzip des VCO´s und die Funktionsweise der FM-Modulation. Der Widerstand $R1$ vervollständigt den RLC-Schwingkreis. Die beiden kreugekoppelten Mosfets sind für die ständige Anregung der Schwingung zuständig. Durch die ständige Änderung der gesamt Impedanz des Schwingkreises ändert sich jeweils der Strom, der durch die Mosfets am Gate Eingang anliegt. Diese Änderung bewirkt eine Rückgekoppelte Schleife, durch welche schwingt das System dauerhaft. Nach Implementierung dieser Schaltung in KiCad, NG- sowie LT-Spice konnte die Funktionsweise sowie das Einstellen der Frequenz $f_0$ klarer gemacht werden. 
 
@@ -12,13 +12,34 @@ Im Verlauf der Entwicklung wurde sich entschieden verschiede VCO Ansätze zu ent
 
 ## Wien-Robinson-Oszillator
 
-Zur Einleitung in den Wien-Robinson-Oszillator wurde sich die Seite des Elektroniktutors angeschaut und versucht die entsprechende Schaltung nachstellen zu können [@wienbruecke]. 
+Um den Wien-Robinson-Oszillator besser verstehen zu können wurde sich als erstes die Grundschaltung, die Wien-Robinson-Brücke, nochmals angeschaut. Hierbei handelt es sich um eine frequenzabhängige Wechselstrom-Messbrücke, die als sogenannte Nullbrücke konzipiert ist. Das bedeutet, dass die Differenzspannung in der Brückendiagonale bei einer spezifischen Resonanzfrequenz exakt $\underset{\scriptscriptstyle\sim}{U} = 0\,\text{V}$ beträgt. Ein Schaltung ist der @fig-wienrobbruecke zu entnehmen.
 
-![Wien-Robinson-Oszillator Schaltung [@wienbruecke]](/images/wien3.png){#fig-wien width="60%"}
+![Wien-Robinson-Brücke [@wienrobinsonbruecke]](/images/wien_rob_bruecke.png){#fig-wienrobbruecke width="70%"}
+
+Wenn man nun an diese Brückendiagonale einen Operationsverstärker (OPV) einbaut, erhält man einen aktiven Oszillator, der die Frequenzselektivität der Brücke nutzt. Da der OPV die verschwindend geringe Differenzspannung im Bereich der Resonanzfrequenz extrem hoch verstärkt, reicht bereits das thermische Rauschen der Bauteile aus, um das System resonant anzuregen. Somit erhält man einen sich selber anwingenden Oszillator. Diese Wien-Robinson-Oszillator Schaltung ist eine der meistgenutzen Schaltungen einer Wien-Robinson-Brücke und bietet somit eine gute Grundlage des VCO's. Für die ersten Tests mit dem Wien-Robinson-Oszillator wurde die Seite des Elektroniktutors herangezogen und versucht, die entsprechende Schaltung nachzustellen [@wienbruecke].
+
+![Wien-Robinson-Oszillator Schaltung [@wienbruecke]](/images/wien3.png){#fig-wien width="80%"}
+
+Die in @fig-wien zu sehende Schaltung zeigt wie bereits erörtert den in der Brückendiagonalen eingebaute Operationsverstärker und eine zusätzliche Amplitudenregulierung. Durch die starke Anregung der Schwingung des OPV's wurde hier noch eine Amplitudenregelung eingebaut, welche aus einem Potentiometer und zwei entgegengeschalteten Varktordioden besteht. Ohne diese Amplitudenregelung würde die Schwingung aufgrund der unendlichen Verstärkung des OPV schnell bis an die Grenzen der Versorgungsspannung anwachsen und begrenzen, was zu starken Verzerrungen des Sinussignals führen würde. Die Regelung sorgt dafür, dass sich ein stabiler, verzerrungsfreier Dauerschwingzustand einstellt. 
+
+Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592\,\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5\,\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1\,\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5\,\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet. Ein erster Versuch ist der @fig-wienvarak zu entnehemen.
+
+![Wien-Robinson-Oszillator mit Frequenzhub](/images/Ich_habe_nixi_Bildi.png){#fig-wienvarak width="80%"}
+
+Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Zum einen kamen in den verschiedenen Simulationen (KiCAD bzw. NG-Spice und LT-Spice) unterschiede Ergebnisse heraus, und zum anderen war es nicht möglich die Kennlinie der Resonanzfrequenz $f_0$ über die Steuerspannung $U_{str}$ linear zu bekommen. Nach vielen vergeblichen Versuchen wurde sich dann dazu entschieden den kompletten Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden. 
+
+## Wien-Robinson VCO
+
 
 ## Komponenten
 
 Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen musste die Grundschaltung angepasst werden und entsprechende Bauteile rausgesucht werden.
 
 ### Operationsverstärker
-Da der 
+Da die Schaltung um $5\,\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
+
+### Varaktoren
+Damit die Mittenfrequenz verschoben werden kann wurden varaktoren Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
+
+### Diode
+?
