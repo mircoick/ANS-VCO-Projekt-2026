@@ -1,23 +1,22 @@
-# Kundenanforderungen FM Modulator
+# Technische Spezifikationen (Kundenanforderungen)
 
-* 5,5 MHz (ZF) Mittenfrequenz bei 0V Eingang
+* **Mittenfrequenz ($f_0$):** $5,5\,\text{MHz}$ (Zwischenfrequenz / ZF) bei einer Steuerspannung von $0\,\text{V}$.
 
-* Einfacher Aufbau (leicht zu verstehen)
+* **Linearer Modulationsbereich:** $\pm 0,5\,\text{MHz}$ (Frequenzhub) bei einer Steuerspannung von $\pm 0,5\,\text{V}$.
+  * *Arbeitsbereich:* $5,0\,\text{MHz}$ bis $6,0\,\text{MHz}$ linear im Spannungsbereich von $-0,5\,\text{V}$ bis $+0,5\,\text{V}$.
 
-* Linearer Bereich 0.5 MHz rechts und links bei 0.5 V (Bandbreite)
+* **Frequenzstabilität:** Es darf keine Frequenzverschiebung (Drift) durch thermische oder externe Einflüsse auftreten.
 
-* $\pm 0.5$ MHz bei $\pm 0.5$ V 
+* **Systemimpedanz:** Ein- und Ausgangswiderstand müssen exakt $50\,\Omega$ betragen.
 
-* Relativ große Platine, die viel ab kann
+* **Steckverbinder:** Ein- und Ausgänge sind als **SMA-** oder **BNC-Buchsen** auszuführen.
 
-* Stehende Bauteile
+* **Schaltungsarchitektur:** Einfacher, leicht zu verstehender und nachvollziehbarer Aufbau (diskreter Bauelemente).
 
-* Integrierter Spannungsteiler mit Drehknopf
+* **Spannungsversorgung:** Integrierte Stabilisierung und Filterung der Versorgungsspannung zur Rauschunterdrückung.
 
-* Ein- und Ausgänge als SMA oder BNC Stecker
+* **Manuelle Steuerung:** Integrierter Spannungsteiler mit einem analogen Drehknopf (Potentiometer) zur Frequenzeinstellung.
 
-* Ein- und Ausgangswiderstand $50 \Omega$
+* **Platinedesign:** Relativ große, robuste und mechanisch unempfindliche Leiterplatte.
 
-* Stabilisierung der Versorgungsspannung
-
-* Keine Frequenzverschiebung
+* **Bestückungstechnologie:** Ausschließlich **stehende, bedrahtete Bauteile** für optimale Zugänglichkeit (keine SMD-Bauteile).
