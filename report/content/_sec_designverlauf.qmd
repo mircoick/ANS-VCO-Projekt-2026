@@ -4,7 +4,7 @@
 
 Zuerst wurde im Design angefangen ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wurde sich für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in @fig-circuit zu sehen:
 
-![Bild1](/images/circuit.png){#fig-circuit width="60%"}
+![VCO-Grundschaltung](/images/circuit.png){#fig-circuit width="60%"}
 
 In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und $L2$ in doppelter Ausführung zu sehen, da die Versorgungsspannung mittig angeschlossen werden muss, um die Symmetrie der Schaltung gewärleisten zu können. Weiter unten ist der einstellbare Kondensator $C1$ zu sehen, dessen Wert die Schwingung der Schaltung maßgeblich beeinflusst. Durch die Änderung des Kondensator ändert sich auch die Frequenz $f_0$ der Schaltung. Somit kann duch eine gesteuerte Änderung der Kapazität die Frequenz der Schwingung eingestellt werden. Das ist das Grundprinzip des VCO´s und die Funktionsweise der FM-Modulation. Der Widerstand $R1$ vervollständigt den RLC-Schwingkreis. Die beiden kreugekoppelten Mosfets sind für die ständige Anregung der Schwingung zuständig. Durch die ständige Änderung der gesamt Impedanz des Schwingkreises ändert sich jeweils der Strom, der durch die Mosfets am Gate Eingang anliegt. Diese Änderung bewirkt eine Rückgekoppelte Schleife, durch welche schwingt das System dauerhaft. Nach Implementierung dieser Schaltung in KiCad, NG- sowie LT-Spice konnte die Funktionsweise sowie das Einstellen der Frequenz $f_0$ klarer gemacht werden. 
 
@@ -12,6 +12,13 @@ Im Verlauf der Entwicklung wurde sich entschieden verschiede VCO Ansätze zu ent
 
 ## Wien-Robinson-Oszillator
 
-Zur Einleitung in den Wien-Robinson-Oszillator wurde sich die Seite des Elektroniktutors angeschaut und versucht die entsprechende Schaltung nachstellen zu können [@wienbruecke]. 
+Um den Wien-Robinson-Oszillator besser verstehen zu können wurde sich als erstes die Grundschaltung, die Wien-Robinson-Brücke, nochmals angeschaut. Hierbei handelt es sich um eine frequenzabhängige Wechselstrom-Messbrücke, die als sogenannte Nullbrücke konzipiert ist. Das bedeutet, dass die Differenzspannung in der Brückendiagonale bei einer spezifischen Resonanzfrequenz exakt $0\,\text{V}$ beträgt. Ein Schaltung ist der @fig-wienrobbruecke zu entnehmen.
 
-![Wien-Robinson-Oszillator Schaltung [@wienbruecke]](/images/wien3.png){#fig-wien width="60%"}
+![Wien-Robinson-Brücke [@wienrobinsonbruecke]](/images/wien_rob_bruecke.png){#fig-wienrobbruecke width="80%"}
+
+
+Zur Einleitung in den Wien-Robinson-Oszillator wurde sich die Seite des Elektroniktutors angeschaut und versucht die entsprechende Schaltung nachzustellen [@wienbruecke]. 
+
+![Wien-Robinson-Oszillator Schaltung [@wienbruecke]](/images/wien3.png){#fig-wien width="80%"}
+
+Die in @fig-wien zu sehende Schaltung zeigt eine [Wien-Robinson-Brücke] mit einem integrietem Operationsverstärker (OPV) und einer Amplitudenregelung. Hierbei sorgt der OPV durch die Einbindung im Nullzeig für die Anregung der Schwingung, welche dann in der Amplitude 
