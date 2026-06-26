@@ -30,3 +30,16 @@ Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Z
 
 ## Wien-Robinson VCO
 
+
+## Komponenten
+
+Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen musste die Grundschaltung angepasst werden und entsprechende Bauteile rausgesucht werden.
+
+### Operationsverstärker
+Da die Schaltung um $5\,\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
+
+### Varaktoren
+Damit die Mittenfrequenz verschoben werden kann wurden varaktoren Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
+
+### Diode
+?
