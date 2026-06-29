@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # %% 1. RAW-Datei laden
-LTR = RawRead(r"../kicad/Wien-Bruecken-VCO_5MHz5/Wien-LT.raw")
+LTR = RawRead(r"../kicad/Wien-Bruecken-VCO_5MHz5/Wien-LT_TB.raw")
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
