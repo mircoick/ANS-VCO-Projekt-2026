@@ -2,6 +2,8 @@
 Mirco Ick, Torben Becker, Tassilo Hertling
 2026-07-02
 
+[![IMAGE ALT TEXT HERE](https://www.deine-tierwelt.de/magazin/wp-content/uploads/sites/7/2023/09/Kleine-American-Short-Hair-Kitte-1068x712.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+
 # Introduction
 
 In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
