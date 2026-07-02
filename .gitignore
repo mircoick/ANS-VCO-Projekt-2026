@@ -1,7 +1,6 @@
 _build
 .ipynb_checkpoints
 .DS_Store
-*.log
 *_cache
 *_files
 *.html
