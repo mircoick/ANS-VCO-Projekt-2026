@@ -2,7 +2,7 @@
 Mirco Ick, Torben Becker, Tassilo Hertling
 2026-07-02
 
-# Introduction
+# Einleitung
 
 In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
 designen und in Betrieb zu nehmen. Das Design soll bestimmte
@@ -37,7 +37,7 @@ Anschlüsse für die im Laborversuch verwendeten Geräte wie das
 Oszilloskop und dem Spektrumanalysator sollen über SMA- oder
 BNC-Anschlüsse geschehen.
 
-# Technische Spezifikationen (Kundenanforderungen)
+# [Technische Spezifikationen (Kundenanforderungen)](/Kundenanforderungen)
 
 - **Mittenfrequenz ($f_0$):** $5,5\,\text{MHz}$ (Zwischenfrequenz / ZF)
   bei einer Steuerspannung von $0\,\text{V}$.
