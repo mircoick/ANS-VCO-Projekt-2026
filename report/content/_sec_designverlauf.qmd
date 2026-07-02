@@ -24,7 +24,7 @@ Die in @fig-wien zu sehende Schaltung zeigt wie bereits erörtert den in der Br�
 
 Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592\,\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5\,\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1\,\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5\,\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet. Ein erster Versuch ist der @fig-wienvarak zu entnehemen.
 
-![Wien-Robinson-Oszillator mit Frequenzhub](/images/Ich_habe_nixi_Bildi.png){#fig-wienvarak width="80%"}
+**Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub**
 
 Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Zum einen kamen in den verschiedenen Simulationen (KiCAD bzw. NG-Spice und LT-Spice) unterschiede Ergebnisse heraus, und zum anderen war es nicht möglich die Kennlinie der Resonanzfrequenz $f_0$ über die Steuerspannung $U_{str}$ linear zu bekommen. Nach vielen vergeblichen Versuchen wurde sich dann dazu entschieden den kompletten Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden. 
 

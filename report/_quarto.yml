@@ -73,6 +73,8 @@ format:
 
     output-file: ans_bericht
 
+  gfm: default
+
 #  epub:
 #    theme: flatly
 #    output-file: ans_bericht

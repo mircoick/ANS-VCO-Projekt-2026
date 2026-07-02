@@ -218,7 +218,7 @@
 
 \title{VCO Design und Simulation}
 \author{Mirco Ick \and Torben Becker \and Tassilo Hertling}
-\date{2026-06-25}
+\date{2026-07-02}
 \begin{document}
 \maketitle
 
@@ -323,7 +323,7 @@ Abbildung~\ref{fig-circuit} zu sehen:
 
 \centering{
 
-\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{./images/circuit.png}
+\includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{./report/images/circuit.png}
 
 }
 
@@ -374,7 +374,7 @@ Schaltung ist der Abbildung~\ref{fig-wienrobbruecke} zu entnehmen.
 
 \centering{
 
-\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{./images/wien_rob_bruecke.png}
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{./report/images/wien_rob_bruecke.png}
 
 }
 
@@ -400,7 +400,7 @@ herangezogen und versucht, die entsprechende Schaltung nachzustellen
 
 \centering{
 
-\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{./images/wien3.png}
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{./report/images/wien3.png}
 
 }
 
@@ -428,20 +428,10 @@ umgesetzt wurde, konnte sich um den geforderten Frequenzhub von
 \(\Delta f=1\,\text{MHz}\) bei einer Steuerspannungsänderung von
 \(U_{str}=\pm 0,5\,\text{V}\) gemacht werden. Für den ersten Entwurf
 wurden nun Varaktoren parallel zu den beiden Kondensatoren \(C\)
-geschaltet. Ein erster Versuch ist der Abbildung~\ref{fig-wienvarak} zu
+geschaltet. Ein erster Versuch ist der \textbf{?@fig-wienvarak} zu
 entnehemen.
 
-\begin{figure}
-
-\centering{
-
-\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{./images/Ich_habe_nixi_Bildi.png}
-
-}
-
-\caption{\label{fig-wienvarak}Wien-Robinson-Oszillator mit Frequenzhub}
-
-\end{figure}%
+\textbf{Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub}
 
 Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme
 kristallisiert. Zum einen kamen in den verschiedenen Simulationen (KiCAD
@@ -452,6 +442,29 @@ vergeblichen Versuchen wurde sich dann dazu entschieden den kompletten
 Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden.
 
 \section{Wien-Robinson VCO}\label{wien-robinson-vco}
+
+\section{Komponenten}\label{komponenten}
+
+Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen
+musste die Grundschaltung angepasst werden und entsprechende Bauteile
+rausgesucht werden.
+
+\subsection{Operationsverstärker}\label{operationsverstuxe4rker}
+
+Da die Schaltung um \(5\,\text{MHz}\) schwingen soll muss der OPV sowohl
+ultra-high-speed sein als auch eine hohe Slew-rate haben.
+
+\subsection{Varaktoren}\label{varaktoren}
+
+Damit die Mittenfrequenz verschoben werden kann wurden varaktoren
+Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um
+sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der
+varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen
+sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
+
+\subsection{Diode}\label{diode}
+
+?
 
 \chapter{Charakterisierung}\label{charakterisierung}
 
