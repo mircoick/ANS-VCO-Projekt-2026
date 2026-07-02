@@ -11,11 +11,10 @@ execute:
 
 format:
 
-  gfm: default
-
   html:
     theme: flatly
 
+    gfm: default
   # typst:
   #   toc: true
   #   toc-depth: 3
