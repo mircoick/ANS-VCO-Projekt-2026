@@ -3343,7 +3343,7 @@
 				(justify left)
 			)
 		)
-		(property "Sim.Library" "C:\\Users\\torbe\\Downloads\\ANS-VCO-Projekt-2026-main\\ANS-VCO-Projekt-2026-main\\kicad\\spicelibs\\max4104.lib"
+		(property "Sim.Library" "..\\spicelibs\\MAX4104.lib"
 			(at 165.1 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -5378,7 +5378,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "..\\spicelibs\\MeinJ113.lib"
+		(property "Sim.Library" "..\\spicelibs\\J113.lib"
 			(at 163.83 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -5389,7 +5389,7 @@
 				)
 			)
 		)
-		(property "Sim.Name" "MeinJ113"
+		(property "Sim.Name" "J113"
 			(at 163.83 104.14 0)
 			(hide yes)
 			(show_name no)
