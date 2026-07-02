@@ -86,7 +86,7 @@ bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in
 
 <div id="fig-circuit">
 
-<img src=".\images/circuit.png" style="width:60.0%" />
+<img src=".\report/images/circuit.png" style="width:60.0%" />
 
 Abbildung 1: VCO-Grundschaltung
 
@@ -135,7 +135,7 @@ entnehmen.
 
 <div id="fig-wienrobbruecke">
 
-<img src=".\images/wien_rob_bruecke.png" style="width:70.0%" />
+<img src=".\report/images/wien_rob_bruecke.png" style="width:70.0%" />
 
 Abbildung 2: Wien-Robinson-Brücke
 (<span class="nocase">de-academic.com</span> 2000-2026)
@@ -157,7 +157,7 @@ herangezogen und versucht, die entsprechende Schaltung nachzustellen
 
 <div id="fig-wien">
 
-<img src=".\images/wien3.png" style="width:80.0%" />
+<img src=".\report/images/wien3.png" style="width:80.0%" />
 
 Abbildung 3: Wien-Robinson-Oszillator Schaltung (Mietke 2002-2026)
 
