@@ -2,7 +2,7 @@
 Mirco Ick, Torben Becker, Tassilo Hertling
 2026-07-02
 
-# Einleitung
+# Introduction
 
 In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
 designen und in Betrieb zu nehmen. Das Design soll bestimmte
@@ -13,12 +13,12 @@ Schaltung soll nun mit neuen und verfügbaren Komponenten erneuert
 werden.
 
 Die VCO Schaltung soll eine FM-Modulation mit einem Trägersignal bei der
-Frequenz $5,5\,\text{MHz}$ durchführen und einen Modulationsbereich
-zwischen $5\,\text{MHz}$ und $6\,\text{MHz}$ verwenden. Der
-Einstellungsbereich soll mit $1\,\text{V}$ pro $1\,\text{MHz}$
-eingestellt werden. Somit kann das zu modulierende Signal einen
-Spannungsbereich von $V_{pp} = 1\,\text{V}$ haben. Die Ein- und
-Ausgangsimpedanz soll $50\,\Omega$ betragen.
+Frequenz $5,5~\text{MHz}$ durchführen und einen Modulationsbereich
+zwischen $5~\text{MHz}$ und $6~\text{MHz}$ verwenden. Der
+Einstellungsbereich soll mit $1~\text{V}$ pro $1~\text{MHz}$ eingestellt
+werden. Somit kann das zu modulierende Signal einen Spannungsbereich von
+$V_{pp} = 1~\text{V}$ haben. Die Ein- und Ausgangsimpedanz soll
+$50~\Omega$ betragen.
 
 Zudem soll die Schaltung aus Komponenten bestehen, die Studierenden im
 4.Semester bereits kennen, damit die Schaltung im Rahmen des
@@ -37,22 +37,22 @@ Anschlüsse für die im Laborversuch verwendeten Geräte wie das
 Oszilloskop und dem Spektrumanalysator sollen über SMA- oder
 BNC-Anschlüsse geschehen.
 
-# [Technische Spezifikationen (Kundenanforderungen)](/Kundenanforderungen)
+# Technische Spezifikationen (Kundenanforderungen)
 
-- **Mittenfrequenz ($f_0$):** $5,5\,\text{MHz}$ (Zwischenfrequenz / ZF)
-  bei einer Steuerspannung von $0\,\text{V}$.
+- **Mittenfrequenz ($f_0$):** $5,5~\text{MHz}$ (Zwischenfrequenz / ZF)
+  bei einer Steuerspannung von $0~\text{V}$.
 
-- **Linearer Modulationsbereich:** $\pm 0,5\,\text{MHz}$ (Frequenzhub)
-  bei einer Steuerspannung von $\pm 0,5\,\text{V}$.
+- **Linearer Modulationsbereich:** $\pm 0,5~\text{MHz}$ (Frequenzhub)
+  bei einer Steuerspannung von $\pm 0,5~\text{V}$.
 
-  - *Arbeitsbereich:* $5,0\,\text{MHz}$ bis $6,0\,\text{MHz}$ linear im
-    Spannungsbereich von $-0,5\,\text{V}$ bis $+0,5\,\text{V}$.
+  - *Arbeitsbereich:* $5,0~\text{MHz}$ bis $6,0~\text{MHz}$ linear im
+    Spannungsbereich von $-0,5~\text{V}$ bis $+0,5~\text{V}$.
 
 - **Frequenzstabilität:** Es darf keine Frequenzverschiebung (Drift)
   durch thermische oder externe Einflüsse auftreten.
 
 - **Systemimpedanz:** Ein- und Ausgangswiderstand müssen exakt
-  $50\,\Omega$ betragen.
+  $50~\Omega$ betragen.
 
 - **Steckverbinder:** Ein- und Ausgänge sind als **SMA-** oder
   **BNC-Buchsen** auszuführen.
@@ -86,7 +86,7 @@ bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in
 
 <div id="fig-circuit">
 
-<img src=".\report/images/circuit.png" style="width:60.0%" />
+<img src=".\images/circuit.png" style="width:60.0%" />
 
 Abbildung 1: VCO-Grundschaltung
 
@@ -120,6 +120,9 @@ Wien-Robinson Brücke auseinander gesetzt wurde haben wir uns für diesen
 VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher
 eingegangen wird.
 
+Eine Simulationsdatei ist dem Ordner
+[VCO-Schwingkreis](.\kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+
 ## Wien-Robinson-Oszillator
 
 Um den Wien-Robinson-Oszillator besser verstehen zu können wurde sich
@@ -128,14 +131,14 @@ angeschaut. Hierbei handelt es sich um eine frequenzabhängige
 Wechselstrom-Messbrücke, die als sogenannte Nullbrücke konzipiert ist.
 Das bedeutet, dass die Differenzspannung in der Brückendiagonale bei
 einer spezifischen Resonanzfrequenz exakt
-$\underset{\scriptscriptstyle\sim}{U} = 0\,\text{V}$ beträgt. Ein
+$\underset{\scriptscriptstyle\sim}{U} = 0~\text{V}$ beträgt. Ein
 Schaltung ist der
 <a href="#fig-wienrobbruecke" class="quarto-xref">Abbildung 2</a> zu
 entnehmen.
 
 <div id="fig-wienrobbruecke">
 
-<img src=".\report/images/wien_rob_bruecke.png" style="width:70.0%" />
+<img src=".\images/wien_rob_bruecke.png" style="width:70.0%" />
 
 Abbildung 2: Wien-Robinson-Brücke
 (<span class="nocase">de-academic.com</span> 2000-2026)
@@ -157,7 +160,7 @@ herangezogen und versucht, die entsprechende Schaltung nachzustellen
 
 <div id="fig-wien">
 
-<img src=".\report/images/wien3.png" style="width:80.0%" />
+<img src=".\images/wien3.png" style="width:80.0%" />
 
 Abbildung 3: Wien-Robinson-Oszillator Schaltung (Mietke 2002-2026)
 
@@ -176,14 +179,13 @@ des Sinussignals führen würde. Die Regelung sorgt dafür, dass sich ein
 stabiler, verzerrungsfreier Dauerschwingzustand einstellt.
 
 Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der
-ursprünglichen Resonanzfrequenz $f_0=1592\,\text{Hz}$ und anschließend
-mit Änderung des OPV’s (LT7171) auf die gewünschten $5,5\,\text{MHz}$,
+ursprünglichen Resonanzfrequenz $f_0=1592~\text{Hz}$ und anschließend
+mit Änderung des OPV’s (LT7171) auf die gewünschten $5,5~\text{MHz}$,
 umgesetzt wurde, konnte sich um den geforderten Frequenzhub von
-$\Delta f=1\,\text{MHz}$ bei einer Steuerspannungsänderung von
-$U_{str}=\pm 0,5\,\text{V}$ gemacht werden. Für den ersten Entwurf
-wurden nun Varaktoren parallel zu den beiden Kondensatoren $C$
-geschaltet. Ein erster Versuch ist der **?@fig-wienvarak** zu
-entnehemen.
+$\Delta f=1~\text{MHz}$ bei einer Steuerspannungsänderung von
+$U_{str}=\pm 0,5~\text{V}$ gemacht werden. Für den ersten Entwurf wurden
+nun Varaktoren parallel zu den beiden Kondensatoren $C$ geschaltet. Ein
+erster Versuch ist der **?@fig-wienvarak** zu entnehemen.
 
 **Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub**
 
@@ -205,7 +207,7 @@ rausgesucht werden.
 
 ### Operationsverstärker
 
-Da die Schaltung um $5\,\text{MHz}$ schwingen soll muss der OPV sowohl
+Da die Schaltung um $5~\text{MHz}$ schwingen soll muss der OPV sowohl
 ultra-high-speed sein als auch eine hohe Slew-rate haben.
 
 ### Varaktoren

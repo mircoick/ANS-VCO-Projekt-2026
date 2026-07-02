@@ -10,6 +10,9 @@ execute:
   freeze: auto
 
 format:
+
+  gfm: default
+
   html:
     theme: flatly
 
@@ -24,56 +27,7 @@ format:
   #   papersize: a4
   #   output-file: ans_bericht 
 
-  pdf:
-    documentclass: scrreprt
-    classoption: [twoside]
 
-    keep-tex: true
-
-    toc: true
-    toc-depth: 3
-    # lof: true
-    # lot: true
-
-    number-sections: true
-    number-depth: 2
-        
-    papersize: a4
-        
-    geometry:
-      - inner=3cm
-      - outer=4cm
-      - top=3cm
-      - bottom=4cm
-      - headsep=22pt
-      - headheight=11pt
-      - footskip=33pt
-      - ignorehead
-      - ignorefoot
-      - heightrounded
-
-    fontsize: 11pt
-    pdfengine: xelatex
-    include-in-header:
-      text: |
-        \usepackage{circuitikz}
-        \usetikzlibrary{arrows.meta}
-    hyperrefoptions:
-      - linktoc=all
-    colorlinks: true
-    linkcolor: "blue"
-    biblio-style: ieee
-    highlight-style: github
-
-    mainfont: "Calibri"
-    # mainfont: "Times New Roman"
-    # sansfont: "Arial"
-    # monofont: "Courier New"
-    mathfont: "TeX Gyre Termes Math"
-
-    output-file: ans_bericht
-
-  gfm: default
 
 #  epub:
 #    theme: flatly

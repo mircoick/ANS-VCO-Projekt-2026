@@ -10,9 +10,11 @@ In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und
 
 Im Verlauf der Entwicklung wurde sich entschieden verschiede VCO Ansätze zu entwerfen und am Ende dem Kunden zu präsentieren. Unter den drei Gruppen konnte sich neben dem Grund-VCO, welcher oben bereits erklärt wurde, der Colpitts Oszillator oder der Wien-Robinson-Oszillator ausgesucht werden. Da sich bereits im zweiten Semester ausgiebig mit der Wien-Robinson Brücke auseinander gesetzt wurde haben wir uns für diesen VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher eingegangen wird.
 
+Eine Simulationsdatei ist dem Ordner [VCO-Schwingkreis](/kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+
 ## Wien-Robinson-Oszillator
 
-Um den Wien-Robinson-Oszillator besser verstehen zu können wurde sich als erstes die Grundschaltung, die Wien-Robinson-Brücke, nochmals angeschaut. Hierbei handelt es sich um eine frequenzabhängige Wechselstrom-Messbrücke, die als sogenannte Nullbrücke konzipiert ist. Das bedeutet, dass die Differenzspannung in der Brückendiagonale bei einer spezifischen Resonanzfrequenz exakt $\underset{\scriptscriptstyle\sim}{U} = 0\,\text{V}$ beträgt. Ein Schaltung ist der @fig-wienrobbruecke zu entnehmen.
+Um den Wien-Robinson-Oszillator besser verstehen zu können wurde sich als erstes die Grundschaltung, die Wien-Robinson-Brücke, nochmals angeschaut. Hierbei handelt es sich um eine frequenzabhängige Wechselstrom-Messbrücke, die als sogenannte Nullbrücke konzipiert ist. Das bedeutet, dass die Differenzspannung in der Brückendiagonale bei einer spezifischen Resonanzfrequenz exakt $\underset{\scriptscriptstyle\sim}{U} = 0~\text{V}$ beträgt. Ein Schaltung ist der @fig-wienrobbruecke zu entnehmen.
 
 ![Wien-Robinson-Brücke [@wienrobinsonbruecke]](/images/wien_rob_bruecke.png){#fig-wienrobbruecke width="70%"}
 
@@ -22,7 +24,7 @@ Wenn man nun an diese Brückendiagonale einen Operationsverstärker (OPV) einbau
 
 Die in @fig-wien zu sehende Schaltung zeigt wie bereits erörtert den in der Brückendiagonalen eingebaute Operationsverstärker und eine zusätzliche Amplitudenregulierung. Durch die starke Anregung der Schwingung des OPV's wurde hier noch eine Amplitudenregelung eingebaut, welche aus einem Potentiometer und zwei entgegengeschalteten Varktordioden besteht. Ohne diese Amplitudenregelung würde die Schwingung aufgrund der unendlichen Verstärkung des OPV schnell bis an die Grenzen der Versorgungsspannung anwachsen und begrenzen, was zu starken Verzerrungen des Sinussignals führen würde. Die Regelung sorgt dafür, dass sich ein stabiler, verzerrungsfreier Dauerschwingzustand einstellt. 
 
-Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592\,\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5\,\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1\,\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5\,\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet. Ein erster Versuch ist der @fig-wienvarak zu entnehemen.
+Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592~\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5~\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1~\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5~\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet. Ein erster Versuch ist der @fig-wienvarak zu entnehemen.
 
 **Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub**
 
@@ -36,7 +38,7 @@ Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Z
 Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen musste die Grundschaltung angepasst werden und entsprechende Bauteile rausgesucht werden.
 
 ### Operationsverstärker
-Da die Schaltung um $5\,\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
+Da die Schaltung um $5~\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
 
 ### Varaktoren
 Damit die Mittenfrequenz verschoben werden kann wurden varaktoren Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.

@@ -1,13 +1,13 @@
 # Technische Spezifikationen (Kundenanforderungen)
 
-* **Mittenfrequenz ($f_0$):** $5,5\,\text{MHz}$ (Zwischenfrequenz / ZF) bei einer Steuerspannung von $0\,\text{V}$.
+* **Mittenfrequenz ($f_0$):** $5,5~\text{MHz}$ (Zwischenfrequenz / ZF) bei einer Steuerspannung von $0~\text{V}$.
 
-* **Linearer Modulationsbereich:** $\pm 0,5\,\text{MHz}$ (Frequenzhub) bei einer Steuerspannung von $\pm 0,5\,\text{V}$.
-  * *Arbeitsbereich:* $5,0\,\text{MHz}$ bis $6,0\,\text{MHz}$ linear im Spannungsbereich von $-0,5\,\text{V}$ bis $+0,5\,\text{V}$.
+* **Linearer Modulationsbereich:** $\pm 0,5~\text{MHz}$ (Frequenzhub) bei einer Steuerspannung von $\pm 0,5~\text{V}$.
+  * *Arbeitsbereich:* $5,0~\text{MHz}$ bis $6,0~\text{MHz}$ linear im Spannungsbereich von $-0,5~\text{V}$ bis $+0,5~\text{V}$.
 
 * **Frequenzstabilität:** Es darf keine Frequenzverschiebung (Drift) durch thermische oder externe Einflüsse auftreten.
 
-* **Systemimpedanz:** Ein- und Ausgangswiderstand müssen exakt $50\,\Omega$ betragen.
+* **Systemimpedanz:** Ein- und Ausgangswiderstand müssen exakt $50~\Omega$ betragen.
 
 * **Steckverbinder:** Ein- und Ausgänge sind als **SMA-** oder **BNC-Buchsen** auszuführen.
 
