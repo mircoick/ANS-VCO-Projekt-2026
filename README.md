@@ -121,7 +121,7 @@ VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher
 eingegangen wird.
 
 Eine Simulationsdatei ist dem Ordner
-[VCO-Schwingkreis](.\kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+[VCO-Schwingkreis](kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
 
 ## Wien-Robinson-Oszillator
 
