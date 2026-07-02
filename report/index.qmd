@@ -40,6 +40,8 @@ number-sections: true
 bibliography: references.bib
 ---
 
+[![Bild](images/Untitled.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 {{< include content/_sec_introduction.qmd >}}
 {{< include content/_sec_requirements.qmd >}}
 {{< include content/_sec_designverlauf.qmd >}}

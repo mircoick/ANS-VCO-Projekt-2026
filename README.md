@@ -2,7 +2,7 @@
 Mirco Ick, Torben Becker, Tassilo Hertling
 2026-07-02
 
-[![IMAGE ALT TEXT HERE](https://www.deine-tierwelt.de/magazin/wp-content/uploads/sites/7/2023/09/Kleine-American-Short-Hair-Kitte-1068x712.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![](images/Untitled.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Introduction
 
@@ -123,7 +123,7 @@ VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher
 eingegangen wird.
 
 Eine Simulationsdatei ist dem Ordner
-[VCO-Schwingkreis](kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+[VCO-Schwingkreis](.\kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
 
 ## Wien-Robinson-Oszillator
 
