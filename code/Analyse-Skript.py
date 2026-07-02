@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # %% 1. RAW-Datei laden
-LTR = RawRead(r"../kicad/Wien-Bruecken-VCO_5MHz5/Wien-LT_TB.raw")
+LTR = RawRead(r"../sim/Wien-VCO.raw")
 
 print(LTR.get_trace_names())
 print(LTR.get_raw_property())
@@ -16,6 +16,8 @@ print(Vdstr)
 time = LTR.get_trace("time") 
 steps = LTR.get_steps()
 
+v_ctrl_list = []
+f_peak_list = []
 
 # %% Berechnugen und Plots
 plt.subplot(3, 2, (1,2))
@@ -50,20 +52,12 @@ for step in range(len(steps)):
 plt.axvline(5.5e6, color="red", linestyle="--", label=r"Mittenfrequenz 5.5 MHz")
 plt.axvline(5.0e6, color="orange", linestyle=":", label=r"Untere Grenzfrequenz 5.0 MHz")
 plt.axvline(6.0e6, color="orange", linestyle=":", label=r"Obere Grenzfrequenz 6.0 MHz")
-plt.xlim(5.3e6, 6.2e6)
+plt.xlim(4.8e6, 6.2e6)
 
 plt.legend()
 plt.grid()
 plt.ylabel(r"Amplitude in $dBV$")
 plt.xlabel(r"Frequency in $Hz$")
-
-
-Vd1 = LTR.get_trace("V(va)")
-time = LTR.get_trace("time") 
-steps = LTR.get_steps()
-
-v_ctrl_list = []
-f_peak_list = []
 
 print(f"Anzahl gefundener Simulationsschritte: {len(steps)}")
 
