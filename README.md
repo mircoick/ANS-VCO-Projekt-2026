@@ -2,7 +2,7 @@
 Mirco Ick, Torben Becker, Tassilo Hertling
 2026-07-02
 
-[![Wir am Semesterende](.\images/Untitled.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[![Wir am Semesterende](images/Untitled.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Introduction
 
