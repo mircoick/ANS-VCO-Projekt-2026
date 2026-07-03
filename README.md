@@ -1,7 +1,3 @@
-# VCO Design und Simulation
-Mirco Ick, Torben Becker, Tassilo Hertling
-2026-07-03
-
 <div align="center">
 
 # VCO Design und Simulation
