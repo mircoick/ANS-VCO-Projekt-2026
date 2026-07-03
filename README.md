@@ -1,3 +1,7 @@
+# VCO Design und Simulation
+Mirco Ick, Torben Becker, Tassilo Hertling
+03.07.2026
+
 <div align="center">
 
 # VCO Design und Simulation
@@ -5,13 +9,13 @@
 **Entwicklung und Inbetriebnahme eines Wien-Robinson-Oszillators als
 Voltage-Controlled-Ozillator ($f_0=5,5~\text{MHz}$)**
 
-[![Simulation](https://img.shields.io/badge/Simulation-LTspice--Spice-red?style=for-the-badge.png)](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
-[![Simulation](https://img.shields.io/badge/Design-KiCad%20%7C%20NG--Spice-blue?style=for-the-badge.png)](https://www.kicad.org/)
+[![Simulation](https://img.shields.io/badge/Simulation-LTspice%20%7C%20NGspice-red?style=for-the-badge.png)](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
+[![Simulation](https://img.shields.io/badge/Design-KiCad-blue?style=for-the-badge.png)](https://www.kicad.org/)
 [![Hardware](https://img.shields.io/badge/Hardware-THT%20%7C%20SMD-orange?style=for-the-badge.png)](datasheets/)
 [![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge.png)](https://www.python.org/)
 
 *Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
-*(Stand:03.07.2026)* <br/>
+*(Stand:$~$<!-- -->03.07.2026)* <br/> <br/>
 
 **Dateiübersicht**
 
