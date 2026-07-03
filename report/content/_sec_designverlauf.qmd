@@ -10,7 +10,7 @@ In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und
 
 Im Verlauf der Entwicklung wurde sich entschieden verschiede VCO Ansätze zu entwerfen und am Ende dem Kunden zu präsentieren. Unter den drei Gruppen konnte sich neben dem Grund-VCO, welcher oben bereits erklärt wurde, der Colpitts Oszillator oder der Wien-Robinson-Oszillator ausgesucht werden. Da sich bereits im zweiten Semester ausgiebig mit der Wien-Robinson Brücke auseinander gesetzt wurde haben wir uns für diesen VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher eingegangen wird.
 
-Eine Simulationsdatei ist dem Ordner [VCO-Schwingkreis](/kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+Eine Simulationsdatei ist dem Ordner [VCO-Schwingkreis](kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
 
 ## Wien-Robinson-Oszillator
 

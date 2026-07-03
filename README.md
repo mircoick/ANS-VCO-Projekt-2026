@@ -53,7 +53,7 @@ Mirco Ick
 
 ------------------------------------------------------------------------
 
-# Introduction
+# Einleitung
 
 In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
 designen und in Betrieb zu nehmen. Das Design soll bestimmte
@@ -172,7 +172,7 @@ VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher
 eingegangen wird.
 
 Eine Simulationsdatei ist dem Ordner
-[VCO-Schwingkreis](.\kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+[VCO-Schwingkreis](kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
 
 ## Wien-Robinson-Oszillator
 

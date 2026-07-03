@@ -1,4 +1,4 @@
-# Introduction
+# Einleitung
 
 In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu designen und in Betrieb zu nehmen. Das Design soll bestimmte Anforderungen erfüllen, damit es in einem Laborversuch als FM-Modulator genutzt werden kann. In der Vergangenheit wurde im Laborversuch eine VCO Schaltung mit alten und abgekündigkten Komponenten verwendet. Diese Schaltung soll nun mit neuen und verfügbaren Komponenten erneuert werden. 
 
