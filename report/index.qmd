@@ -36,11 +36,34 @@ keyword:
   - VCO
 
 date: last-modified
+date-format: "DD.MM.YYYY"
 number-sections: true
 bibliography: references.bib
 ---
 
-[![Bild](images/Untitled.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+<div align="center">
+
+# VCO Design und Simulation
+
+**Entwicklung und Inbetriebnahme eines Wien-Robinson-Oszillators als Voltage-Controlled-Ozillator ($f_0=5,5~\text{MHz}$)**
+
+[![Simulation](https://img.shields.io/badge/Simulation-LTspice--Spice-red?style=for-the-badge)](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
+[![Simulation](https://img.shields.io/badge/Design-KiCad%20%7C%20NG--Spice-blue?style=for-the-badge)](https://www.kicad.org/)
+[![Hardware](https://img.shields.io/badge/Hardware-THT%20%7C%20SMD-orange?style=for-the-badge)](datasheets/)
+[![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge)](https://www.python.org/)
+
+*Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
+*(Stand: {{< meta date >}})*
+<br/>
+<br/>
+
+**Dateiübersicht**
+
+[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) · [Analyse-Code](code/) · [Datenblätter](datasheets/)
+
+</div>
+
+---
 
 {{< include content/_sec_introduction.qmd >}}
 {{< include content/_sec_requirements.qmd >}}
