@@ -1,24 +1,30 @@
+# VCO Design und Simulation
+Mirco Ick, Torben Becker, Tassilo Hertling
+2026-07-03
+
 <div align="center">
 
-# 📻 VCO Design und Simulation
+# VCO Design und Simulation
 
-**Entwicklung und Inbetriebnahme eines Wien-Robinson-Oszillators als FM-Modulator ($5,5~\text{MHz}$)**
+**Entwicklung und Inbetriebnahme eines Wien-Robinson-Oszillators als
+Voltage-Controlled-Ozillator ($f_0=5,5~\text{MHz}$)**
 
-<!-- Badges für verwendete Tools und Projektstatus -->
-[![KiCad](https://img.shields.io/badge/KiCad-314CB6?style=for-the-badge&logo=kicad&logoColor=white)](https://www.kicad.org/)
-[![Simulation](https://img.shields.io/badge/Simulation-LTspice%20%7C%20NG--Spice-red?style=for-the-badge)]()
-[![Hardware](https://img.shields.io/badge/Hardware-THT%20Bauteile-orange?style=for-the-badge)]()
+[![Simulation](https://img.shields.io/badge/Simulation-LTspice--Spice-red?style=for-the-badge.png)](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html)
+[![Simulation](https://img.shields.io/badge/Design-KiCad%20%7C%20NG--Spice-blue?style=for-the-badge.png)](https://www.kicad.org/)
+[![Hardware](https://img.shields.io/badge/Hardware-THT%20%7C%20SMD-orange?style=for-the-badge.png)](datasheets/)
+[![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge.png)](https://www.python.org/)
 
 *Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
-*(Stand:03.07.2026)*
+*(Stand:03.07.2026)* <br/>
 
-<br/>
+**Dateiübersicht**
 
-[KiCad-Dateien](./kicad/Archiv/VCO-Schwingkreis/) · [Simulationsdaten](#) · [Dokumentation](#)
+[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) ·
+[Analyse-Code](code/) · [Datenblätter](datasheets/)
 
 </div>
 
----
+------------------------------------------------------------------------
 
 # Introduction
 
@@ -139,7 +145,7 @@ VCO entschieden, auf welchen in den nachfolgenden Kapiteln näher
 eingegangen wird.
 
 Eine Simulationsdatei ist dem Ordner
-[VCO-Schwingkreis](kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
+[VCO-Schwingkreis](.\kicad/Archiv/VCO-Schwingkreis/) zu entnehmen.
 
 ## Wien-Robinson-Oszillator
 
