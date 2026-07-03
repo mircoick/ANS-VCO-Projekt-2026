@@ -15,7 +15,7 @@ Voltage-Controlled-Ozillator ($f_0=5,5~\text{MHz}$)**
 [![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge.png)](https://www.python.org/)
 
 *Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
-*(Stand:$~$<!-- -->03.07.2026)* <br/> <br/>
+*(Stand: 03.07.2026)* <br/> <br/>
 
 **Dateiübersicht**
 

@@ -53,7 +53,7 @@ bibliography: references.bib
 [![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge)](https://www.python.org/)
 
 *Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
-*(Stand:$~${{< meta date >}})*
+*(Stand: {{< meta date >}})*
 <br/>
 <br/>
 
