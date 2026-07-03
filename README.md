@@ -35,7 +35,7 @@ Torben Becker
 
 Mirco Ick
 <a href="https://github.com/mircoick"><img src="https://img.shields.io/badge/-%20-181717?style=flat&logo=github" valign="middle" alt="GitHub"></a>
-<a href="mailto:mick@stud.hs-bremen.de"><img src="https://img.shields.io/badge/-✉-blue?style=flat" valign="middle" alt="Email"></a>
+<a href="mailto:mick001@stud.hs-bremen.de"><img src="https://img.shields.io/badge/-✉-blue?style=flat" valign="middle" alt="Email"></a>
 </td>
 
 </tr>
