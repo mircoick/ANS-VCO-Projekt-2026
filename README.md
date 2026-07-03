@@ -1,3 +1,6 @@
+
+03.07.2026
+
 <div align="center">
 
 # VCO Design und Simulation
@@ -10,8 +13,36 @@ Voltage-Controlled-Ozillator ($f_0=5,5~\text{MHz}$)**
 [![Hardware](https://img.shields.io/badge/Hardware-THT%20%7C%20SMD-orange?style=for-the-badge.png)](datasheets/)
 [![Python](https://img.shields.io/badge/Analyse-Python-green?style=for-the-badge.png)](https://www.python.org/)
 
-*Ein Projekt von Tassilo Hertling, Torben Becker & Mirco Ick*  
-*(Stand: 03.07.2026)* <br/> <br/>
+<table style="border: none; border-collapse: collapse; margin: 0 auto;" border="0">
+
+<tr style="border: none;">
+
+<td style="border: none; padding: 0 25px; text-align: center;">
+
+Tassilo Hertling
+<a href="https://github.com/TassiloHertling"><img src="https://img.shields.io/badge/-%20-181717?style=flat&logo=github" valign="middle" alt="GitHub"></a>
+<a href="mailto:thertling@stud.hs-bremen.de"><img src="https://img.shields.io/badge/-✉-blue?style=flat" valign="middle" alt="Email"></a>
+</td>
+
+<td style="border: none; padding: 0 25px; text-align: center;">
+
+Torben Becker
+<a href="https://github.com/beckertorben"><img src="https://img.shields.io/badge/-%20-181717?style=flat&logo=github" valign="middle" alt="GitHub"></a>
+<a href="mailto:tbecker@stud.hs-bremen.de"><img src="https://img.shields.io/badge/-✉-blue?style=flat" valign="middle" alt="Email"></a>
+</td>
+
+<td style="border: none; padding: 0 25px; text-align: center;">
+
+Mirco Ick
+<a href="https://github.com/mircoick"><img src="https://img.shields.io/badge/-%20-181717?style=flat&logo=github" valign="middle" alt="GitHub"></a>
+<a href="mailto:mick@stud.hs-bremen.de"><img src="https://img.shields.io/badge/-✉-blue?style=flat" valign="middle" alt="Email"></a>
+</td>
+
+</tr>
+
+</table>
+
+</br> </br>
 
 **Dateiübersicht**
 
