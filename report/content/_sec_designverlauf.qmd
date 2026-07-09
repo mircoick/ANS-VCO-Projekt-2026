@@ -4,7 +4,7 @@
 
 Zuerst wurde im Design angefangen ein passendes VCO-Modell nach den Anforderungen auszusuchen. Als Modell haben wurde sich für den LC-VCO entschieden. Dieser besteht im Grunde aus einer RLC-Schaltung und einer kreuzgekoppelten Mosfet-Schaltung. Das Design ist somit gut für Studierende aus dem 4. Semester zu verstehen und kann auch gut mit bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in @fig-circuit zu sehen:
 
-![VCO-Grundschaltung](/images/circuit.png){#fig-circuit width="60%"}
+![VCO-Grundschaltung](/images/circuit.png){#fig-circuit width="40%"}
 
 In der Grundschaltung sind im oberen Bereich die beiden Induktivitäten $L1$ und $L2$ in doppelter Ausführung zu sehen, da die Versorgungsspannung mittig angeschlossen werden muss, um die Symmetrie der Schaltung gewärleisten zu können. Weiter unten ist der einstellbare Kondensator $C1$ zu sehen, dessen Wert die Schwingung der Schaltung maßgeblich beeinflusst. Durch die Änderung des Kondensator ändert sich auch die Frequenz $f_0$ der Schaltung. Somit kann duch eine gesteuerte Änderung der Kapazität die Frequenz der Schwingung eingestellt werden. Das ist das Grundprinzip des VCO´s und die Funktionsweise der FM-Modulation. Der Widerstand $R1$ vervollständigt den RLC-Schwingkreis. Die beiden kreugekoppelten Mosfets sind für die ständige Anregung der Schwingung zuständig. Durch die ständige Änderung der gesamt Impedanz des Schwingkreises ändert sich jeweils der Strom, der durch die Mosfets am Gate Eingang anliegt. Diese Änderung bewirkt eine Rückgekoppelte Schleife, durch welche schwingt das System dauerhaft. Nach Implementierung dieser Schaltung in KiCad, NG- sowie LT-Spice konnte die Funktionsweise sowie das Einstellen der Frequenz $f_0$ klarer gemacht werden. 
 
@@ -35,13 +35,24 @@ Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Z
 
 ## Komponenten
 
-Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen musste die Grundschaltung angepasst werden und entsprechende Bauteile rausgesucht werden.
+Um den Wien-Robinson-Oszilator im gewünschten Frequenzbereich schwingen zu lassen, musste die Grundschaltung angepasst werden und um entsprechende Bauteile ersetzt werden.
 
 ### Operationsverstärker
-Da die Schaltung um $5~\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
+Da die Schaltung maximal bei $6~\text{MHz}$ schwingen soll muss der OPV sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
 
-### Varaktoren
-Damit die Mittenfrequenz verschoben werden kann wurden varaktoren Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
+### Varaktordioden
+Damit die Mittenfrequenz verschoben werden kann, wurden varaktoren Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um sich in einem Lineraren Berreich zu bewegen müssen die Kennlinien der Varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen diese eine möglichst hohe Änderung der Kapazität in diesem Berreich vorweisen.
 
 ### Diode
-?
+Die Diode in der rückführenden Verstärkerschaltung des VCO´s muss ebenfalls eine sehr schnelle Schottkydiode sein, da sie ebenfalls die Signale von maximal $6~\text{MHz}$ sperren und durchlassen soll.
+
+### Transistor
+Der Transistor muss in diesem Fall ein J-FET, also ein Transistor, welcher ohne Spannung maxiaml Leitend ist, eingebaut werden. Dieser wird mit einer negativen Gleichspannung versorgt und muss somit nicht High-Speed sein.
+
+## Schaltung
+Die nachfolgende Schaltung in @fig-wien-vco ist die verwendete Schaltung für den Wie-Brücken-VCO. Am Anfang auf der linken Seite ist die Verstärkerschaltung für die Steuerspannung der Varaktordioden zu sehen. Diese soll die Einstellmöglichkeit für einen Spannungsbereich zwischen $0~\text{V}$ und $1~\text{V}$ ermöglichen. Diese Spannung geht über einen Widerstand auf die jeweiligen Kathoden der Varaktordioden. Diese ändern ihre Kapazität in Abhängigkeit der Steuerspannung. Der paralelle Kondensator ist hierbei für einen Offset der Frequenz eingebaut worden und ist Teil der Wien-Brücke. Die Wien Brücke ist in der Mitte der Schaltung zu sehen, bestehend aus insg. vier Varaktordioden (D2-D5), zwei Kondensatoren (C1,C2) und zwei Widerständen (R1,R2). Die Nachfolgende Verstärkerschaltung, bestehend aus U1, R3 und R4 ist für die Verstärkung der Schwingung und aufrechterhaltung zuständig. Die Verstärkung ist hier mit R3 und R4 auf Faktor 3 eingestellt. Die Amplitudenregelung zum Einschwingen der Schaltung ist auf der unteren rechten Seite zu sehen. Diese besteht aus D1, C3, R5, R7, R8 und J1. Diese Kombination regelt die Verstärkung am Anfang des Einschwingverhalten höher als 3, damit die Schaltung in einen sicheren Eingeschwungenen Zustand gerät. Sobald die Amplitude den eingestellten Wert erreicht, regelt sich die Verstärkung automatisch über J1 wieder auf 3 runter. Die Schaltung schwingt nun stabil.
+
+![Wien-Robinson-Oszillator VCO Schaltung [@geissler1993]](/images/WienVCO.png){#fig-wien-vco width="100%"}
+
+Wir haben uns speziell für diese Schaltungsart entscheiden, da die steuerbare Amplitudenregelung anfangs bessere Ergebnisse in der Simulation mit NGSpice und LTSpice bezüglich der linearität der Ausgangsfrequenz bessere Ergebnisse lieferte.
+

@@ -1,5 +1,5 @@
 
-03.07.2026
+09.07.2026
 
 <div align="center">
 
@@ -55,7 +55,7 @@ Mirco Ick
 
 # Einleitung
 
-In diesesm Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
+In diesem Projekt gilt es einen VCO (Voltage Controlled Oszillator) zu
 designen und in Betrieb zu nehmen. Das Design soll bestimmte
 Anforderungen erfüllen, damit es in einem Laborversuch als FM-Modulator
 genutzt werden kann. In der Vergangenheit wurde im Laborversuch eine VCO
@@ -137,7 +137,7 @@ bedrahteten Bauteilen aufgebaut werden. Die Grundschaltung ist in
 
 <div id="fig-circuit">
 
-<img src=".\images/circuit.png" style="width:60.0%" />
+<img src=".\images/circuit.png" style="width:40.0%" />
 
 Abbildung 1: VCO-Grundschaltung
 
@@ -252,26 +252,74 @@ Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden.
 
 ## Komponenten
 
-Um den Wien-Robinson-Oszilator im gewünschten Berreich zu bekommen
-musste die Grundschaltung angepasst werden und entsprechende Bauteile
-rausgesucht werden.
+Um den Wien-Robinson-Oszilator im gewünschten Frequenzbereich schwingen
+zu lassen, musste die Grundschaltung angepasst werden und um
+entsprechende Bauteile ersetzt werden.
 
 ### Operationsverstärker
 
-Da die Schaltung um $5~\text{MHz}$ schwingen soll muss der OPV sowohl
-ultra-high-speed sein als auch eine hohe Slew-rate haben.
+Da die Schaltung maximal bei $6~\text{MHz}$ schwingen soll muss der OPV
+sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
 
-### Varaktoren
+### Varaktordioden
 
-Damit die Mittenfrequenz verschoben werden kann wurden varaktoren
+Damit die Mittenfrequenz verschoben werden kann, wurden varaktoren
 Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um
-sich in einem Lineraren Berreich zu bewegen müssen die kennlinien der
-varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen
-sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
+sich in einem Lineraren Berreich zu bewegen müssen die Kennlinien der
+Varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen
+diese eine möglichst hohe Änderung der Kapazität in diesem Berreich
+vorweisen.
 
 ### Diode
 
-?
+Die Diode in der rückführenden Verstärkerschaltung des VCO´s muss
+ebenfalls eine sehr schnelle Schottkydiode sein, da sie ebenfalls die
+Signale von maximal $6~\text{MHz}$ sperren und durchlassen soll.
+
+### Transistor
+
+Der Transistor muss in diesem Fall ein J-FET, also ein Transistor,
+welcher ohne Spannung maxiaml Leitend ist, eingebaut werden. Dieser wird
+mit einer negativen Gleichspannung versorgt und muss somit nicht
+High-Speed sein.
+
+## Schaltung
+
+Die nachfolgende Schaltung in
+<a href="#fig-wien-vco" class="quarto-xref">Abbildung 4</a> ist die
+verwendete Schaltung für den Wie-Brücken-VCO. Am Anfang auf der linken
+Seite ist die Verstärkerschaltung für die Steuerspannung der
+Varaktordioden zu sehen. Diese soll die Einstellmöglichkeit für einen
+Spannungsbereich zwischen $0~\text{V}$ und $1~\text{V}$ ermöglichen.
+Diese Spannung geht über einen Widerstand auf die jeweiligen Kathoden
+der Varaktordioden. Diese ändern ihre Kapazität in Abhängigkeit der
+Steuerspannung. Der paralelle Kondensator ist hierbei für einen Offset
+der Frequenz eingebaut worden und ist Teil der Wien-Brücke. Die Wien
+Brücke ist in der Mitte der Schaltung zu sehen, bestehend aus insg. vier
+Varaktordioden (D2-D5), zwei Kondensatoren (C1,C2) und zwei Widerständen
+(R1,R2). Die Nachfolgende Verstärkerschaltung, bestehend aus U1, R3 und
+R4 ist für die Verstärkung der Schwingung und aufrechterhaltung
+zuständig. Die Verstärkung ist hier mit R3 und R4 auf Faktor 3
+eingestellt. Die Amplitudenregelung zum Einschwingen der Schaltung ist
+auf der unteren rechten Seite zu sehen. Diese besteht aus D1, C3, R5,
+R7, R8 und J1. Diese Kombination regelt die Verstärkung am Anfang des
+Einschwingverhalten höher als 3, damit die Schaltung in einen sicheren
+Eingeschwungenen Zustand gerät. Sobald die Amplitude den eingestellten
+Wert erreicht, regelt sich die Verstärkung automatisch über J1 wieder
+auf 3 runter. Die Schaltung schwingt nun stabil.
+
+<div id="fig-wien-vco">
+
+<img src=".\images/WienVCO.png" style="width:100.0%" />
+
+Abbildung 4: Wien-Robinson-Oszillator VCO Schaltung (Geißler u. a. 1993)
+
+</div>
+
+Wir haben uns speziell für diese Schaltungsart entscheiden, da die
+steuerbare Amplitudenregelung anfangs bessere Ergebnisse in der
+Simulation mit NGSpice und LTSpice bezüglich der linearität der
+Ausgangsfrequenz bessere Ergebnisse lieferte.
 
 # Charakterisierung
 
@@ -284,6 +332,15 @@ sie eine Möglichst hohe änderung der Kapazität in diesem Berreich haben.
 <span class="nocase">de-academic.com</span>. 2000-2026.
 *Wien-Robinson-Brücke*. Design Reference.
 <https://de-academic.com/dic.nsf/dewiki/1507065>.
+
+</div>
+
+<div id="ref-geissler1993" class="csl-entry">
+
+Geißler, Rainer, Werner Kammerloher, und Hans Werner Schneider. 1993.
+*Berechnungs- und Entwurfsverfahren der Hochfrequenztechnik 1*.
+Vieweg+Teubner Verlag Wiesbaden.
+<https://doi.org/10.1007/978-3-322-84915-1>.
 
 </div>
 
