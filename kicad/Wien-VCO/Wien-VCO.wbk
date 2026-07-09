@@ -22,13 +22,13 @@
       "showGrid": true,
       "traces": [
         {
-          "color": "rgb(77, 175, 74)",
+          "color": "rgb(55, 126, 184)",
           "signal": "V(/Va)",
           "trace_type": 257
         },
         {
-          "color": "rgb(55, 126, 184)",
-          "signal": "V(/Ve)",
+          "color": "rgb(252, 141, 98)",
+          "signal": "V(Net-_U3-IN-_)",
           "trace_type": 257
         }
       ]
