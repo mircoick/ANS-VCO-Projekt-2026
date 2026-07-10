@@ -8,24 +8,35 @@ import os
 list = np.array([0,1,2,3,4,5,6,7,8,9,10])
 peaks = np.array([])
 
-plt.subplot(3, 2, (1,2))
+def datas(data,type):
+    data = data.drop([0, 1])
+
+    data[type] = data[type].str.replace("," , ".")
+    data["Channel A"] = data["Channel A"].str.replace("," , ".")
+
+    data["Channel A"] = data["Channel A"].astype(float)
+    data[type] = data[type].astype(float)
+    return data
+
+
 
 for i in list:
+
+    plt.subplot(3, 2, (1,2))
+
+    list_of_filest = glob.glob(f'data/kennlinie/20260710_t_{i}/*')
+    latest_filet = max(list_of_filest, key=os.path.getctime)
+
+    data_t = pd.read_csv(latest_filet, sep=';')
+    data_t = datas(data_t,"Time")
+
+    plt.plot(data_t["Time"],data_t["Channel A"],label = f"{i*100} mV")
+
     plt.subplot(3, 2, (3,5))
-    list_of_files = glob.glob(f'data/kennlinie/20260709_fft_{i}/*')
+    list_of_files = glob.glob(f'data/kennlinie/20260710_fft_{i}/*')
     latest_file = max(list_of_files, key=os.path.getctime)
 
     data_fft = pd.read_csv(latest_file, sep=';')
-    def datas(data,type):
-        data = data.drop([0, 1])
-
-        data[type] = data[type].str.replace("," , ".")
-        data["Channel A"] = data["Channel A"].str.replace("," , ".")
-
-        data["Channel A"] = data["Channel A"].astype(float)
-        data[type] = data[type].astype(float)
-        return data
-
     data_fft = datas(data_fft,"Frequency")
 
     plt.plot(data_fft["Frequency"],data_fft["Channel A"],label = f"{i*100} mV")
@@ -33,6 +44,8 @@ for i in list:
     ind = data_fft["Channel A"].idxmax()
     freq = data_fft["Frequency"][ind]
     peaks = np.append(peaks,freq)
+
+
 
 print(peaks)
 
