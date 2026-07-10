@@ -31,6 +31,8 @@ for i in list:
     data_t = datas(data_t,"Time")
 
     plt.plot(data_t["Time"],data_t["Channel A"],label = f"{i*100} mV")
+    plt.xlim(0,2.5)
+    plt.grid()
 
     plt.subplot(3, 2, (3,5))
     list_of_files = glob.glob(f'data/kennlinie/20260710_fft_{i}/*')
