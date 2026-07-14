@@ -1,4 +1,3 @@
-
 09.07.2026
 
 <div align="center">
