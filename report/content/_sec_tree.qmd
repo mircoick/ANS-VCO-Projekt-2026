@@ -1,0 +1,19 @@
+# Ordnerstruktur
+
+```{text}
+.
+├── code/
+├── data/
+├── datasheets/
+├── images/
+├── kicad/
+│   ├── Archiv/
+        ├── VCO-Schwingkreis/
+│   ├── footprints/
+│   ├── spicelibs/
+│   └── Wien-VCO/
+├── report/
+├── sim/
+├── .gitignore
+└── README.md
+```

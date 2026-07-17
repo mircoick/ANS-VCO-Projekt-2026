@@ -44,7 +44,7 @@ bibliography: references.bib
 
 **Dateiübersicht**
 
-[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) · [Analyse-Code](code/) · [Datenblätter](datasheets/)
+[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) · [Python Code](code/) · [Datenblätter](datasheets/)
 
 </div>
 
@@ -54,4 +54,5 @@ bibliography: references.bib
 {{< include content/_sec_requirements.qmd >}}
 {{< include content/_sec_designverlauf.qmd >}}
 {{< include content/_sec_characterisation.qmd >}}
+{{< include content/_sec_tree.qmd >}}
 {{< include content/references.qmd >}}

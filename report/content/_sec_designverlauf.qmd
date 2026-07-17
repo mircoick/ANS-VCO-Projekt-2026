@@ -24,9 +24,7 @@ Wenn man nun an diese Brückendiagonale einen Operationsverstärker (OPV) einbau
 
 Die in @fig-wien zu sehende Schaltung zeigt wie bereits erörtert den in der Brückendiagonalen eingebaute Operationsverstärker und eine zusätzliche Amplitudenregulierung. Durch die starke Anregung der Schwingung des OPV's wurde hier noch eine Amplitudenregelung eingebaut, welche aus einem Potentiometer und zwei entgegengeschalteten Varktordioden besteht. Ohne diese Amplitudenregelung würde die Schwingung aufgrund der unendlichen Verstärkung des OPV schnell bis an die Grenzen der Versorgungsspannung anwachsen und begrenzen, was zu starken Verzerrungen des Sinussignals führen würde. Die Regelung sorgt dafür, dass sich ein stabiler, verzerrungsfreier Dauerschwingzustand einstellt. 
 
-Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592~\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5~\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1~\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5~\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet. Ein erster Versuch ist der @fig-wienvarak zu entnehemen.
-
-**Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub**
+Nachdem nun diese Schaltung erfolgreich in KiCAD, erst auf der ursprünglichen Resonanzfrequenz $f_0=1592~\text{Hz}$ und anschließend mit Änderung des OPV's (LT7171) auf die gewünschten $5,5~\text{MHz}$, umgesetzt wurde, konnte sich um den geforderten Frequenzhub von $\Delta f=1~\text{MHz}$ bei einer Steuerspannungsänderung von $U_{str}=\pm 0,5~\text{V}$ gemacht werden. Für den ersten Entwurf wurden nun Varaktoren parallel zu den beiden Kondensatoren  $C$ geschaltet.
 
 Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme kristallisiert. Zum einen kamen in den verschiedenen Simulationen (KiCAD bzw. NG-Spice und LT-Spice) unterschiede Ergebnisse heraus, und zum anderen war es nicht möglich die Kennlinie der Resonanzfrequenz $f_0$ über die Steuerspannung $U_{str}$ linear zu bekommen. Nach vielen vergeblichen Versuchen wurde sich dann dazu entschieden den kompletten Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden. 
 
@@ -56,3 +54,50 @@ Die nachfolgende Schaltung in @fig-wien-vco ist die verwendete Schaltung für de
 
 Wir haben uns speziell für diese Schaltungsart entscheiden, da die steuerbare Amplitudenregelung anfangs bessere Ergebnisse in der Simulation mit NGSpice und LTSpice bezüglich der linearität der Ausgangsfrequenz bessere Ergebnisse lieferte.
 
+Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem [sim_plot.py](code/sim_plot.py) ist der @fig-sim-wien-vco zu entnehmen. Es wurden die folgenden Werte gewählt:
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column width="45%"}
+| Bauteil | Typ / Wert |
+|:--------|:-----------|
+| **$V_{\text{str}}$** | $0 - 1~\text{V}$ |
+| **VCC+**    | $+10~\text{V}$ |
+| **VCC-**    | $-10~\text{V}$ |
+| **U1**      | MAX4104 |
+| **U2**      | TL082 |
+| **J1**      | J113 |
+| **D1**      | 1N6263 (Schottky) |
+| **D2-D5**   | BB535/SIE (Kapazitätsdiode) |
+:::
+
+::: {.column width="10%"}
+<!-- Freiraum zwischen den Spalten -->
+:::
+
+::: {.column width="45%"}
+| Bauteil | Wert |
+|:--------|:-----|
+| **C1-C2**   | $2{,}7~\text{pF}$   |
+| **C3**      | $2{,}0~\text{nF}$   |
+| **C4-C5**   | $100~\text{nF}$     |
+
+<div style="margin-top: 1.5em;"></div>
+
+| Bauteil | Wert |
+|:--------|:-----|
+| **R1-R2**   | $3{,}275~\text{k}\Omega$ |
+| **R3**      | $2{,}32~\text{k}\Omega$  |
+| **R4**      | $1{,}2~\text{k}\Omega$   |
+| **R5**      | $20~\text{k}\Omega$      |
+| **R6, R9**  | $100~\text{k}\Omega$     |
+| **R7**      | $1{,}0~\text{k}\Omega$   |
+| **R8**      | $8{,}0~\text{k}\Omega$   |
+| **R10**     | $10~\text{k}\Omega$      |
+| **R11**     | $75~\text{k}\Omega$      |
+| **R12**     | $50~\text{k}\Omega$      |
+:::
+
+::::
+
+![Simulationsergebnis mit Python Auswertung](/images/sim_wien_vco){#fig-sim-wien-vco width="100%"}
