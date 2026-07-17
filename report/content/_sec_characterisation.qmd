@@ -1,2 +1,61 @@
 # Charakterisierung
 
+## Simulation
+
+Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem [sim_plot.py](code/sim_plot.py) ist der @fig-sim-wien-vco zu entnehmen. Es wurden die folgenden Werte gewählt:
+
+:::: {.columns style="display: flex; align-items: center;"}
+
+::: {.column width="45%"}
+| Bauteil | Typ / Wert |
+|:--------|:-----------|
+| **$V_{\text{str}}$** | $0 - 1~\text{V}$ |
+| **VCC+**    | $+10~\text{V}$ |
+| **VCC-**    | $-10~\text{V}$ |
+| **U1**      | MAX4104 |
+| **U2**      | TL082 |
+| **J1**      | J113 |
+| **D1**      | 1N6263 (Schottky) |
+| **D2-D5**   | BB535/SIE (Kapazitätsdiode) |
+:::
+
+::: {.column width="10%"}
+<!-- Freiraum zwischen den Spalten -->
+:::
+
+::: {.column width="45%"}
+| Bauteil | Wert |
+|:--------|:-----|
+| **C1-C2**   | $2{,}7~\text{pF}$   |
+| **C3**      | $2{,}0~\text{nF}$   |
+| **C4-C5**   | $100~\text{nF}$     |
+
+<div style="margin-top: 1.5em;"></div>
+
+| Bauteil | Wert |
+|:--------|:-----|
+| **R1-R2**   | $3{,}275~\text{k}\Omega$ |
+| **R3**      | $2{,}32~\text{k}\Omega$  |
+| **R4**      | $1{,}2~\text{k}\Omega$   |
+| **R5**      | $20~\text{k}\Omega$      |
+| **R6, R9**  | $100~\text{k}\Omega$     |
+| **R7**      | $1{,}0~\text{k}\Omega$   |
+| **R8**      | $8{,}0~\text{k}\Omega$   |
+| **R10**     | $10~\text{k}\Omega$      |
+| **R11**     | $75~\text{k}\Omega$      |
+| **R12**     | $50~\text{k}\Omega$      |
+:::
+
+::::
+
+![Simulationsergebnis mit Python Auswertung](/images/sim_wien_vco){#fig-sim-wien-vco width="100%"}
+
+## Fertige Platine
+
+![Platine 1](/images/IMG_1872%20(1).JPEG){#fig-plat1 width="100%"}
+![Platine 2](/images/IMG_1873%20(1).JPEG){#fig-plat2 width="100%"}
+![Platine 3](/images/IMG_1874%20(1).JPEG){#fig-plat3 width="100%"}
+
+
+
+### Messergenisse
