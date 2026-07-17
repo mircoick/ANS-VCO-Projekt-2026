@@ -1,8 +1,15 @@
 # Charakterisierung
+Nachdem nun der Aufbau und die meisten Bauteile feststanden konnte sich mit Hilfe von LTSpice eine Simulation des Aufbaus zusammengestellt werden. Die Simulationsdateien können dem Ordner [sim](sim/) entnommen werden. 
 
-## Simulation
+## Bauteilauswahl der Varaktor-Diode
 
-Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem [sim_plot.py](code/sim_plot.py) ist der @fig-sim-wien-vco zu entnehmen. Es wurden die folgenden Werte gewählt:
+Die bereitgestellte [Varaktor-Dioden-Bibliothek](kicad\spicelibs) umfasst 30 Einzelmodelle. Um eine Diode zu identifizieren, die eine nahezu lineare Kapazitätsänderung von $\Delta C \approx 14~\text{pF}$ über einen Steuerspannungsbereich von $V_{str} = 3~\text{V}$ aufweist, wurde ein Capometer eingesetzt. Dieses Capometer ermöglichte die automatisierte Auswertung der Kennlinien, um die optimale Komponente für die geplante Schaltung festzulegen. Es wird hier bei einer linear ansteigenden Spannung die Kapazität der Diode in einer $C(V)$-Kennline aufgetragen, wodurch der benötigte Kapaziätsunterschied direkt abgelesen werden kann. Die LTSpice Schematic ist [hier](sim/capometer.asc) zufinden.
+
+Die Analyse der Modelle ergab, dass die [BB535/SIE](datasheets/BB535.pdf) Varaktor Diode am besten zu den Anforderungen passt. Somit wurden alle benötigten Bauteile gefunden und die Silumation konnte durchgeführt werden.
+
+## Simulation den Wien-Brücken-VCO's
+
+Um nun die Schaltung Simulieren zu können wurde LTSpice sowie auch NGSpice über KiCAD zur Hilfe genommen. In beiden Fällen konnte der in @fig-wien-vco zu sehende Schaltungsaufbau genommen werden und mit den passenden Werten sowie Bauteilen verknüpft werden. Das Simulationsergebnis der Schaltung ([KiCAD](kicad/Wien-VCO/)) Ausgewertet mit dem [sim_plot.py](code/sim_plot.py) Skript ist der @fig-sim-wien-vco zu entnehmen. Für die LTSpice sowie NGSpice Bauteile wurden folgende Werte festgelegt:
 
 :::: {.columns style="display: flex; align-items: center;"}
 
@@ -50,9 +57,19 @@ Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem [sim_plot.py](c
 
 ![Simulationsergebnis mit Python Auswertung](/images/sim_wien_vco){#fig-sim-wien-vco width="100%"}
 
+Die in @fig-sim-wien-vco dargestellte Simulation zeigt die vollständige Schaltung im einstellbaren Steuerspannungsbereich von $V_{str} = 0 \dots 1~\text{V}$. Die Auswertung umfasst drei Darstellungen:
+
+Der obere Plot zeigt die Zeitsignale der 11 simulierten Zustände. Hierbei lässt sich die Amplitudenstabilität der Schaltung überprüfen. Zu sehen ist, dass die Amplitude über den gesamten Steuerspannungsbereich sowohl im positiven als auch im negativen Bereich bei ca. $\pm 9~\text{V}$ stabil bleibt. Die unterschiedlichen Frequenzen der Signale sind bereits im Zeitbereich visuell erkennbar. 
+
+Um nun die Frequenzanteile genauer zu betrachten dient der untere linke Plot, welcher die Fast Fourier Transformation (FFT) der Signale visualisiert. Die Darstellung ermöglicht den Abgleich mit den Kundenvorgaben für die Mittenfrequenz ($f_0 = 5,5~\text{MHz}$) sowie den Grenzfrequenzen ($f_u = 5~\text{MHz}$ bis $f_o = 6~\text{MHz}$). Die Analyse zeigt, dass bei einer Steuerspannung von $V_{str} = 0~\text{V}$ nahezu exakt $5~\text{MHz}$ erreicht werden. Die obere Grenzfrequenz wird mit ca. $6,025~\text{MHz}$ nur minimal überschritten, was für eine sehr gute Abstimmung der Schaltung spricht.
+
+Der dritte Plot implimentiert die berechneten Peak-Frequenzen der FFT mit der Steuerspannung. Im Idealfall entspräche die Kennlinie einer Geraden, die exakt bei $(0~\text{V}, 5~\text{MHz})$ beginnt und bei $(1~\text{V}, 6~\text{MHz})$ endet. Die Simulationsergebnisse bilden diesen Verlauf sehr präzise ab. Die geringfügigen Abweichungen sind primär auf die in LTspice bzw. NGspice hinterlegten Bauteiltoleranzen sowie auf physikalisch notwendige Kompromisse bei der Bauteilwahl zurückzuführen.
+
+Zusammenfassend liegen die Simulationsergebnisse über den Erwartungen und zeigen die Funktionalität sowie die gute Machbarkeit der zu entwerfenden Wien-Brücken-VCO Platine.
+
 ## Fertige Platine
 
-![Platine 1](/images/IMG_1872%20(1).JPEG){#fig-plat1 width="100%"}
+![Platine 1](/images/IMG_1872 (1).JPEG){#fig-plat1 width="100%"}
 ![Platine 2](/images/IMG_1873%20(1).JPEG){#fig-plat2 width="100%"}
 ![Platine 3](/images/IMG_1874%20(1).JPEG){#fig-plat3 width="100%"}
 

@@ -1,5 +1,4 @@
 
-
 17.07.2026
 
 <div align="center">
@@ -248,41 +247,6 @@ Aufbau neu aufzusetzen und eine andere Schaltung zu verwenden.
 
 ## Wien-Robinson VCO
 
-## Komponenten
-
-Um den Wien-Robinson-Oszilator im gewünschten Frequenzbereich schwingen
-zu lassen, musste die Grundschaltung angepasst werden und um
-entsprechende Bauteile ersetzt werden.
-
-### Operationsverstärker
-
-Da die Schaltung maximal bei $6~\text{MHz}$ schwingen soll muss der OPV
-sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
-
-### Varaktordioden
-
-Damit die Mittenfrequenz verschoben werden kann, wurden varaktoren
-Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um
-sich in einem Lineraren Berreich zu bewegen müssen die Kennlinien der
-Varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen
-diese eine möglichst hohe Änderung der Kapazität in diesem Berreich
-vorweisen.
-
-### Diode
-
-Die Diode in der rückführenden Verstärkerschaltung des VCO´s muss
-ebenfalls eine sehr schnelle Schottkydiode sein, da sie ebenfalls die
-Signale von maximal $6~\text{MHz}$ sperren und durchlassen soll.
-
-### Transistor
-
-Der Transistor muss in diesem Fall ein J-FET, also ein Transistor,
-welcher ohne Spannung maxiaml Leitend ist, eingebaut werden. Dieser wird
-mit einer negativen Gleichspannung versorgt und muss somit nicht
-High-Speed sein.
-
-## Schaltung
-
 Die nachfolgende Schaltung in
 <a href="#fig-wien-vco" class="quarto-xref">Abbildung 4</a> ist die
 verwendete Schaltung für den Wie-Brücken-VCO. Am Anfang auf der linken
@@ -319,25 +283,92 @@ steuerbare Amplitudenregelung anfangs bessere Ergebnisse in der
 Simulation mit NGSpice und LTSpice bezüglich der linearität der
 Ausgangsfrequenz bessere Ergebnisse lieferte.
 
-Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem
-[sim_plot.py](code/sim_plot.py) ist der
+## Komponenten
+
+Um den Wien-Robinson-Oszilator im gewünschten Frequenzbereich schwingen
+zu lassen, musste die Grundschaltung angepasst werden und um
+entsprechende Bauteile ersetzt werden.
+
+### Operationsverstärker
+
+Da die Schaltung maximal bei $6~\text{MHz}$ schwingen soll muss der OPV
+sowohl ultra-high-speed sein als auch eine hohe Slew-rate haben.
+
+### Varaktordioden
+
+Damit die Mittenfrequenz verschoben werden kann, wurden varaktoren
+Parrallel zu den Kondensatoren der Wien-Robinson-Brücke geschaltet. Um
+sich in einem Lineraren Berreich zu bewegen müssen die Kennlinien der
+Varaktoren in dem beschalteten Berreich auch linerar sein. Zudem müssen
+diese eine möglichst hohe Änderung der Kapazität in diesem Berreich
+vorweisen.
+
+### Diode
+
+Die Diode in der rückführenden Verstärkerschaltung des VCO´s muss
+ebenfalls eine sehr schnelle Schottkydiode sein, da sie ebenfalls die
+Signale von maximal $6~\text{MHz}$ sperren und durchlassen soll.
+
+### Transistor
+
+Der Transistor muss in diesem Fall ein J-FET, also ein Transistor,
+welcher ohne Spannung maxiaml Leitend ist, eingebaut werden. Dieser wird
+mit einer negativen Gleichspannung versorgt und muss somit nicht
+High-Speed sein.
+
+# Charakterisierung
+
+Nachdem nun der Aufbau und die meisten Bauteile feststanden konnte sich
+mit Hilfe von LTSpice eine Simulation des Aufbaus zusammengestellt
+werden. Die Simulationsdateien können dem Ordner [sim](sim/) entnommen
+werden.
+
+## Bauteilauswahl der Varaktor-Diode
+
+Die bereitgestellte [Varaktor-Dioden-Bibliothek](kicad\spicelibs)
+umfasst 30 Einzelmodelle. Um eine Diode zu identifizieren, die eine
+nahezu lineare Kapazitätsänderung von $\Delta C \approx 14~\text{pF}$
+über einen Steuerspannungsbereich von $V_{str} = 3~\text{V}$ aufweist,
+wurde ein Capometer eingesetzt. Dieses Capometer ermöglichte die
+automatisierte Auswertung der Kennlinien, um die optimale Komponente für
+die geplante Schaltung festzulegen. Es wird hier bei einer linear
+ansteigenden Spannung die Kapazität der Diode in einer $C(V)$-Kennline
+aufgetragen, wodurch der benötigte Kapaziätsunterschied direkt abgelesen
+werden kann. Die LTSpice Schematic ist [hier](sim/capometer.asc)
+zufinden.
+
+Die Analyse der Modelle ergab, dass die
+[BB535/SIE](datasheets/BB535.pdf) Varaktor Diode am besten zu den
+Anforderungen passt. Somit wurden alle benötigten Bauteile gefunden und
+die Silumation konnte durchgeführt werden.
+
+## Simulation
+
+Um nun die Schaltung Simulieren zu können wurde LTSpice sowie auch
+NGSpice über KiCAD zur Hilfe genommen. In beiden Fällen konnte der in
+<a href="#fig-wien-vco" class="quarto-xref">Abbildung 4</a> zu sehende
+Schaltungsaufbau genommen werden und mit den passenden Werten sowie
+Bauteilen verknüpft werden. Das Simulationsergebnis der Schaltung
+([KiCAD](kicad/Wien-VCO/)) Ausgewertet mit dem
+[sim_plot.py](code/sim_plot.py) Skript ist der
 <a href="#fig-sim-wien-vco" class="quarto-xref">Abbildung 5</a> zu
-entnehmen. Es wurden die folgenden Werte gewählt:
+entnehmen. Für die LTSpice sowie NGSpice Bauteile wurden folgende Werte
+festgelegt:
 
 <div class="columns" style="display: flex; align-items: center;">
 
 <div class="column" width="45%">
 
-| Bauteil              | Typ / Wert                      |
-|:---------------------|:--------------------------------|
-| **$V_{\text{str}}$** | $0 \dots 1~\text{V}$ (variabel) |
-| **VCC+**             | $+10~\text{V}$                  |
-| **VCC-**             | $-10~\text{V}$                  |
-| **U1**               | MAX4104                         |
-| **U2**               | TL082                           |
-| **J1**               | J113                            |
-| **D1**               | 1N6263 (Schottky)               |
-| **D2-D5**            | BB535/SIE (Kapazitätsdiode)     |
+| Bauteil              | Typ / Wert                  |
+|:---------------------|:----------------------------|
+| **$V_{\text{str}}$** | $0 - 1~\text{V}$            |
+| **VCC+**             | $+10~\text{V}$              |
+| **VCC-**             | $-10~\text{V}$              |
+| **U1**               | MAX4104                     |
+| **U2**               | TL082                       |
+| **J1**               | J113                        |
+| **D1**               | 1N6263 (Schottky)           |
+| **D2-D5**            | BB535/SIE (Kapazitätsdiode) |
 
 </div>
 
@@ -384,15 +415,51 @@ Abbildung 5: Simulationsergebnis mit Python Auswertung
 
 </div>
 
-<div id="meas_plot">
+Die in <a href="#fig-sim-wien-vco" class="quarto-xref">Abbildung 5</a>
+dargestellte Simulation zeigt die vollständige Schaltung im
+einstellbaren Steuerspannungsbereich von $V_{str} = 0 \dots 1~\text{V}$.
+Die Auswertung umfasst drei Darstellungen:
 
-<img src=".\images/meas_plot.png" style="width:100.0%" />
+Der obere Plot zeigt die Zeitsignale der 11 simulierten Zustände.
+Hierbei lässt sich die Amplitudenstabilität der Schaltung überprüfen. Zu
+sehen ist, dass die Amplitude über den gesamten Steuerspannungsbereich
+sowohl im positiven als auch im negativen Bereich bei ca.
+$\pm 9~\text{V}$ stabil bleibt. Die unterschiedlichen Frequenzen der
+Signale sind bereits im Zeitbereich visuell erkennbar.
 
-Abbildung 6: Gemesene Ergebnisse
+Um nun die Frequenzanteile genauer zu betrachten dient der untere linke
+Plot, welcher die Fast Fourier Transformation (FFT) der Signale
+visualisiert. Die Darstellung ermöglicht den Abgleich mit den
+Kundenvorgaben für die Mittenfrequenz ($f_0 = 5,5~\text{MHz}$) sowie den
+Grenzfrequenzen ($f_u = 5~\text{MHz}$ bis $f_o = 6~\text{MHz}$). Die
+Analyse zeigt, dass bei einer Steuerspannung von $V_{str} = 0~\text{V}$
+nahezu exakt $5~\text{MHz}$ erreicht werden. Die obere Grenzfrequenz
+wird mit ca. $6,025~\text{MHz}$ nur minimal überschritten, was für eine
+sehr gute Abstimmung der Schaltung spricht.
 
-</div>
+Der dritte Plot implimentiert die berechneten Peak-Frequenzen der FFT
+mit der Steuerspannung. Im Idealfall entspräche die Kennlinie einer
+Geraden, die exakt bei $(0~\text{V}, 5~\text{MHz})$ beginnt und bei
+$(1~\text{V}, 6~\text{MHz})$ endet. Die Simulationsergebnisse bilden
+diesen Verlauf sehr präzise ab. Die geringfügigen Abweichungen sind
+primär auf die in LTspice bzw. NGspice hinterlegten Bauteiltoleranzen
+sowie auf physikalisch notwendige Kompromisse bei der Bauteilwahl
+zurückzuführen.
 
-# Charakterisierung
+Zusammenfassend liegen die Simulationsergebnisse über den Erwartungen
+und zeigen die Funktionalität sowie die gute Machbarkeit der zu
+entwerfenden Wien-Brücken-VCO Platine.
+
+## Fertige Platine
+
+<img src=".\images/IMG_1872%20(1).JPEG" id="fig-plat1"
+style="width:100.0%" alt="Platine 1" />
+<img src=".\images/IMG_1873%20(1).JPEG" id="fig-plat2"
+style="width:100.0%" alt="Platine 2" />
+<img src=".\images/IMG_1874%20(1).JPEG" id="fig-plat3"
+style="width:100.0%" alt="Platine 3" />
+
+### Messergenisse
 
 # Ordnerstruktur
 
@@ -404,7 +471,7 @@ Abbildung 6: Gemesene Ergebnisse
 ├── images/
 ├── kicad/
 │   ├── Archiv/
-        ├── VCO-Schwingkreis/
+|       ├── VCO-Schwingkreis/
 │   ├── footprints/
 │   ├── spicelibs/
 │   └── Wien-VCO/
