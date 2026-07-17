@@ -24,7 +24,7 @@ for i in list:
 
     plt.subplot(3, 2, (1,2))
 
-    list_of_filest = glob.glob(f'../data/20260710_t_{i}/*')
+    list_of_filest = glob.glob(f'./data/20260710_t_{i}/*')
     latest_filet = max(list_of_filest, key=os.path.getctime)
 
     data_t = pd.read_csv(latest_filet, sep=';')
@@ -37,7 +37,7 @@ for i in list:
     plt.ylabel(r"Spannung in $V$")
 
     plt.subplot(3, 2, (3,5))
-    list_of_files = glob.glob(f'../data/20260710_fft_{i}/*')
+    list_of_files = glob.glob(f'./data/20260710_fft_{i}/*')
     latest_file = max(list_of_files, key=os.path.getctime)
 
     data_fft = pd.read_csv(latest_file, sep=';')
@@ -61,7 +61,7 @@ plt.axvline(5.5, color="red", linestyle="--", label=r"Mittenfrequenz 5.5 MHz")
 plt.axvline(5.0, color="red", linestyle="--", label=r"Untere Grenzfrequenz 5.0 MHz")
 plt.axvline(6.0, color="red", linestyle="--", label=r"Obere Grenzfrequenz 6.0 MHz")
 
-plt.legend()
+#plt.legend()
 
 plt.subplot(3, 2, (4,6))
 plt.plot(list*100,peaks, "o-",color="green")
@@ -73,6 +73,6 @@ plt.axhline(5.5, color="red", linestyle="--", label=r"Mittenfrequenz $5.5\,$MHz"
 plt.axhline(6, color="red", linestyle="--", label=r"Obere Frequenz $6.0\,$MHz")
 plt.grid()
 
-plt.legend(loc="best")
+#plt.legend(loc="best")
 plt.tight_layout()
 plt.show()
