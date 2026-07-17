@@ -8,7 +8,7 @@
 ├── images/
 ├── kicad/
 │   ├── Archiv/
-        ├── VCO-Schwingkreis/
+|       ├── VCO-Schwingkreis/
 │   ├── footprints/
 │   ├── spicelibs/
 │   └── Wien-VCO/
