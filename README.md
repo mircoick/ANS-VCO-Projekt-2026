@@ -383,6 +383,14 @@ Abbildung 5: Simulationsergebnis mit Python Auswertung
 
 </div>
 
+<div id="meas_plot">
+
+<img src=".\images/meas_plot.png" style="width:100.0%" />
+
+Abbildung 6: Gemesene Ergebnisse
+
+</div>
+
 # Charakterisierung
 
 # Ordnerstruktur
