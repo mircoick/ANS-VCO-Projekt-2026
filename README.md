@@ -342,7 +342,7 @@ Die Analyse der Modelle ergab, dass die
 Anforderungen passt. Somit wurden alle benötigten Bauteile gefunden und
 die Silumation konnte durchgeführt werden.
 
-## Simulation
+## Simulation den Wien-Brücken-VCO’s
 
 Um nun die Schaltung Simulieren zu können wurde LTSpice sowie auch
 NGSpice über KiCAD zur Hilfe genommen. In beiden Fällen konnte der in
@@ -452,14 +452,63 @@ entwerfenden Wien-Brücken-VCO Platine.
 
 ## Fertige Platine
 
-<img src=".\images/IMG_1872%20(1).JPEG" id="fig-plat1"
-style="width:100.0%" alt="Platine 1" />
+Im folgenden ist der Messaufbau zur Messwertaufnahme und
+Charakterisierung der Schaltung zu sehen. Für die Spannungsversorgung
+beider Operationsverstärker wurde enine Spannungsquelle verwendet,
+welche auf $5\,\text{V}$ eingestellt wurde. Die Spannung und somit die
+Frequenz wurde mit einem PicoScope Oszilloskop aufgenommen.
+
+<div id="fig-plat1">
+
+<img src=".\images/IMG_1872%20(1).JPEG" style="width:100.0%" />
+
+Abbildung 6: Platine 1
+
+</div>
+
+Die beiden weiteren Bilder zeigen die bestückte Platine. Diese umfasst
+die Wie-Robinson-Brücke mit den Varaktoren und der Verstärkerschaltung
+des Oszillatorteils mit Ampltitudenregelung. Die Verstärkerschaltung der
+Steuerspannung wurde auf dem Breadboard aufgebaut.
+
+Die Platine wurde mit der, sich im kicad Ordner befindlichen
+PDF-Dateien, belichtet und anschließend geätzt. Im Anschluss wurden alle
+Löcher gebohrt und die Platine bestückt.
+
 <img src=".\images/IMG_1873%20(1).JPEG" id="fig-plat2"
 style="width:100.0%" alt="Platine 2" />
 <img src=".\images/IMG_1874%20(1).JPEG" id="fig-plat3"
 style="width:100.0%" alt="Platine 3" />
 
 ### Messergenisse
+
+Im folgenden sind die Messergebnisse des zuvor gezeigten Messaufbaus zu
+sehen.
+
+<div id="fig-test">
+
+<img src=".\images/meas_wien_vco.png" style="width:100.0%" />
+
+Abbildung 7: Darstellung der Messergebnisse mit Python
+
+</div>
+
+Das obere Diagramm zeigt die Spannung am Ausgang des VCOs. Diese bleibt
+ebenfalls über den gesamten Steuerbereich konstant bei einer Amplitude
+von etwa $\pm 25\,\text{mV}$. Zudem ist eine leichte Verzerrung der
+Schwingung zu erkennen, dies ist auf den Operationsverstärker und deren
+Amplitudensteuerung zurückzuführen. Anhand des Spektrums sind ebenfalls
+die Peaks im Bereich des benötigten Frequenzbereichs zu sehen. Diese
+ordnen sich präzise zwischen den markierten Grenzfrequenzen von
+$5,0\,\text{MHz}$ und $6,0\,\text{MHz}$ ein, wobei sich das Nutzsignal
+bei etwa $-30\,\text{dBV}$ mit einem hohen Störabstand deutlich vom
+Grundrauschen abhebt. Die Kennlinie der Steuerspannung zu der
+Ausgangsfrequenz zeigt ebenfalls ein deutliches lineares Verhalten, wie
+bereits in der Simulation zu sehen. Der abgebildete Steuerbereich von
+$0\,\text{V}$ bis $1\,\text{V}$ deckt den geforderten Frequenzhub
+präzise ab, wobei die Kurve bei $0\,\text{V}$ exakt bei
+$5,0\,\text{MHz}$ startet und bei $1\,\text{V}$ den oberen Grenzwert von
+$6,0\,\text{MHz}$ erreicht
 
 # Ordnerstruktur
 
