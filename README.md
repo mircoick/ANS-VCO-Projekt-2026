@@ -1,4 +1,5 @@
-09.07.2026
+
+17.07.2026
 
 <div align="center">
 
@@ -45,8 +46,8 @@ Mirco Ick
 
 **Dateiübersicht**
 
-[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) ·
-[Analyse-Code](code/) · [Datenblätter](datasheets/)
+[KiCad-Dateien](kicad/) · [Simulationsdaten](sim/) · [Python
+Code](code/) · [Datenblätter](datasheets/)
 
 </div>
 
@@ -234,10 +235,7 @@ mit Änderung des OPV’s (LT7171) auf die gewünschten $5,5~\text{MHz}$,
 umgesetzt wurde, konnte sich um den geforderten Frequenzhub von
 $\Delta f=1~\text{MHz}$ bei einer Steuerspannungsänderung von
 $U_{str}=\pm 0,5~\text{V}$ gemacht werden. Für den ersten Entwurf wurden
-nun Varaktoren parallel zu den beiden Kondensatoren $C$ geschaltet. Ein
-erster Versuch ist der **?@fig-wienvarak** zu entnehemen.
-
-**Abbildung mit Wien-Robinson-Oszillator mit Frequenzhub**
+nun Varaktoren parallel zu den beiden Kondensatoren $C$ geschaltet.
 
 Nach umsetzen dieser Schaltung haben sich jedoch zwei Probleme
 kristallisiert. Zum einen kamen in den verschiedenen Simulationen (KiCAD
@@ -320,7 +318,92 @@ steuerbare Amplitudenregelung anfangs bessere Ergebnisse in der
 Simulation mit NGSpice und LTSpice bezüglich der linearität der
 Ausgangsfrequenz bessere Ergebnisse lieferte.
 
+Eine Simulation der Schaltung ([KiCAD](kicad/Wien-VCO/)) mit dem
+[sim_plot.py](code/sim_plot.py) ist der
+<a href="#fig-sim-wien-vco" class="quarto-xref">Abbildung 5</a> zu
+entnehmen. Es wurden die folgenden Werte gewählt:
+
+<div class="columns" style="display: flex; align-items: center;">
+
+<div class="column" width="45%">
+
+| Bauteil              | Typ / Wert                      |
+|:---------------------|:--------------------------------|
+| **$V_{\text{str}}$** | $0 \dots 1~\text{V}$ (variabel) |
+| **VCC+**             | $+10~\text{V}$                  |
+| **VCC-**             | $-10~\text{V}$                  |
+| **U1**               | MAX4104                         |
+| **U2**               | TL082                           |
+| **J1**               | J113                            |
+| **D1**               | 1N6263 (Schottky)               |
+| **D2-D5**            | BB535/SIE (Kapazitätsdiode)     |
+
+</div>
+
+<div class="column" width="10%">
+
+<!-- Freiraum zwischen den Spalten -->
+
+</div>
+
+<div class="column" width="45%">
+
+| Bauteil   | Wert              |
+|:----------|:------------------|
+| **C1-C2** | $2{,}7~\text{pF}$ |
+| **C3**    | $2{,}0~\text{nF}$ |
+| **C4-C5** | $100~\text{nF}$   |
+
+<div style="margin-top: 1.5em;">
+
+</div>
+
+| Bauteil    | Wert                     |
+|:-----------|:-------------------------|
+| **R1-R2**  | $3{,}275~\text{k}\Omega$ |
+| **R3**     | $2{,}32~\text{k}\Omega$  |
+| **R4**     | $1{,}2~\text{k}\Omega$   |
+| **R5**     | $20~\text{k}\Omega$      |
+| **R6, R9** | $100~\text{k}\Omega$     |
+| **R7**     | $1{,}0~\text{k}\Omega$   |
+| **R8**     | $8{,}0~\text{k}\Omega$   |
+| **R10**    | $10~\text{k}\Omega$      |
+| **R11**    | $75~\text{k}\Omega$      |
+| **R12**    | $50~\text{k}\Omega$      |
+
+</div>
+
+</div>
+
+<div id="fig-sim-wien-vco">
+
+<img src=".\images/sim_wien_vco.png" style="width:100.0%" />
+
+Abbildung 5: Simulationsergebnis mit Python Auswertung
+
+</div>
+
 # Charakterisierung
+
+# Ordnerstruktur
+
+``` {text}
+.
+├── code/
+├── data/
+├── datasheets/
+├── images/
+├── kicad/
+│   ├── Archiv/
+        ├── VCO-Schwingkreis/
+│   ├── footprints/
+│   ├── spicelibs/
+│   └── Wien-VCO/
+├── report/
+├── sim/
+├── .gitignore
+└── README.md
+```
 
 # Literaturverzeichnis
 
