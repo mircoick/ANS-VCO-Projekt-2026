@@ -455,7 +455,7 @@ entwerfenden Wien-Brücken-VCO Platine.
 Im folgenden ist der Messaufbau zur Messwertaufnahme und
 Charakterisierung der Schaltung zu sehen. Für die Spannungsversorgung
 beider Operationsverstärker wurde enine Spannungsquelle verwendet,
-welche auf $5\,\text{V}$ eingestellt wurde. Die Spannung und somit die
+welche auf $5~\text{V}$ eingestellt wurde. Die Spannung und somit die
 Frequenz wurde mit einem PicoScope Oszilloskop aufgenommen.
 
 <div id="fig-plat1">
@@ -495,20 +495,20 @@ Abbildung 7: Darstellung der Messergebnisse mit Python
 
 Das obere Diagramm zeigt die Spannung am Ausgang des VCOs. Diese bleibt
 ebenfalls über den gesamten Steuerbereich konstant bei einer Amplitude
-von etwa $\pm 25\,\text{mV}$. Zudem ist eine leichte Verzerrung der
+von etwa $\pm 35~\text{mV}$. Zudem ist eine leichte Verzerrung der
 Schwingung zu erkennen, dies ist auf den Operationsverstärker und deren
 Amplitudensteuerung zurückzuführen. Anhand des Spektrums sind ebenfalls
 die Peaks im Bereich des benötigten Frequenzbereichs zu sehen. Diese
 ordnen sich präzise zwischen den markierten Grenzfrequenzen von
-$5,0\,\text{MHz}$ und $6,0\,\text{MHz}$ ein, wobei sich das Nutzsignal
-bei etwa $-30\,\text{dBV}$ mit einem hohen Störabstand deutlich vom
+$5,0~\text{MHz}$ und $6,0~\text{MHz}$ ein, wobei sich das Nutzsignal
+bei etwa $-30~\text{dBV}$ mit einem hohen Störabstand deutlich vom
 Grundrauschen abhebt. Die Kennlinie der Steuerspannung zu der
 Ausgangsfrequenz zeigt ebenfalls ein deutliches lineares Verhalten, wie
 bereits in der Simulation zu sehen. Der abgebildete Steuerbereich von
-$0\,\text{V}$ bis $1\,\text{V}$ deckt den geforderten Frequenzhub
-präzise ab, wobei die Kurve bei $0\,\text{V}$ exakt bei
-$5,0\,\text{MHz}$ startet und bei $1\,\text{V}$ den oberen Grenzwert von
-$6,0\,\text{MHz}$ erreicht
+$0~\text{V}$ bis $1~\text{V}$ deckt den geforderten Frequenzhub
+präzise ab, wobei die Kurve bei $0~\text{V}$ exakt bei
+$5,0~\text{MHz}$ startet und bei $1~\text{V}$ den oberen Grenzwert von
+$6,0~\text{MHz}$ erreicht
 
 # Ordnerstruktur
 
