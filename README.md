@@ -361,7 +361,6 @@ festgelegt:
 
 | Symbol | Bauteil | Typ / Wert |
 |:--------|:--------|:--------|
-
 | **U1**      | Operationsverstärker | MAX4104 |
 | **U2**      | Operationsverstärker | TL082 |
 | **J1**      | JFET | J113 |
