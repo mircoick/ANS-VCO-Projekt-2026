@@ -14,50 +14,34 @@ Um nun die Schaltung Simulieren zu können wurde LTSpice sowie auch NGSpice übe
 :::: {.columns style="display: flex; align-items: center;"}
 
 ::: {.column width="45%"}
-| Bauteil | Typ / Wert |
-|:--------|:-----------|
-| **$V_{\text{str}}$** | $0 - 1~\text{V}$ |
-| **VCC+**    | $+10~\text{V}$ |
-| **VCC-**    | $-10~\text{V}$ |
-| **U1**      | MAX4104 |
-| **U2**      | TL082 |
-| **J1**      | J113 |
-| **D1**      | 1N6263 (Schottky) |
-| **D2-D5**   | BB535/SIE (Kapazitätsdiode) |
-:::
+| Symbol | Bauteil | Typ / Wert |
+|:--------|:--------|:--------|
 
-::: {.column width="10%"}
-<!-- Freiraum zwischen den Spalten -->
-:::
-
-::: {.column width="45%"}
-| Bauteil | Wert |
-|:--------|:-----|
-| **C1-C2**   | $2{,}7~\text{pF}$   |
-| **C3**      | $2{,}0~\text{nF}$   |
-| **C4-C5**   | $100~\text{nF}$     |
-
-<div style="margin-top: 1.5em;"></div>
-
-| Bauteil | Wert |
-|:--------|:-----|
-| **R1-R2**   | $3{,}275~\text{k}\Omega$ |
-| **R3**      | $2{,}32~\text{k}\Omega$  |
-| **R4**      | $1{,}2~\text{k}\Omega$   |
-| **R5**      | $20~\text{k}\Omega$      |
-| **R6, R9**  | $100~\text{k}\Omega$     |
-| **R7**      | $1{,}0~\text{k}\Omega$   |
-| **R8**      | $8{,}0~\text{k}\Omega$   |
-| **R10**     | $10~\text{k}\Omega$      |
-| **R11**     | $75~\text{k}\Omega$      |
-| **R12**     | $50~\text{k}\Omega$      |
+| **U1**      | Operationsverstärker | MAX4104 |
+| **U2**      | Operationsverstärker | TL082 |
+| **J1**      | JFET | J113 |
+| **D1**      | Diode | 1N6263 (Schottky) |
+| **D2-D5**   | Kapazitätsdiode |  BB535/SIE  |
+| **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   |
+| **C3**      | Regelungs Kondensator | $2{,}0~\text{nF}$   |
+| **C4-C5**   | V_{str} Kondensator | $100~\text{nF}$     |
+| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ |
+| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  |
+| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   |
+| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      |
+| **R6, R9**  | V_{str} Widerstand | $100~\text{k}\Omega$     |
+| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   |
+| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   |
+| **R10**     | V_{str} Widerstand | $10~\text{k}\Omega$      |
+| **R11**     | V_{str} Widerstand | $75~\text{k}\Omega$      |
+| **R12**     | V_{str} Widerstand | $50~\text{k}\Omega$      |
 :::
 
 ::::
 
 ![Simulationsergebnis mit Python Auswertung](/images/sim_wien_vco){#fig-sim-wien-vco width="100%"}
 
-Die in @fig-sim-wien-vco dargestellte Simulation zeigt die vollständige Schaltung im einstellbaren Steuerspannungsbereich von $V_{str} = 0 \dots 1~\text{V}$. Die Auswertung umfasst drei Darstellungen:
+Die in @fig-sim-wien-vco dargestellte Simulation zeigt die vollständige Schaltung im einstellbaren Steuerspannungsbereich von $V_{str} = 0 \dots 1~\text{V}$. Sie wurde mit $VCC+ = +10~\text{V}$ und $VCC- = +10~\text{V}$ angesteuert. Die Auswertung umfasst drei Darstellungen:
 
 Der obere Plot zeigt die Zeitsignale der 11 simulierten Zustände. Hierbei lässt sich die Amplitudenstabilität der Schaltung überprüfen. Zu sehen ist, dass die Amplitude über den gesamten Steuerspannungsbereich sowohl im positiven als auch im negativen Bereich bei ca. $\pm 9~\text{V}$ stabil bleibt. Die unterschiedlichen Frequenzen der Signale sind bereits im Zeitbereich visuell erkennbar. 
 
