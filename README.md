@@ -368,7 +368,7 @@ festgelegt:
 | **D2-D5**   | Kapazitätsdiode |  BB535/SIE  |  [.model BB535](kicad/spicelibs/models.txt)  |
 | **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   | |
 | **C3**      | Regelungs Kondensator | $2{,}0~\text{nF}$   | |
-| **C4-C5**   |$ V_{str}$ Kondensator | $100~\text{nF}$     | |
+| **C4-C5**   |$V_{str}$ Kondensator | $100~\text{nF}$     | |
 | **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ | |
 | **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  | |
 | **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   | |
@@ -456,6 +456,31 @@ Löcher gebohrt und die Platine bestückt.
 style="width:100.0%" alt="Platine 2" />
 <img src=".\images/IMG_1874%20(1).JPEG" id="fig-plat3"
 style="width:100.0%" alt="Platine 3" />
+
+Aufgrund von parasitären Eigenschaften des Messaufbaus sowie des Platinenlayouts wichen die im realen Aufbau verwendeten Bauteilwerte von den ursprünglichen Simulationswerten ab. Diese Anpassungen waren notwendig, um die gewünschten Zielvorgaben und Spezifikationen zu erreichen. Die betroffenen Komponenten und ihre angepassten Werte sind in der folgenden Tabelle zusammengefasst:
+
+| Symbol | Bauteil | Typ / Wert | Model |
+|:--------|:--------|:--------|:--------|
+| **C3**      | Regelungs Kondensator | $1{,}0~\text{nF}$   | |
+| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ | |
+| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  | |
+| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   | |
+| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      | |
+| **R6, R9**  | $V_{str}$ Widerstand | $100~\text{k}\Omega$     | |
+| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   | |
+| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   | |
+| **R10**     | $V_{str}$ Widerstand | $10~\text{k}\Omega$      | |
+| **R11**     | $V_{str}$ Widerstand | $75~\text{k}\Omega$      | |
+| **R12**     | $V_{str}$ Widerstand | $50~\text{k}\Omega$      | |
+
+
+<div class="columns" style="display: flex; align-items: center;">
+
+<div class="column" width="45%">
+
+</div>
+
+</div>
 
 ### Messergenisse
 
