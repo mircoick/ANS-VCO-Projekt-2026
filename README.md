@@ -361,9 +361,9 @@ festgelegt:
 
 | Symbol | Bauteil | Typ / Wert | Model |
 |:--------|:--------|:--------|:--------|
-| **U1**      | Operationsverstärker | MAX4104 |[MAX4104.lib](kicad/spicelibs/MAX4104.lib) |
-| **U2**      | Operationsverstärker | TL082 |  [elk.lib](kicad/spicelibs/elk.lib) |
-| **J1**      | JFET | J113 |                   [J113.lib](kicad/spicelibs/J113.lib) |
+| **U1**      | Operationsverstärker | MAX4104 |[MAX4104.lib](kicad/spicelibs/) |
+| **U2**      | Operationsverstärker | TL082 |  [elk.lib](kicad/spicelibs/) |
+| **J1**      | JFET | J113 |                   [J113.lib](kicad/spicelibs/) |
 | **D1**      | Diode | 1N6263 (Schottky) |   [.model 1N6263](kicad/spicelibs/models.txt)   |
 | **D2-D5**   | Kapazitätsdiode |  BB535/SIE  |  [.model BB535](kicad/spicelibs/models.txt)  |
 | **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   | |
