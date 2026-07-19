@@ -359,13 +359,13 @@ festgelegt:
 
 <div class="column" width="45%">
 
-| Symbol | Bauteil | Typ / Wert | Datasheet |
+| Symbol | Bauteil | Typ / Wert | Model |
 |:--------|:--------|:--------|:--------|
-| **U1**      | Operationsverstärker | MAX4104 |[datasheet](datasheets/MAX410-MAX4101.pdf) |
-| **U2**      | Operationsverstärker | TL082 |  [datasheet](datasheets/tl082.pdf) |
-| **J1**      | JFET | J113 |                   [datasheet](datasheets/J113.pdf) |
-| **D1**      | Diode | 1N6263 (Schottky) |     [datasheet](datasheets/1n6263.pdf) |
-| **D2-D5**   | Kapazitätsdiode |  BB535/SIE  | [datasheet](datasheets/BB535.pdf) |
+| **U1**      | Operationsverstärker | MAX4104 |[MAX4104.lib](kicad/spicelibs/MAX4104.lib) |
+| **U2**      | Operationsverstärker | TL082 |  [elk.lib](kicad/spicelibs/elk.lib) |
+| **J1**      | JFET | J113 |                   [J113.lib](kicad/spicelibs/J113.lib) |
+| **D1**      | Diode | 1N6263 (Schottky) |   [.model 1N6263](kicad/spicelibs/models.txt)   |
+| **D2-D5**   | Kapazitätsdiode |  BB535/SIE  |  [.model BB535](kicad/spicelibs/models.txt)  |
 | **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   | |
 | **C3**      | Regelungs Kondensator | $2{,}0~\text{nF}$   | |
 | **C4-C5**   | V_{str} Kondensator | $100~\text{nF}$     | |
