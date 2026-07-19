@@ -359,26 +359,26 @@ festgelegt:
 
 <div class="column" width="45%">
 
-| Symbol | Bauteil | Typ / Wert |
-|:--------|:--------|:--------|
-| **U1**      | Operationsverstärker | MAX4104 |
-| **U2**      | Operationsverstärker | TL082 |
-| **J1**      | JFET | J113 |
-| **D1**      | Diode | 1N6263 (Schottky) |
-| **D2-D5**   | Kapazitätsdiode |  BB535/SIE  |
-| **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   |
-| **C3**      | Regelungs Kondensator | $2{,}0~\text{nF}$   |
-| **C4-C5**   | $V_{str}$ Kondensator | $100~\text{nF}$     |
-| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ |
-| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  |
-| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   |
-| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      |
-| **R6, R9**  | $V_{str}$ Widerstand | $100~\text{k}\Omega$     |
-| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   |
-| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   |
-| **R10**     | V_{str} Widerstand | $10~\text{k}\Omega$      |
-| **R11**     | V_{str} Widerstand | $75~\text{k}\Omega$      |
-| **R12**     | V_{str} Widerstand | $50~\text{k}\Omega$      |
+| Symbol | Bauteil | Typ / Wert | Datasheet |
+|:--------|:--------|:--------|:--------|
+| **U1**      | Operationsverstärker | MAX4104 |[datasheet](datasheets/MAX410-MAX4101.pdf) |
+| **U2**      | Operationsverstärker | TL082 |  [datasheet](datasheets/tl082.pdf) |
+| **J1**      | JFET | J113 |                   [datasheet](datasheets/J113.pdf) |
+| **D1**      | Diode | 1N6263 (Schottky) |     [datasheet](datasheets/1n6263.pdf) |
+| **D2-D5**   | Kapazitätsdiode |  BB535/SIE  | [datasheet](datasheets/BB535.pdf) |
+| **C1-C2**   | WRB Kondensator | $2{,}7~\text{pF}$   | |
+| **C3**      | Regelungs Kondensator | $2{,}0~\text{nF}$   | |
+| **C4-C5**   | V_{str} Kondensator | $100~\text{nF}$     | |
+| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ | |
+| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  | |
+| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   | |
+| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      | |
+| **R6, R9**  | V_{str} Widerstand | $100~\text{k}\Omega$     | |
+| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   | |
+| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   | |
+| **R10**     | V_{str} Widerstand | $10~\text{k}\Omega$      | |
+| **R11**     | V_{str} Widerstand | $75~\text{k}\Omega$      | |
+| **R12**     | V_{str} Widerstand | $50~\text{k}\Omega$      | |
 
 </div>
 
