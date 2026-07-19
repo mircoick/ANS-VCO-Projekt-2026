@@ -459,19 +459,23 @@ style="width:100.0%" alt="Platine 3" />
 
 Aufgrund von parasitären Eigenschaften des Messaufbaus sowie des Platinenlayouts wichen die im realen Aufbau verwendeten Bauteilwerte von den ursprünglichen Simulationswerten ab. Diese Anpassungen waren notwendig, um die gewünschten Zielvorgaben und Spezifikationen zu erreichen. Die betroffenen Komponenten und ihre angepassten Werte sind in der folgenden Tabelle zusammengefasst:
 
-| Symbol | Bauteil | Typ / Wert | Model |
-|:--------|:--------|:--------|:--------|
-| **C3**      | Regelungs Kondensator | $1{,}0~\text{nF}$   | |
-| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ | |
-| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  | |
-| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   | |
-| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      | |
-| **R6, R9**  | $V_{str}$ Widerstand | $100~\text{k}\Omega$     | |
-| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   | |
-| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   | |
-| **R10**     | $V_{str}$ Widerstand | $10~\text{k}\Omega$      | |
-| **R11**     | $V_{str}$ Widerstand | $75~\text{k}\Omega$      | |
-| **R12**     | $V_{str}$ Widerstand | $50~\text{k}\Omega$      | |
+<div class="columns" style="display: flex; align-items: center;">
+
+<div class="column" width="45%">
+
+| Symbol | Bauteil | Typ / Wert |
+|:--------|:--------|:--------|
+| **C3**      | Regelungs Kondensator | $1{,}0~\text{nF}$   |
+| **R1-R2**   | WRB Widerstand | $3{,}275~\text{k}\Omega$ |
+| **R3**      | Verstärker Widerstand | $2{,}32~\text{k}\Omega$  |
+| **R4**      | Verstärker Widerstand | $1{,}2~\text{k}\Omega$   |
+| **R5**      | Regelungs Widerstand | $20~\text{k}\Omega$      |
+| **R6, R9**  | $V_{str}$ Widerstand | $100~\text{k}\Omega$     |
+| **R7**      | Regelungs Widerstand | $1{,}0~\text{k}\Omega$   |
+| **R8**      | Regelungs Widerstand | $8{,}0~\text{k}\Omega$   |
+| **R10**     | $V_{str}$ Widerstand | $10~\text{k}\Omega$      |
+| **R11**     | $V_{str}$ Widerstand | $75~\text{k}\Omega$      |
+| **R12**     | $V_{str}$ Widerstand | $50~\text{k}\Omega$      |
 
 
 <div class="columns" style="display: flex; align-items: center;">
